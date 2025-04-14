@@ -177,6 +177,30 @@ src/VGE_device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.s
 .PHONY : src/VGE_device.cpp.s
 
+src/VGE_game_object.o: src/VGE_game_object.cpp.o
+.PHONY : src/VGE_game_object.o
+
+# target to build an object file
+src/VGE_game_object.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o
+.PHONY : src/VGE_game_object.cpp.o
+
+src/VGE_game_object.i: src/VGE_game_object.cpp.i
+.PHONY : src/VGE_game_object.i
+
+# target to preprocess a source file
+src/VGE_game_object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.i
+.PHONY : src/VGE_game_object.cpp.i
+
+src/VGE_game_object.s: src/VGE_game_object.cpp.s
+.PHONY : src/VGE_game_object.s
+
+# target to generate assembly for a file
+src/VGE_game_object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.s
+.PHONY : src/VGE_game_object.cpp.s
+
 src/VGE_mesh.o: src/VGE_mesh.cpp.o
 .PHONY : src/VGE_mesh.o
 
@@ -312,6 +336,9 @@ help:
 	@echo "... src/VGE_device.o"
 	@echo "... src/VGE_device.i"
 	@echo "... src/VGE_device.s"
+	@echo "... src/VGE_game_object.o"
+	@echo "... src/VGE_game_object.i"
+	@echo "... src/VGE_game_object.s"
 	@echo "... src/VGE_mesh.o"
 	@echo "... src/VGE_mesh.i"
 	@echo "... src/VGE_mesh.s"

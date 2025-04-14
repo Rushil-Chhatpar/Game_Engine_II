@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_app.cpp" "CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.o" "gcc" "CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.o.d"
   "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_device.cpp" "CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o" "gcc" "CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_game_object.cpp" "CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o" "gcc" "CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o.d"
   "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_mesh.cpp" "CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o" "gcc" "CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o.d"
   "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_pipeline.cpp" "CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o" "gcc" "CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o.d"
   "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_swap_chain.cpp" "CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o" "gcc" "CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o.d"

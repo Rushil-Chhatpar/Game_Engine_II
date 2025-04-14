@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.o.d"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o.d"
+  "CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o"
+  "CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o.d"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o.d"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o"

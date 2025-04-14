@@ -324,7 +324,12 @@ CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.o: \
  /usr/include/glm/packing.hpp /usr/include/glm/detail/func_packing.inl \
  /usr/include/glm/detail/type_half.hpp \
  /usr/include/glm/detail/type_half.inl /usr/include/glm/integer.hpp \
- /usr/include/glm/detail/func_integer.inl /usr/include/c++/13/stdexcept \
+ /usr/include/glm/detail/func_integer.inl \
+ /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_game_object.hpp \
+ /usr/include/glm/gtc/constants.hpp \
+ /usr/include/glm/ext/scalar_constants.hpp \
+ /usr/include/glm/ext/scalar_constants.inl \
+ /usr/include/glm/gtc/constants.inl /usr/include/c++/13/stdexcept \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/bits/ios_base.h \
  /usr/include/c++/13/bits/locale_classes.h \

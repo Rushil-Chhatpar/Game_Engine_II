@@ -3,6 +3,7 @@
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
+#include <glm/gtc/constants.hpp>
 
 #include <stdexcept>
 #include <iostream>
@@ -20,7 +21,7 @@ namespace VGE
 
     VgeApp::VgeApp()
     {
-        loadMeshes();
+        loadGameObjects();
         createPipelineLayout();
         recreateSwapChain();
         createCommandBuffers();
@@ -42,12 +43,19 @@ namespace VGE
         vkDeviceWaitIdle(_device.device());
     }
 
-    void VgeApp::loadMeshes()
+    void VgeApp::loadGameObjects()
     {
         std::vector<VgeMesh::Vertex> vertices{};
         VgeMesh::sierpinskiTriangle(vertices, 6, {-0.5f, 0.5f}, {0.5f, 0.5f}, {0.0f, -0.5f});
         
-        _mesh = std::make_unique<VgeMesh>(_device, vertices);
+        std::shared_ptr<VgeMesh> mesh = std::make_shared<VgeMesh>(_device, vertices);
+
+        auto triangle = VgeGameObject::createGameObject();
+        triangle.setMesh(mesh);
+        triangle.setColor({0.0f, 0.0f, 1.0f});
+        // triangle._transform2d.rotation = 0.25f * glm::two_pi<float>(); // 90 degree rotation
+
+        _gameObjects.push_back(std::move(triangle));
     }
 
     void VgeApp::createPipelineLayout()
@@ -182,9 +190,6 @@ namespace VGE
 
     void VgeApp::recordCommandBuffer(uint32_t imageIndex)
     {
-        static int frame = 0;
-        frame = (frame + 1) % 1000;
-
         VkCommandBufferBeginInfo beginInfo{};
         beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
         beginInfo.flags = 0; // Optional
@@ -232,25 +237,31 @@ namespace VGE
         vkCmdSetViewport(_commandBuffers[imageIndex], 0, 1, &viewport);
         vkCmdSetScissor(_commandBuffers[imageIndex], 0, 1, &scissor);
 
-        _pipeline->bind(_commandBuffers[imageIndex]);
-
-        // bind and draw the meshes
-        _mesh->bind(_commandBuffers[imageIndex]);
-        
-        for(int i = 0;i<4;i++)
-        {
-            SimplePushConstantData push{};
-            push.offset = {-0.5f + frame * 0.002f, -0.4f + i * 0.25f};
-            push.color = {0.0f, 0.0f, 0.2f + 0.2f * i};
-
-            vkCmdPushConstants(_commandBuffers[imageIndex], _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
-            _mesh->draw(_commandBuffers[imageIndex]);
-        }
+        renderGameObjects(_commandBuffers[imageIndex]);
 
         vkCmdEndRenderPass(_commandBuffers[imageIndex]);
         if (vkEndCommandBuffer(_commandBuffers[imageIndex]) != VK_SUCCESS)
         {
             throw std::runtime_error("failed to record command buffer!");
+        }
+    }
+
+    void VgeApp::renderGameObjects(VkCommandBuffer commandBuffer)
+    {
+        _pipeline->bind(commandBuffer);
+
+        for(auto& gameObject : _gameObjects)
+        {
+            gameObject._transform2d.rotation = glm::mod(gameObject._transform2d.rotation + 0.01f, glm::two_pi<float>());
+
+            SimplePushConstantData push{};
+            push.offset = gameObject._transform2d.translation;
+            push.color = gameObject.getColor();
+            push.transform = gameObject._transform2d.mat2();
+
+            vkCmdPushConstants(commandBuffer, _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
+            gameObject.getMesh()->bind(commandBuffer);
+            gameObject.getMesh()->draw(commandBuffer);
         }
     }
 }

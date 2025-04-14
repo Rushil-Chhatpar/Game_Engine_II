@@ -6,9 +6,9 @@
             "type": "shell",
             "command": "./compile.sh",
             "options": {
-            "cwd": "${workspaceFolder}/VulkanGameEngine"
-    },
-    "problemMatcher": []
+                "cwd": "${workspaceFolder}/VulkanGameEngine"
+            },
+            "problemMatcher": []
         },
         {
             "type": "cppbuild",

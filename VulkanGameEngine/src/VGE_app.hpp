@@ -5,6 +5,7 @@
 #include "VGE_window.hpp"
 #include "VGE_swap_chain.hpp"
 #include "VGE_mesh.hpp"
+#include "VGE_game_object.hpp"
 
 #include <memory>
 #include <vector>
@@ -27,7 +28,7 @@ namespace VGE
 
     private:
     
-        void loadMeshes();
+        void loadGameObjects();
         void createPipelineLayout();
         void createPipeline();
         void createCommandBuffers();
@@ -35,6 +36,7 @@ namespace VGE
         void drawFrame();
         void recreateSwapChain();
         void recordCommandBuffer(uint32_t imageIndex);
+        void renderGameObjects(VkCommandBuffer commandBuffer);
 
     private:
         VgeWindow _window{WIDTH, HEIGHT, "Vulkan Game Engine"};
@@ -43,7 +45,7 @@ namespace VGE
         std::unique_ptr<VgePipeline> _pipeline;
         VkPipelineLayout _pipelineLayout;
         std::vector<VkCommandBuffer> _commandBuffers;
-        std::unique_ptr<VgeMesh> _mesh;
+        std::vector<VgeGameObject> _gameObjects;
 
         VkClearColorValue _defaultClearColor = {{0.0f, 0.0f, 0.0f, 1.0f}};
     };
