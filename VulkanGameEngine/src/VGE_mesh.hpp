@@ -19,9 +19,15 @@ namespace VGE
 
             static std::vector<VkVertexInputBindingDescription> getBindingDescriptions();
             static std::vector<VkVertexInputAttributeDescription> getAttributeDescriptions();
+
+            bool operator==(const Vertex& other) const
+            {
+                return pos == other.pos && color == other.color;
+            }
         };
 
         VgeMesh(VgeDevice& device, const std::vector<Vertex>& vertices);
+        VgeMesh(VgeDevice& device, const char* filename);
         ~VgeMesh();
 
         VgeMesh(const VgeMesh&) = delete;
