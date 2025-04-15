@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.o"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.o.d"
+  "CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o"
+  "CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o.d"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o.d"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o"
@@ -9,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o.d"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o.d"
+  "CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o"
+  "CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o.d"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o.d"
   "CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o"

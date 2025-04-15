@@ -142,7 +142,7 @@ CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_pipeline.hpp \
+ /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_renderer.hpp \
  /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_swap_chain.hpp \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
@@ -326,6 +326,8 @@ CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.o: \
  /usr/include/glm/detail/type_half.inl /usr/include/glm/integer.hpp \
  /usr/include/glm/detail/func_integer.inl \
  /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_game_object.hpp \
+ /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_default_render_system.hpp \
+ /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_pipeline.hpp \
  /usr/include/glm/gtc/constants.hpp \
  /usr/include/glm/ext/scalar_constants.hpp \
  /usr/include/glm/ext/scalar_constants.inl \

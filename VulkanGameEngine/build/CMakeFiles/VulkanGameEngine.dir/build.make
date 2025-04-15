@@ -83,10 +83,24 @@ CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_app.cpp -o CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.s
 
+CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o: CMakeFiles/VulkanGameEngine.dir/flags.make
+CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o: /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_default_render_system.cpp
+CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o: CMakeFiles/VulkanGameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o -MF CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o.d -o CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o -c /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_default_render_system.cpp
+
+CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_default_render_system.cpp > CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.i
+
+CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_default_render_system.cpp -o CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.s
+
 CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o: CMakeFiles/VulkanGameEngine.dir/flags.make
 CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o: /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_device.cpp
 CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o: CMakeFiles/VulkanGameEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o -MF CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o.d -o CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o -c /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_device.cpp
 
 CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.s: cmake_force
 CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o: CMakeFiles/VulkanGameEngine.dir/flags.make
 CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o: /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_game_object.cpp
 CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o: CMakeFiles/VulkanGameEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o -MF CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o.d -o CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o -c /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_game_object.cpp
 
 CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.s: cmake_force
 CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o: CMakeFiles/VulkanGameEngine.dir/flags.make
 CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o: /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_mesh.cpp
 CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o: CMakeFiles/VulkanGameEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o -MF CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o.d -o CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o -c /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_mesh.cpp
 
 CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.s: cmake_force
 CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o: CMakeFiles/VulkanGameEngine.dir/flags.make
 CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o: /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_pipeline.cpp
 CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o: CMakeFiles/VulkanGameEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o -MF CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o.d -o CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o -c /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_pipeline.cpp
 
 CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.i: cmake_force
@@ -139,10 +153,24 @@ CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_pipeline.cpp -o CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.s
 
+CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o: CMakeFiles/VulkanGameEngine.dir/flags.make
+CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o: /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_renderer.cpp
+CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o: CMakeFiles/VulkanGameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o -MF CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o.d -o CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o -c /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_renderer.cpp
+
+CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_renderer.cpp > CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.i
+
+CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_renderer.cpp -o CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.s
+
 CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o: CMakeFiles/VulkanGameEngine.dir/flags.make
 CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o: /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_swap_chain.cpp
 CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o: CMakeFiles/VulkanGameEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o -MF CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o.d -o CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o -c /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_swap_chain.cpp
 
 CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.i: cmake_force
@@ -156,7 +184,7 @@ CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.s: cmake_force
 CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o: CMakeFiles/VulkanGameEngine.dir/flags.make
 CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o: /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_window.cpp
 CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o: CMakeFiles/VulkanGameEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o -MF CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o.d -o CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o -c /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_window.cpp
 
 CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.i: cmake_force
@@ -170,7 +198,7 @@ CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.s: cmake_force
 CMakeFiles/VulkanGameEngine.dir/src/main.cpp.o: CMakeFiles/VulkanGameEngine.dir/flags.make
 CMakeFiles/VulkanGameEngine.dir/src/main.cpp.o: /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/main.cpp
 CMakeFiles/VulkanGameEngine.dir/src/main.cpp.o: CMakeFiles/VulkanGameEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/VulkanGameEngine.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanGameEngine.dir/src/main.cpp.o -MF CMakeFiles/VulkanGameEngine.dir/src/main.cpp.o.d -o CMakeFiles/VulkanGameEngine.dir/src/main.cpp.o -c /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/main.cpp
 
 CMakeFiles/VulkanGameEngine.dir/src/main.cpp.i: cmake_force
@@ -184,10 +212,12 @@ CMakeFiles/VulkanGameEngine.dir/src/main.cpp.s: cmake_force
 # Object files for target VulkanGameEngine
 VulkanGameEngine_OBJECTS = \
 "CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.o" \
+"CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o" \
 "CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o" \
 "CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o" \
 "CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o" \
 "CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o" \
+"CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o" \
 "CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o" \
 "CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o" \
 "CMakeFiles/VulkanGameEngine.dir/src/main.cpp.o"
@@ -196,10 +226,12 @@ VulkanGameEngine_OBJECTS = \
 VulkanGameEngine_EXTERNAL_OBJECTS =
 
 VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.o
+VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o
 VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/src/VGE_device.cpp.o
 VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/src/VGE_game_object.cpp.o
 VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/src/VGE_mesh.cpp.o
 VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.o
+VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o
 VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/src/VGE_swap_chain.cpp.o
 VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/src/VGE_window.cpp.o
 VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/src/main.cpp.o
@@ -207,7 +239,7 @@ VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/build.make
 VulkanGameEngine: /usr/lib/x86_64-linux-gnu/libglfw.so
 VulkanGameEngine: /usr/lib/x86_64-linux-gnu/libvulkan.so
 VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable VulkanGameEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable VulkanGameEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VulkanGameEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

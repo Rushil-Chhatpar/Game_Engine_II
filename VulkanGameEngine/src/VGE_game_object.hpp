@@ -57,7 +57,7 @@ namespace VGE
         // Get the ID of the game object
         id_t getId() const { return _id; }
         
-        Transform2dComponent _transform2d{};
+        Transform2dComponent Transform2d{};
 
         VgeGameObject(const VgeGameObject&) = delete;
         VgeGameObject& operator=(const VgeGameObject&) = delete;

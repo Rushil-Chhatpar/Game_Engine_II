@@ -153,6 +153,30 @@ src/VGE_app.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_app.cpp.s
 .PHONY : src/VGE_app.cpp.s
 
+src/VGE_default_render_system.o: src/VGE_default_render_system.cpp.o
+.PHONY : src/VGE_default_render_system.o
+
+# target to build an object file
+src/VGE_default_render_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.o
+.PHONY : src/VGE_default_render_system.cpp.o
+
+src/VGE_default_render_system.i: src/VGE_default_render_system.cpp.i
+.PHONY : src/VGE_default_render_system.i
+
+# target to preprocess a source file
+src/VGE_default_render_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.i
+.PHONY : src/VGE_default_render_system.cpp.i
+
+src/VGE_default_render_system.s: src/VGE_default_render_system.cpp.s
+.PHONY : src/VGE_default_render_system.s
+
+# target to generate assembly for a file
+src/VGE_default_render_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_default_render_system.cpp.s
+.PHONY : src/VGE_default_render_system.cpp.s
+
 src/VGE_device.o: src/VGE_device.cpp.o
 .PHONY : src/VGE_device.o
 
@@ -249,6 +273,30 @@ src/VGE_pipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_pipeline.cpp.s
 .PHONY : src/VGE_pipeline.cpp.s
 
+src/VGE_renderer.o: src/VGE_renderer.cpp.o
+.PHONY : src/VGE_renderer.o
+
+# target to build an object file
+src/VGE_renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.o
+.PHONY : src/VGE_renderer.cpp.o
+
+src/VGE_renderer.i: src/VGE_renderer.cpp.i
+.PHONY : src/VGE_renderer.i
+
+# target to preprocess a source file
+src/VGE_renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.i
+.PHONY : src/VGE_renderer.cpp.i
+
+src/VGE_renderer.s: src/VGE_renderer.cpp.s
+.PHONY : src/VGE_renderer.s
+
+# target to generate assembly for a file
+src/VGE_renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/src/VGE_renderer.cpp.s
+.PHONY : src/VGE_renderer.cpp.s
+
 src/VGE_swap_chain.o: src/VGE_swap_chain.cpp.o
 .PHONY : src/VGE_swap_chain.o
 
@@ -333,6 +381,9 @@ help:
 	@echo "... src/VGE_app.o"
 	@echo "... src/VGE_app.i"
 	@echo "... src/VGE_app.s"
+	@echo "... src/VGE_default_render_system.o"
+	@echo "... src/VGE_default_render_system.i"
+	@echo "... src/VGE_default_render_system.s"
 	@echo "... src/VGE_device.o"
 	@echo "... src/VGE_device.i"
 	@echo "... src/VGE_device.s"
@@ -345,6 +396,9 @@ help:
 	@echo "... src/VGE_pipeline.o"
 	@echo "... src/VGE_pipeline.i"
 	@echo "... src/VGE_pipeline.s"
+	@echo "... src/VGE_renderer.o"
+	@echo "... src/VGE_renderer.i"
+	@echo "... src/VGE_renderer.s"
 	@echo "... src/VGE_swap_chain.o"
 	@echo "... src/VGE_swap_chain.i"
 	@echo "... src/VGE_swap_chain.s"
