@@ -3,7 +3,6 @@
 #include "VGE_device.hpp"
 #include "VGE_window.hpp"
 #include "VGE_renderer.hpp"
-#include "VGE_mesh.hpp"
 #include "VGE_game_object.hpp"
 
 #include <memory>
@@ -28,6 +27,9 @@ namespace VGE
     private:
     
         void loadGameObjects();
+
+
+        std::unique_ptr<VgeMesh> createCubeModel(VgeDevice& device, glm::vec3 offset);
 
     private:
         VgeWindow _window{WIDTH, HEIGHT, "Vulkan Game Engine"};

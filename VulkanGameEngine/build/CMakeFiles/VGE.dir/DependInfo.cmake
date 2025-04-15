@@ -1,0 +1,33 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_app.cpp" "CMakeFiles/VGE.dir/src/VGE_app.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_app.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_camera.cpp" "CMakeFiles/VGE.dir/src/VGE_camera.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_camera.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_default_render_system.cpp" "CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_device.cpp" "CMakeFiles/VGE.dir/src/VGE_device.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_device.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_game_object.cpp" "CMakeFiles/VGE.dir/src/VGE_game_object.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_game_object.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_mesh.cpp" "CMakeFiles/VGE.dir/src/VGE_mesh.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_mesh.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_pipeline.cpp" "CMakeFiles/VGE.dir/src/VGE_pipeline.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_pipeline.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_renderer.cpp" "CMakeFiles/VGE.dir/src/VGE_renderer.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_renderer.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_swap_chain.cpp" "CMakeFiles/VGE.dir/src/VGE_swap_chain.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_swap_chain.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_window.cpp" "CMakeFiles/VGE.dir/src/VGE_window.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_window.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/main.cpp" "CMakeFiles/VGE.dir/src/main.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/main.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

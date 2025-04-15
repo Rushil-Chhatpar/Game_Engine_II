@@ -14,8 +14,7 @@ namespace VGE
 
     struct SimplePushConstantData
     {
-        glm::mat2 transform{1.0f};
-        glm::vec2 offset;
+        glm::mat4 transform{1.0f};
         alignas(16) glm::vec3 color;
     };
 
@@ -61,25 +60,19 @@ namespace VGE
         _pipeline = std::make_unique<VgePipeline>(_device, "../shaders/simple_shader.vert.spv", "../shaders/simple_shader.frag.spv", pipelineConfig);
     }
 
-    void VgeDefaultRenderSystem::renderGameObjects(VkCommandBuffer commandBuffer, std::vector<VgeGameObject>& gameObjects)
+    void VgeDefaultRenderSystem::renderGameObjects(VkCommandBuffer commandBuffer, std::vector<VgeGameObject>& gameObjects, const VgeCamera& camera)
     {
-        int i = 0;
-        for (auto& gameObject : gameObjects)
-        {
-            i++;
-            gameObject.Transform2d.rotation = glm::mod<float>(gameObject.Transform2d.rotation + 0.001f * i, 2.f * glm::pi<float>());
-        }
-
         _pipeline->bind(commandBuffer);
 
         for(auto& gameObject : gameObjects)
         {
-            gameObject.Transform2d.rotation = glm::mod(gameObject.Transform2d.rotation + 0.01f, glm::two_pi<float>());
+            gameObject.Transform.rotation.y = glm::mod(gameObject.Transform.rotation.y + 0.01f, glm::two_pi<float>());
+            gameObject.Transform.rotation.x = glm::mod(gameObject.Transform.rotation.x + 0.01f, glm::two_pi<float>());
+
 
             SimplePushConstantData push{};
-            push.offset = gameObject.Transform2d.translation;
             push.color = gameObject.getColor();
-            push.transform = gameObject.Transform2d.mat2();
+            push.transform = camera.getProjectionMatrix() * gameObject.Transform.mat4();
 
             vkCmdPushConstants(commandBuffer, _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
             gameObject.getMesh()->bind(commandBuffer);

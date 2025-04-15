@@ -28,6 +28,7 @@ namespace VGE
             assert(_isFrameStarted && "Cannot get command buffer when frame is not in progress");
             return _commandBuffers[_currentFrameIndex];
         }
+        float getAspectRatio() const { return _swapChain->extentAspectRatio(); }
 
         VkCommandBuffer beginFrame();
         void endFrame();

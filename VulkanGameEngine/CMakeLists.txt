@@ -12,8 +12,8 @@ find_package(glfw3 REQUIRED)
 file(GLOB SOURCES src/*.cpp)
 
 # Create the executable
-add_executable(VulkanGameEngine ${SOURCES})
+add_executable(VGE ${SOURCES})
 
 # Link Vulkan and GLFW libraries
 link_directories(/usr/lib/x86_64-linux-gnu)
-target_link_libraries(VulkanGameEngine /usr/lib/x86_64-linux-gnu/libglfw.so ${Vulkan_LIBRARIES})
+target_link_libraries(VGE /usr/lib/x86_64-linux-gnu/libglfw.so ${Vulkan_LIBRARIES})

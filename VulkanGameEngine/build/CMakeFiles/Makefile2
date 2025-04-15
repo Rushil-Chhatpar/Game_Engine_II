@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/rcwsl/VulkanGameEngine/VulkanGameEngine/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/VulkanGameEngine.dir/all
+all: CMakeFiles/VGE.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/VulkanGameEngine.dir/clean
+clean: CMakeFiles/VGE.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/VulkanGameEngine.dir
+# Target rules for target CMakeFiles/VGE.dir
 
 # All Build rule for target.
-CMakeFiles/VulkanGameEngine.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target VulkanGameEngine"
-.PHONY : CMakeFiles/VulkanGameEngine.dir/all
+CMakeFiles/VGE.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target VGE"
+.PHONY : CMakeFiles/VGE.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/VulkanGameEngine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles 11
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/VulkanGameEngine.dir/all
+CMakeFiles/VGE.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/VGE.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rcwsl/VulkanGameEngine/VulkanGameEngine/build/CMakeFiles 0
-.PHONY : CMakeFiles/VulkanGameEngine.dir/rule
+.PHONY : CMakeFiles/VGE.dir/rule
 
 # Convenience name for target.
-VulkanGameEngine: CMakeFiles/VulkanGameEngine.dir/rule
-.PHONY : VulkanGameEngine
+VGE: CMakeFiles/VGE.dir/rule
+.PHONY : VGE
 
 # clean rule for target.
-CMakeFiles/VulkanGameEngine.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanGameEngine.dir/build.make CMakeFiles/VulkanGameEngine.dir/clean
-.PHONY : CMakeFiles/VulkanGameEngine.dir/clean
+CMakeFiles/VGE.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/clean
+.PHONY : CMakeFiles/VGE.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

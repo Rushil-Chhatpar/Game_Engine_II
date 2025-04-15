@@ -14,7 +14,7 @@ namespace VGE
 
         struct Vertex
         {
-            glm::vec2 pos;
+            glm::vec3 pos;
             glm::vec3 color;
 
             static std::vector<VkVertexInputBindingDescription> getBindingDescriptions();
@@ -30,7 +30,7 @@ namespace VGE
         void bind(VkCommandBuffer commandBuffer);
         void draw(VkCommandBuffer commandBuffer);
 
-        static void sierpinskiTriangle(std::vector<Vertex>& vertices, uint32_t depth, const glm::vec2& left, const glm::vec2& right, const glm::vec2& top);
+        //static void sierpinskiTriangle(std::vector<Vertex>& vertices, uint32_t depth, const glm::vec2& left, const glm::vec2& right, const glm::vec2& top);
     
     private:
         void createVertexBuffer(const std::vector<Vertex>& vertices);

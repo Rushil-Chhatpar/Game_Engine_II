@@ -31,27 +31,27 @@ namespace VGE
         vkUnmapMemory(_device.device(), _vertexBufferMemory);
     }
 
-    void VgeMesh::sierpinskiTriangle(std::vector<Vertex> &vertices, uint32_t depth, const glm::vec2 &left, const glm::vec2 &right, const glm::vec2 &top)
-    {
-        glm::vec3 red = {1.0f, 0.0f, 0.0f};
-        glm::vec3 green = {0.0f, 1.0f, 0.0f};
-        glm::vec3 blue = {0.0f, 0.0f, 1.0f};
-        if (depth <= 0)
-        {
-            vertices.push_back({{top}, {green}});
-            vertices.push_back({{right}, {green}});
-            vertices.push_back({{left}, {green}});
-        } 
-        else 
-        {
-            auto leftTop = 0.5f * (left + top);
-            auto rightTop = 0.5f * (right + top);
-            auto leftRight = 0.5f * (left + right);
-            sierpinskiTriangle(vertices, depth - 1, left, leftRight, leftTop);
-            sierpinskiTriangle(vertices, depth - 1, leftRight, right, rightTop);
-            sierpinskiTriangle(vertices, depth - 1, leftTop, rightTop, top);
-        }
-    }
+    // void VgeMesh::sierpinskiTriangle(std::vector<Vertex> &vertices, uint32_t depth, const glm::vec2 &left, const glm::vec2 &right, const glm::vec2 &top)
+    // {
+    //     glm::vec3 red = {1.0f, 0.0f, 0.0f};
+    //     glm::vec3 green = {0.0f, 1.0f, 0.0f};
+    //     glm::vec3 blue = {0.0f, 0.0f, 1.0f};
+    //     if (depth <= 0)
+    //     {
+    //         vertices.push_back({{top}, {green}});
+    //         vertices.push_back({{right}, {green}});
+    //         vertices.push_back({{left}, {green}});
+    //     } 
+    //     else 
+    //     {
+    //         auto leftTop = 0.5f * (left + top);
+    //         auto rightTop = 0.5f * (right + top);
+    //         auto leftRight = 0.5f * (left + right);
+    //         sierpinskiTriangle(vertices, depth - 1, left, leftRight, leftTop);
+    //         sierpinskiTriangle(vertices, depth - 1, leftRight, right, rightTop);
+    //         sierpinskiTriangle(vertices, depth - 1, leftTop, rightTop, top);
+    //     }
+    // }
 
     void VgeMesh::draw(VkCommandBuffer commandBuffer)
     {
@@ -80,7 +80,7 @@ namespace VGE
         std::vector<VkVertexInputAttributeDescription> attributeDescriptions(2);
         attributeDescriptions[0].binding = 0;
         attributeDescriptions[0].location = 0;
-        attributeDescriptions[0].format = VK_FORMAT_R32G32_SFLOAT;
+        attributeDescriptions[0].format = VK_FORMAT_R32G32B32_SFLOAT;
         attributeDescriptions[0].offset = offsetof(Vertex, pos);
 
         attributeDescriptions[1].binding = 0;
