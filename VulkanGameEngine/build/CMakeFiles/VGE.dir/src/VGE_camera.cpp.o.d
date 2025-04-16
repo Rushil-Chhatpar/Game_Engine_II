@@ -1,7 +1,7 @@
 CMakeFiles/VGE.dir/src/VGE_camera.cpp.o: \
- /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_camera.cpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_camera.cpp \
  /usr/include/stdc-predef.h \
- /home/rcwsl/VulkanGameEngine/VulkanGameEngine/src/VGE_camera.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_camera.hpp \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/c++/13/cmath /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
