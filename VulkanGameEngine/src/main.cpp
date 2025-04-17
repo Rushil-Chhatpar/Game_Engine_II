@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <stdexcept>
+#include <cstdint>
 
 #include "VGE_app.hpp"
 
@@ -18,7 +19,6 @@ int main()
         std::cerr << "Error: " << e.what() << std::endl;
         return EXIT_FAILURE;
     }
-    
     
     return EXIT_SUCCESS;
 }

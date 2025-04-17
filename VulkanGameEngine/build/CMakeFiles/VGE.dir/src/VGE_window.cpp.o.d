@@ -140,7 +140,7 @@ CMakeFiles/VGE.dir/src/VGE_window.cpp.o: \
  /usr/include/c++/13/bits/exception_ptr.h \
  /usr/include/c++/13/bits/cxxabi_init_exception.h \
  /usr/include/c++/13/typeinfo /usr/include/c++/13/bits/nested_exception.h \
- /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/../include/stb_image.h \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/stb_image.h \
  /usr/include/c++/13/stdlib.h /usr/include/string.h \
  /usr/include/strings.h /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \

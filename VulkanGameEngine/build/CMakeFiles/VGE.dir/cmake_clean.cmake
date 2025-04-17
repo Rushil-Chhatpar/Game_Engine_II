@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VGE.dir/src/VGE_swap_chain.cpp.o.d"
   "CMakeFiles/VGE.dir/src/VGE_window.cpp.o"
   "CMakeFiles/VGE.dir/src/VGE_window.cpp.o.d"
+  "CMakeFiles/VGE.dir/src/keyboard_controller.cpp.o"
+  "CMakeFiles/VGE.dir/src/keyboard_controller.cpp.o.d"
   "CMakeFiles/VGE.dir/src/main.cpp.o"
   "CMakeFiles/VGE.dir/src/main.cpp.o.d"
   "VGE"

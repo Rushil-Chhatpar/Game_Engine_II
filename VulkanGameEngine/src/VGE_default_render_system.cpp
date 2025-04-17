@@ -15,7 +15,7 @@ namespace VGE
     struct SimplePushConstantData
     {
         glm::mat4 transform{1.0f};
-        alignas(16) glm::vec3 color;
+        glm::mat4 modelMatrix{1.0f};
     };
 
     VgeDefaultRenderSystem::VgeDefaultRenderSystem(VgeDevice& device, VkRenderPass renderPass)
@@ -64,15 +64,14 @@ namespace VGE
     {
         _pipeline->bind(commandBuffer);
 
+        glm::mat4 projectionView = camera.getProjectionMatrix() * camera.getViewMatrix();
+
         for(auto& gameObject : gameObjects)
         {
-            gameObject.Transform.rotation.y = glm::mod(gameObject.Transform.rotation.y + 0.01f, glm::two_pi<float>());
-            gameObject.Transform.rotation.x = glm::mod(gameObject.Transform.rotation.x + 0.01f, glm::two_pi<float>());
-
-
             SimplePushConstantData push{};
-            push.color = gameObject.getColor();
-            push.transform = camera.getProjectionMatrix() * gameObject.Transform.mat4();
+            push.transform = projectionView * gameObject.Transform.mat4();
+            auto modelMatrix = gameObject.Transform.mat4();
+            push.modelMatrix = modelMatrix;
 
             vkCmdPushConstants(commandBuffer, _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
             gameObject.getMesh()->bind(commandBuffer);

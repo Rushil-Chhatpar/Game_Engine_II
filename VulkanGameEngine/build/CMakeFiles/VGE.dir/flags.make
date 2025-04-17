@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include
 
 CXX_FLAGS = -std=gnu++17
 

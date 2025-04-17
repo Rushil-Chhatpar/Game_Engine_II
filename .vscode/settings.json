@@ -52,6 +52,20 @@
         "unordered_set": "cpp",
         "__split_buffer": "cpp",
         "variant": "cpp",
-        "filesystem": "cpp"
-    }
+        "filesystem": "cpp",
+        "charconv": "cpp",
+        "chrono": "cpp",
+        "ctime": "cpp",
+        "map": "cpp",
+        "ratio": "cpp",
+        "format": "cpp",
+        "iomanip": "cpp",
+        "span": "cpp",
+        "sstream": "cpp"
+    },
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/VulkanGameEngine/include",
+        "${workspaceFolder}/VulkanGameEngine/**",
+    ],
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
 }

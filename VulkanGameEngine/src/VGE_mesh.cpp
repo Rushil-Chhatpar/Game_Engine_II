@@ -4,14 +4,16 @@
 #include <cstring>
 #include <unordered_map>
 
-
+#define TINYOBJLOADER_IMPLEMENTATION
+#include <tiny_obj_loader.h>
 
 namespace VGE
 {
-    VgeMesh::VgeMesh(VgeDevice& device, const std::vector<Vertex>& vertices)
+    VgeMesh::VgeMesh(VgeDevice& device, const MeshBuilder& builder)
         : _device(device)
     {
-        createVertexBuffer(vertices);
+        createVertexBuffer(builder.vertices);
+        createIndexBuffer(builder.indices);
     }
 
     VgeMesh::VgeMesh(VgeDevice& device, const char* filename)
@@ -32,6 +34,11 @@ namespace VGE
     {
         vkDestroyBuffer(_device.device(), _vertexBuffer, nullptr);
         vkFreeMemory(_device.device(), _vertexBufferMemory, nullptr);
+        if(_hasIndexBuffer)
+        {
+            vkDestroyBuffer(_device.device(), _indexBuffer, nullptr);
+            vkFreeMemory(_device.device(), _indexBufferMemory, nullptr);
+        }
     }
     
     void VgeMesh::createVertexBuffer(const std::vector<Vertex> &vertices)
@@ -39,40 +46,71 @@ namespace VGE
         _vertexCount = static_cast<uint32_t>(vertices.size());
         assert(_vertexCount >= 3 && "Vertex count must be at least 3");
         VkDeviceSize bufferSize = sizeof(vertices[0]) * _vertexCount;
-        
-        _device.createBuffer(bufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, _vertexBuffer, _vertexBufferMemory);
-        
+
+        VkBuffer stagingBuffer;
+        VkDeviceMemory stagingBufferMemory;
+        _device.createBuffer(bufferSize, VK_BUFFER_USAGE_TRANSFER_SRC_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, stagingBuffer, stagingBufferMemory);
+
         void* data;
-        vkMapMemory(_device.device(), _vertexBufferMemory, 0, bufferSize, 0, &data);
+        vkMapMemory(_device.device(), stagingBufferMemory, 0, bufferSize, 0, &data);
         memcpy(data, vertices.data(), (size_t)bufferSize);
-        vkUnmapMemory(_device.device(), _vertexBufferMemory);
+        vkUnmapMemory(_device.device(), stagingBufferMemory);
+        
+        _device.createBuffer(bufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, _vertexBuffer, _vertexBufferMemory);
+
+        _device.copyBuffer(stagingBuffer, _vertexBuffer, bufferSize);
+        
+        vkDestroyBuffer(_device.device(), stagingBuffer, nullptr);
+        vkFreeMemory(_device.device(), stagingBufferMemory, nullptr);
     }
 
-    // void VgeMesh::sierpinskiTriangle(std::vector<Vertex> &vertices, uint32_t depth, const glm::vec2 &left, const glm::vec2 &right, const glm::vec2 &top)
-    // {
-    //     glm::vec3 red = {1.0f, 0.0f, 0.0f};
-    //     glm::vec3 green = {0.0f, 1.0f, 0.0f};
-    //     glm::vec3 blue = {0.0f, 0.0f, 1.0f};
-    //     if (depth <= 0)
-    //     {
-    //         vertices.push_back({{top}, {green}});
-    //         vertices.push_back({{right}, {green}});
-    //         vertices.push_back({{left}, {green}});
-    //     } 
-    //     else 
-    //     {
-    //         auto leftTop = 0.5f * (left + top);
-    //         auto rightTop = 0.5f * (right + top);
-    //         auto leftRight = 0.5f * (left + right);
-    //         sierpinskiTriangle(vertices, depth - 1, left, leftRight, leftTop);
-    //         sierpinskiTriangle(vertices, depth - 1, leftRight, right, rightTop);
-    //         sierpinskiTriangle(vertices, depth - 1, leftTop, rightTop, top);
-    //     }
-    // }
+    void VgeMesh::createIndexBuffer(const std::vector<uint32_t> &indices)
+    {
+        _indexCount = static_cast<uint32_t>(indices.size());
+        _hasIndexBuffer = _indexCount > 0;
+
+        if(!_hasIndexBuffer)
+        {
+            return;
+        }
+
+        VkDeviceSize bufferSize = sizeof(indices[0]) * _indexCount;
+
+        VkBuffer stagingBuffer;
+        VkDeviceMemory stagingBufferMemory;
+        _device.createBuffer(bufferSize, VK_BUFFER_USAGE_TRANSFER_SRC_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, stagingBuffer, stagingBufferMemory);
+
+        void* data;
+        vkMapMemory(_device.device(), stagingBufferMemory, 0, bufferSize, 0, &data);
+        memcpy(data, indices.data(), (size_t)bufferSize);
+        vkUnmapMemory(_device.device(), stagingBufferMemory);
+        
+        _device.createBuffer(bufferSize, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, _indexBuffer, _indexBufferMemory);
+        
+        _device.copyBuffer(stagingBuffer, _indexBuffer, bufferSize);
+        
+        vkDestroyBuffer(_device.device(), stagingBuffer, nullptr);
+        vkFreeMemory(_device.device(), stagingBufferMemory, nullptr);
+    }
 
     void VgeMesh::draw(VkCommandBuffer commandBuffer)
     {
-        vkCmdDraw(commandBuffer, _vertexCount, 1, 0, 0);
+        if(_hasIndexBuffer)
+        {
+            vkCmdDrawIndexed(commandBuffer, _indexCount, 1, 0, 0, 0);
+        }
+        else
+        {
+            vkCmdDraw(commandBuffer, _vertexCount, 1, 0, 0);
+        }
+    }
+
+    std::unique_ptr<VgeMesh> VgeMesh::createModelFromFile(VgeDevice &device, const char *filename)
+    {
+        MeshBuilder builder;
+        builder.loadWavefront(filename);
+
+        return std::make_unique<VgeMesh>(device, builder);
     }
 
     void VgeMesh::bind(VkCommandBuffer commandBuffer)
@@ -80,6 +118,10 @@ namespace VGE
         VkBuffer buffers[] = { _vertexBuffer };
         VkDeviceSize offsets[] = { 0 };
         vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers, offsets);
+        if(_hasIndexBuffer)
+        {
+            vkCmdBindIndexBuffer(commandBuffer, _indexBuffer, 0, VK_INDEX_TYPE_UINT32);
+        }
     }
 
     std::vector<VkVertexInputBindingDescription> VgeMesh::Vertex::getBindingDescriptions()
@@ -94,7 +136,8 @@ namespace VGE
 
     std::vector<VkVertexInputAttributeDescription> VgeMesh::Vertex::getAttributeDescriptions()
     {
-        std::vector<VkVertexInputAttributeDescription> attributeDescriptions(2);
+        std::vector<VkVertexInputAttributeDescription> attributeDescriptions(4);
+
         attributeDescriptions[0].binding = 0;
         attributeDescriptions[0].location = 0;
         attributeDescriptions[0].format = VK_FORMAT_R32G32B32_SFLOAT;
@@ -105,6 +148,79 @@ namespace VGE
         attributeDescriptions[1].format = VK_FORMAT_R32G32B32_SFLOAT;
         attributeDescriptions[1].offset = offsetof(Vertex, color);
 
+        attributeDescriptions[2].binding = 0;
+        attributeDescriptions[2].location = 2;
+        attributeDescriptions[2].format = VK_FORMAT_R32G32B32_SFLOAT;
+        attributeDescriptions[2].offset = offsetof(Vertex, normal);
+
+        attributeDescriptions[3].binding = 0;
+        attributeDescriptions[3].location = 3;
+        attributeDescriptions[3].format = VK_FORMAT_R32G32_SFLOAT;
+        attributeDescriptions[3].offset = offsetof(Vertex, uv);
+
         return attributeDescriptions;
+    }
+
+    void VgeMesh::MeshBuilder::loadWavefront(const char *filename)
+    {
+        tinyobj::attrib_t attrib;
+        std::vector<tinyobj::shape_t> shapes;
+        std::vector<tinyobj::material_t> materials;
+        std::string warning, error;
+        if (!tinyobj::LoadObj(&attrib, &shapes, &materials, &warning, &error, filename))
+        {
+            throw std::runtime_error("Failed to load obj!!!   " + warning + error);
+        }
+        
+        vertices.clear();
+        indices.clear();
+
+        std::unordered_map<Vertex, uint32_t> uniqueVertices{};
+
+        for (tinyobj::shape_t& shape : shapes)
+	    {
+		    for (auto index : shape.mesh.indices)
+		    {
+			    Vertex vertex{};
+                if(index.vertex_index >=0)
+                {
+			        vertex.pos = {
+			    	    attrib.vertices[3 * index.vertex_index + 0],
+			    	    attrib.vertices[3 * index.vertex_index + 1],
+			    	    attrib.vertices[3 * index.vertex_index + 2],
+			        };
+                   
+                    vertex.color = {
+			    	    attrib.colors[3 * index.vertex_index + 0],
+			    	    attrib.colors[3 * index.vertex_index + 1],
+			    	    attrib.colors[3 * index.vertex_index + 2],
+			        };
+                }
+
+                if(index.texcoord_index >=0)
+                {
+			        vertex.uv = {
+			    	    attrib.texcoords[2 * index.texcoord_index + 0],
+			    	    1.0f - attrib.texcoords[2 * index.texcoord_index + 1],
+			        };
+                }
+
+                if(index.normal_index >=0)
+                {
+                    vertex.normal = {
+			    	    attrib.normals[3 * index.normal_index + 0],
+			    	    attrib.normals[3 * index.normal_index + 1],
+			    	    attrib.normals[3 * index.normal_index + 2],
+			        };
+                }
+
+			    if(uniqueVertices.count(vertex) == 0)
+			    {
+			    	uniqueVertices[vertex] = static_cast<uint32_t>(vertices.size());
+			    	vertices.push_back(vertex);
+			    }
+			    indices.push_back(uniqueVertices[vertex]);
+		    }
+	    }
     }
 }

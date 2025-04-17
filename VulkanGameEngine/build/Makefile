@@ -369,6 +369,30 @@ src/VGE_window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_window.cpp.s
 .PHONY : src/VGE_window.cpp.s
 
+src/keyboard_controller.o: src/keyboard_controller.cpp.o
+.PHONY : src/keyboard_controller.o
+
+# target to build an object file
+src/keyboard_controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/keyboard_controller.cpp.o
+.PHONY : src/keyboard_controller.cpp.o
+
+src/keyboard_controller.i: src/keyboard_controller.cpp.i
+.PHONY : src/keyboard_controller.i
+
+# target to preprocess a source file
+src/keyboard_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/keyboard_controller.cpp.i
+.PHONY : src/keyboard_controller.cpp.i
+
+src/keyboard_controller.s: src/keyboard_controller.cpp.s
+.PHONY : src/keyboard_controller.s
+
+# target to generate assembly for a file
+src/keyboard_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/keyboard_controller.cpp.s
+.PHONY : src/keyboard_controller.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -432,6 +456,9 @@ help:
 	@echo "... src/VGE_window.o"
 	@echo "... src/VGE_window.i"
 	@echo "... src/VGE_window.s"
+	@echo "... src/keyboard_controller.o"
+	@echo "... src/keyboard_controller.i"
+	@echo "... src/keyboard_controller.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

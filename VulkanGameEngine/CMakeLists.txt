@@ -11,9 +11,14 @@ find_package(glfw3 REQUIRED)
 # Add source files
 file(GLOB SOURCES src/*.cpp)
 
+# Add include directories
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 # Create the executable
 add_executable(VGE ${SOURCES})
 
 # Link Vulkan and GLFW libraries
 link_directories(/usr/lib/x86_64-linux-gnu)
 target_link_libraries(VGE /usr/lib/x86_64-linux-gnu/libglfw.so ${Vulkan_LIBRARIES})
+target_include_directories(VGE PRIVATE ${CMAKE_SOURCE_DIR}/include)
+

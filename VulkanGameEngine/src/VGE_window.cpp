@@ -2,7 +2,7 @@
 #include <stdexcept>
 
 #define STB_IMAGE_IMPLEMENTATION
-#include "../include/stb_image.h"
+#include <stb_image.h>
 
 namespace VGE
 {

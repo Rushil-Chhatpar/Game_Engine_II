@@ -23,6 +23,7 @@ namespace VGE
         bool wasWindowResized() { return _framebufferResized; }
         void resetWindowResizedFlag() { _framebufferResized = false; }
 
+        GLFWwindow* getGLFWwindow() const { return _window; }
         VkExtent2D getExtent()
         {
             return VkExtent2D{ static_cast<uint32_t>(_width), static_cast<uint32_t>(_height) };
