@@ -153,6 +153,30 @@ src/VGE_app.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_app.cpp.s
 .PHONY : src/VGE_app.cpp.s
 
+src/VGE_buffer.o: src/VGE_buffer.cpp.o
+.PHONY : src/VGE_buffer.o
+
+# target to build an object file
+src/VGE_buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_buffer.cpp.o
+.PHONY : src/VGE_buffer.cpp.o
+
+src/VGE_buffer.i: src/VGE_buffer.cpp.i
+.PHONY : src/VGE_buffer.i
+
+# target to preprocess a source file
+src/VGE_buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_buffer.cpp.i
+.PHONY : src/VGE_buffer.cpp.i
+
+src/VGE_buffer.s: src/VGE_buffer.cpp.s
+.PHONY : src/VGE_buffer.s
+
+# target to generate assembly for a file
+src/VGE_buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_buffer.cpp.s
+.PHONY : src/VGE_buffer.cpp.s
+
 src/VGE_camera.o: src/VGE_camera.cpp.o
 .PHONY : src/VGE_camera.o
 
@@ -224,6 +248,30 @@ src/VGE_device.s: src/VGE_device.cpp.s
 src/VGE_device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_device.cpp.s
 .PHONY : src/VGE_device.cpp.s
+
+src/VGE_frame_info.o: src/VGE_frame_info.cpp.o
+.PHONY : src/VGE_frame_info.o
+
+# target to build an object file
+src/VGE_frame_info.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_frame_info.cpp.o
+.PHONY : src/VGE_frame_info.cpp.o
+
+src/VGE_frame_info.i: src/VGE_frame_info.cpp.i
+.PHONY : src/VGE_frame_info.i
+
+# target to preprocess a source file
+src/VGE_frame_info.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_frame_info.cpp.i
+.PHONY : src/VGE_frame_info.cpp.i
+
+src/VGE_frame_info.s: src/VGE_frame_info.cpp.s
+.PHONY : src/VGE_frame_info.s
+
+# target to generate assembly for a file
+src/VGE_frame_info.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_frame_info.cpp.s
+.PHONY : src/VGE_frame_info.cpp.s
 
 src/VGE_game_object.o: src/VGE_game_object.cpp.o
 .PHONY : src/VGE_game_object.o
@@ -429,6 +477,9 @@ help:
 	@echo "... src/VGE_app.o"
 	@echo "... src/VGE_app.i"
 	@echo "... src/VGE_app.s"
+	@echo "... src/VGE_buffer.o"
+	@echo "... src/VGE_buffer.i"
+	@echo "... src/VGE_buffer.s"
 	@echo "... src/VGE_camera.o"
 	@echo "... src/VGE_camera.i"
 	@echo "... src/VGE_camera.s"
@@ -438,6 +489,9 @@ help:
 	@echo "... src/VGE_device.o"
 	@echo "... src/VGE_device.i"
 	@echo "... src/VGE_device.s"
+	@echo "... src/VGE_frame_info.o"
+	@echo "... src/VGE_frame_info.i"
+	@echo "... src/VGE_frame_info.s"
 	@echo "... src/VGE_game_object.o"
 	@echo "... src/VGE_game_object.i"
 	@echo "... src/VGE_game_object.s"

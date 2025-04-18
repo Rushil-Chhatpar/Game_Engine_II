@@ -293,6 +293,7 @@ CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.o: \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_pipeline.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_game_object.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_mesh.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_buffer.hpp \
  /usr/include/glm/gtx/hash.hpp /usr/include/c++/13/functional \
  /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/typeinfo \
  /usr/include/c++/13/unordered_map \
@@ -383,9 +384,11 @@ CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.o: \
  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
- /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/stdexcept \
- /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
- /usr/include/c++/13/ios /usr/include/c++/13/bits/ios_base.h \
+ /usr/include/c++/13/pstl/execution_defs.h \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_frame_info.hpp \
+ /usr/include/c++/13/stdexcept /usr/include/c++/13/iostream \
+ /usr/include/c++/13/ostream /usr/include/c++/13/ios \
+ /usr/include/c++/13/bits/ios_base.h \
  /usr/include/c++/13/bits/locale_classes.h \
  /usr/include/c++/13/bits/locale_classes.tcc \
  /usr/include/c++/13/system_error \

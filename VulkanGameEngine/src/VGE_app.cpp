@@ -3,7 +3,8 @@
 #include "VGE_mesh.hpp"
 #include "VGE_camera.hpp"
 #include "keyboard_controller.hpp"
-
+#include "VGE_buffer.hpp"
+#include "VGE_frame_info.hpp"
 
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
@@ -14,9 +15,16 @@
 #include <iostream>
 #include <array>
 #include <chrono>
+#include <numeric>
 
 namespace VGE
 {
+    struct GlobalUBO
+    {
+        glm::mat4 projectionViewMatrix{1.0f};
+        glm::vec3 lightDirection = glm::normalize(glm::vec3{1.0f, -3.0f, -1.0f});
+    };
+
     VgeApp::VgeApp()
     {
         loadGameObjects();
@@ -28,6 +36,19 @@ namespace VGE
 
     void VgeApp::run()
     {
+        auto minOffsetAlignment = std::lcm(
+            _device.properties.limits.minUniformBufferOffsetAlignment,
+            _device.properties.limits.nonCoherentAtomSize);
+
+        std::cout << "minOffsetAlignment: " << minOffsetAlignment << std::endl;
+
+        std::vector<std::unique_ptr<VgeBuffer>> uboBuffers(VgeSwapChain::MAX_FRAMES_IN_FLIGHT);
+        for (int i = 0; i < VgeSwapChain::MAX_FRAMES_IN_FLIGHT; i++)
+        {
+            uboBuffers[i] = std::make_unique<VgeBuffer>(_device, sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT, minOffsetAlignment);
+            uboBuffers[i]->map();
+        }
+
         VgeDefaultRenderSystem renderSystem{_device, _renderer.getSwapChainRenderPass()};
         VgeCamera camera{};
 
@@ -53,14 +74,28 @@ namespace VGE
 
             if (VkCommandBuffer commandBuffer = _renderer.beginFrame())
             {
+                int frameIndex = _renderer.getFrameIndex();
+
+                // update objects in memory
+                GlobalUBO ubo{};
+                ubo.projectionViewMatrix = camera.getProjectionMatrix() * camera.getViewMatrix();
+                uboBuffers[frameIndex]->writeToBuffer(&ubo);
+                uboBuffers[frameIndex]->flush();
+
                 // This level of separation is necessary
                 // It can easily integrate multiple render passes for things like
                 // shadow mapping, post processing, reflections, etc.
                 // begin offscreen shadow pass
                 // render shadow casting objects
                 // end offscreen shadow pass
+                FrameInfo frameInfo{
+                    .frameIndex = frameIndex,
+                    .frameTime = deltaTime,
+                    .commandBuffer = commandBuffer,
+                    .camera = camera
+                };
                 _renderer.beginSwapChainRenderPass(commandBuffer);
-                renderSystem.renderGameObjects(commandBuffer, _gameObjects, camera);
+                renderSystem.renderGameObjects(frameInfo, _gameObjects);
                 _renderer.endSwapChainRenderPass(commandBuffer);
                 _renderer.endFrame();
             }
@@ -84,6 +119,14 @@ namespace VGE
         go.Transform.scale = glm::vec3{0.2f};
         go.Transform.rotation = {glm::pi<float>(), 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
+
+        go = VgeGameObject::createGameObject();
+        go.setMesh(mesh);
+        go.Transform.translation = {2.0f, 0.0f, 0.0f};
+        go.Transform.scale = glm::vec3{0.2f};
+        go.Transform.rotation = {glm::pi<float>(), 0.0f, 0.0f};
+        _gameObjects.push_back(std::move(go));
+
     }
 
     // temporary helper function, creates a 1x1x1 cube centered at offset

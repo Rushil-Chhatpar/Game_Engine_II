@@ -143,6 +143,7 @@ CMakeFiles/VGE.dir/src/VGE_pipeline.cpp.o: \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_mesh.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_buffer.hpp \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \

@@ -178,6 +178,7 @@ CMakeFiles/VGE.dir/src/VGE_app.cpp.o: \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_mesh.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_buffer.hpp \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -386,6 +387,7 @@ CMakeFiles/VGE.dir/src/VGE_app.cpp.o: \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_default_render_system.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_camera.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_pipeline.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_frame_info.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/keyboard_controller.hpp \
  /usr/include/c++/13/stdexcept /usr/include/c++/13/iostream \
  /usr/include/c++/13/ostream /usr/include/c++/13/ios \
@@ -406,4 +408,6 @@ CMakeFiles/VGE.dir/src/VGE_app.cpp.o: \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/chrono \
  /usr/include/c++/13/bits/chrono.h /usr/include/c++/13/ratio \
- /usr/include/c++/13/ctime /usr/include/c++/13/bits/parse_numbers.h
+ /usr/include/c++/13/ctime /usr/include/c++/13/bits/parse_numbers.h \
+ /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
+ /usr/include/c++/13/pstl/glue_numeric_defs.h

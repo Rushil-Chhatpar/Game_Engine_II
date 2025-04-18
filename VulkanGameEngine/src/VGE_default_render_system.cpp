@@ -60,11 +60,11 @@ namespace VGE
         _pipeline = std::make_unique<VgePipeline>(_device, "../shaders/simple_shader.vert.spv", "../shaders/simple_shader.frag.spv", pipelineConfig);
     }
 
-    void VgeDefaultRenderSystem::renderGameObjects(VkCommandBuffer commandBuffer, std::vector<VgeGameObject>& gameObjects, const VgeCamera& camera)
+    void VgeDefaultRenderSystem::renderGameObjects(FrameInfo& frameInfo, std::vector<VgeGameObject>& gameObjects)
     {
-        _pipeline->bind(commandBuffer);
+        _pipeline->bind(frameInfo.commandBuffer);
 
-        glm::mat4 projectionView = camera.getProjectionMatrix() * camera.getViewMatrix();
+        glm::mat4 projectionView = frameInfo.camera.getProjectionMatrix() * frameInfo.camera.getViewMatrix();
 
         for(auto& gameObject : gameObjects)
         {
@@ -73,9 +73,9 @@ namespace VGE
             auto modelMatrix = gameObject.Transform.mat4();
             push.normalMatrix = gameObject.Transform.normalMatrix();
 
-            vkCmdPushConstants(commandBuffer, _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
-            gameObject.getMesh()->bind(commandBuffer);
-            gameObject.getMesh()->draw(commandBuffer);
+            vkCmdPushConstants(frameInfo.commandBuffer, _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
+            gameObject.getMesh()->bind(frameInfo.commandBuffer);
+            gameObject.getMesh()->draw(frameInfo.commandBuffer);
         }
     }
 }
