@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_buffer.cpp" "CMakeFiles/VGE.dir/src/VGE_buffer.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_buffer.cpp.o.d"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_camera.cpp" "CMakeFiles/VGE.dir/src/VGE_camera.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_camera.cpp.o.d"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_default_render_system.cpp" "CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.o.d"
+  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_descriptors.cpp" "CMakeFiles/VGE.dir/src/VGE_descriptors.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_descriptors.cpp.o.d"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_device.cpp" "CMakeFiles/VGE.dir/src/VGE_device.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_device.cpp.o.d"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_frame_info.cpp" "CMakeFiles/VGE.dir/src/VGE_frame_info.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_frame_info.cpp.o.d"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_game_object.cpp" "CMakeFiles/VGE.dir/src/VGE_game_object.cpp.o" "gcc" "CMakeFiles/VGE.dir/src/VGE_game_object.cpp.o.d"

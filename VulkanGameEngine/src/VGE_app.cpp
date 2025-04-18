@@ -21,12 +21,17 @@ namespace VGE
 {
     struct GlobalUBO
     {
-        glm::mat4 projectionViewMatrix{1.0f};
-        glm::vec3 lightDirection = glm::normalize(glm::vec3{1.0f, -3.0f, -1.0f});
+        alignas(16) glm::mat4 projectionViewMatrix{1.0f};
+        alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{1.0f, 1.0f, -1.0f});
     };
 
     VgeApp::VgeApp()
     {
+        _globalPool = VgeDescriptorPool::Builder(_device)
+            .setMaxSets(VgeSwapChain::MAX_FRAMES_IN_FLIGHT)
+            .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VgeSwapChain::MAX_FRAMES_IN_FLIGHT)
+            .build();
+            
         loadGameObjects();
     }
 
@@ -49,7 +54,22 @@ namespace VGE
             uboBuffers[i]->map();
         }
 
-        VgeDefaultRenderSystem renderSystem{_device, _renderer.getSwapChainRenderPass()};
+        // create descriptor set layout
+        auto globalSetLayout = VgeDescriptorSetLayout::Builder(_device)
+            .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT)
+            .build();
+
+        // create descriptor sets
+        std::vector<VkDescriptorSet> globalDescriptorSets(VgeSwapChain::MAX_FRAMES_IN_FLIGHT);
+        for (int i = 0; i < VgeSwapChain::MAX_FRAMES_IN_FLIGHT; i++)
+        {
+            VkDescriptorBufferInfo bufferInfo = uboBuffers[i]->descriptorInfo();
+            VgeDescriptorWriter(*globalSetLayout, *_globalPool)
+                .writeBuffer(0, &bufferInfo)
+                .build(globalDescriptorSets[i]);
+        }
+
+        VgeDefaultRenderSystem renderSystem{_device, _renderer.getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
         VgeCamera camera{};
 
         auto cameraObject = VgeGameObject::createGameObject();
@@ -92,7 +112,8 @@ namespace VGE
                     .frameIndex = frameIndex,
                     .frameTime = deltaTime,
                     .commandBuffer = commandBuffer,
-                    .camera = camera
+                    .camera = camera,
+                    .globalDescriptorSet = globalDescriptorSets[frameIndex],
                 };
                 _renderer.beginSwapChainRenderPass(commandBuffer);
                 renderSystem.renderGameObjects(frameInfo, _gameObjects);

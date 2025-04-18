@@ -225,6 +225,30 @@ src/VGE_default_render_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.s
 .PHONY : src/VGE_default_render_system.cpp.s
 
+src/VGE_descriptors.o: src/VGE_descriptors.cpp.o
+.PHONY : src/VGE_descriptors.o
+
+# target to build an object file
+src/VGE_descriptors.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_descriptors.cpp.o
+.PHONY : src/VGE_descriptors.cpp.o
+
+src/VGE_descriptors.i: src/VGE_descriptors.cpp.i
+.PHONY : src/VGE_descriptors.i
+
+# target to preprocess a source file
+src/VGE_descriptors.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_descriptors.cpp.i
+.PHONY : src/VGE_descriptors.cpp.i
+
+src/VGE_descriptors.s: src/VGE_descriptors.cpp.s
+.PHONY : src/VGE_descriptors.s
+
+# target to generate assembly for a file
+src/VGE_descriptors.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_descriptors.cpp.s
+.PHONY : src/VGE_descriptors.cpp.s
+
 src/VGE_device.o: src/VGE_device.cpp.o
 .PHONY : src/VGE_device.o
 
@@ -486,6 +510,9 @@ help:
 	@echo "... src/VGE_default_render_system.o"
 	@echo "... src/VGE_default_render_system.i"
 	@echo "... src/VGE_default_render_system.s"
+	@echo "... src/VGE_descriptors.o"
+	@echo "... src/VGE_descriptors.i"
+	@echo "... src/VGE_descriptors.s"
 	@echo "... src/VGE_device.o"
 	@echo "... src/VGE_device.i"
 	@echo "... src/VGE_device.s"

@@ -12,5 +12,6 @@ namespace VGE
         float frameTime;
         VkCommandBuffer commandBuffer;
         VgeCamera& camera;
+        VkDescriptorSet globalDescriptorSet = VK_NULL_HANDLE;
     };
 }

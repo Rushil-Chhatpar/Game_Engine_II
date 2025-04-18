@@ -15,7 +15,7 @@ namespace VGE
     {
     public:
 
-        VgeDefaultRenderSystem(VgeDevice& device, VkRenderPass renderPass);
+        VgeDefaultRenderSystem(VgeDevice& device, VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout);
         ~VgeDefaultRenderSystem();
 
         VgeDefaultRenderSystem(const VgeDefaultRenderSystem &) = delete;
@@ -25,7 +25,7 @@ namespace VGE
         void renderGameObjects(FrameInfo& frameInfo, std::vector<VgeGameObject>& gameObjects);
     private:
     
-        void createPipelineLayout();
+        void createPipelineLayout(VkDescriptorSetLayout globalSetLayout);
         void createPipeline(VkRenderPass renderPass);
 
     private:

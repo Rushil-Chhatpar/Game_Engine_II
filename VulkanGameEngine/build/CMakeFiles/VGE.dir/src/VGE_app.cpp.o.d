@@ -384,6 +384,7 @@ CMakeFiles/VGE.dir/src/VGE_app.cpp.o: \
  /usr/include/glm/gtx/dual_quaternion.hpp \
  /usr/include/glm/gtx/dual_quaternion.inl /usr/include/glm/gtx/hash.inl \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_game_object.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_descriptors.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_default_render_system.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_camera.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_pipeline.hpp \

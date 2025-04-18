@@ -14,14 +14,14 @@ namespace VGE
 
     struct SimplePushConstantData
     {
-        glm::mat4 transform{1.0f};
+        glm::mat4 modelMatrix{1.0f};
         glm::mat4 normalMatrix{1.0f};
     };
 
-    VgeDefaultRenderSystem::VgeDefaultRenderSystem(VgeDevice& device, VkRenderPass renderPass)
+    VgeDefaultRenderSystem::VgeDefaultRenderSystem(VgeDevice& device, VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout)
         : _device{device}
     {
-        createPipelineLayout();
+        createPipelineLayout(globalSetLayout);
         createPipeline(renderPass);
     }
     VgeDefaultRenderSystem::~VgeDefaultRenderSystem()
@@ -29,17 +29,19 @@ namespace VGE
         vkDestroyPipelineLayout(_device.device(), _pipelineLayout, nullptr);
     }
 
-    void VgeDefaultRenderSystem::createPipelineLayout()
+    void VgeDefaultRenderSystem::createPipelineLayout(VkDescriptorSetLayout globalSetLayout)
     {
         VkPushConstantRange pushConstantRange{};
         pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
         pushConstantRange.offset = 0;
         pushConstantRange.size = sizeof(SimplePushConstantData);
 
+        std::vector<VkDescriptorSetLayout> descriptorSetLayouts = {globalSetLayout};
+
         VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
         pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-        pipelineLayoutInfo.setLayoutCount = 0; // Optional
-        pipelineLayoutInfo.pSetLayouts = nullptr; // Optional
+        pipelineLayoutInfo.setLayoutCount = static_cast<uint32_t>(descriptorSetLayouts.size());
+        pipelineLayoutInfo.pSetLayouts = descriptorSetLayouts.data();
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
@@ -64,13 +66,12 @@ namespace VGE
     {
         _pipeline->bind(frameInfo.commandBuffer);
 
-        glm::mat4 projectionView = frameInfo.camera.getProjectionMatrix() * frameInfo.camera.getViewMatrix();
+        vkCmdBindDescriptorSets(frameInfo.commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, _pipelineLayout, 0, 1, &frameInfo.globalDescriptorSet, 0, nullptr);
 
         for(auto& gameObject : gameObjects)
         {
             SimplePushConstantData push{};
-            push.transform = projectionView * gameObject.Transform.mat4();
-            auto modelMatrix = gameObject.Transform.mat4();
+            push.modelMatrix = gameObject.Transform.mat4();
             push.normalMatrix = gameObject.Transform.normalMatrix();
 
             vkCmdPushConstants(frameInfo.commandBuffer, _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);

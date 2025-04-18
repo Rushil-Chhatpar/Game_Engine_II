@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VGE.dir/src/VGE_camera.cpp.o.d"
   "CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.o"
   "CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.o.d"
+  "CMakeFiles/VGE.dir/src/VGE_descriptors.cpp.o"
+  "CMakeFiles/VGE.dir/src/VGE_descriptors.cpp.o.d"
   "CMakeFiles/VGE.dir/src/VGE_device.cpp.o"
   "CMakeFiles/VGE.dir/src/VGE_device.cpp.o.d"
   "CMakeFiles/VGE.dir/src/VGE_frame_info.cpp.o"

@@ -399,4 +399,5 @@ CMakeFiles/VGE.dir/src/main.cpp.o: \
  /usr/include/glm/detail/setup.hpp /usr/include/glm/gtc/epsilon.inl \
  /usr/include/glm/gtx/dual_quaternion.hpp \
  /usr/include/glm/gtx/dual_quaternion.inl /usr/include/glm/gtx/hash.inl \
- /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_game_object.hpp
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_game_object.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_descriptors.hpp
