@@ -45,7 +45,7 @@ namespace VGE
         std::vector<std::unique_ptr<VgeBuffer>> uboBuffers(VgeSwapChain::MAX_FRAMES_IN_FLIGHT);
         for (int i = 0; i < VgeSwapChain::MAX_FRAMES_IN_FLIGHT; i++)
         {
-            uboBuffers[i] = std::make_unique<VgeBuffer>(_device, sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT, minOffsetAlignment);
+            uboBuffers[i] = std::make_unique<VgeBuffer>(_device, sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
             uboBuffers[i]->map();
         }
 

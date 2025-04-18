@@ -45,11 +45,6 @@ namespace VGE
 
     VkResult VgeBuffer::map(VkDeviceSize size, VkDeviceSize offset)
     {
-        assert(_buffer && _memory && "Cannot map buffer: no buffer or memory. Called map before crate!");
-        if(size == VK_WHOLE_SIZE)
-        {
-            return vkMapMemory(_device.device(), _memory, 0, _bufferSize, 0, &_mapped);
-        }
         return vkMapMemory(_device.device(), _memory, offset, size, 0, &_mapped);
     }
     
