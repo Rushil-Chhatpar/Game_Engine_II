@@ -15,7 +15,7 @@ namespace VGE
     struct SimplePushConstantData
     {
         glm::mat4 transform{1.0f};
-        glm::mat4 modelMatrix{1.0f};
+        glm::mat4 normalMatrix{1.0f};
     };
 
     VgeDefaultRenderSystem::VgeDefaultRenderSystem(VgeDevice& device, VkRenderPass renderPass)
@@ -71,7 +71,7 @@ namespace VGE
             SimplePushConstantData push{};
             push.transform = projectionView * gameObject.Transform.mat4();
             auto modelMatrix = gameObject.Transform.mat4();
-            push.modelMatrix = modelMatrix;
+            push.normalMatrix = gameObject.Transform.normalMatrix();
 
             vkCmdPushConstants(commandBuffer, _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
             gameObject.getMesh()->bind(commandBuffer);

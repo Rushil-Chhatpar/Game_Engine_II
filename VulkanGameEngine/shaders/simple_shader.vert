@@ -10,10 +10,11 @@ layout(location = 0) out vec3 fragColor;
 layout(push_constant) uniform Push
 {
     mat4 transform; // projection * view * model
-    mat4 modelMatrix;
+    mat4 normalMatrix;
 } push;
 
 const vec3 DIRECTION_TO_LIGHT = normalize(vec3(1.0, -3.0, -1.0));
+const float AMBIENT_LIGHT_INTENSITY = 0.02;
 
 void main()
 {
@@ -23,7 +24,10 @@ void main()
 
     // transform normals from model space to world space to properly calculate lighting
     // since lighting is done in world space
-    vec3 normalWorldSpace = normalize(mat3(push.modelMatrix) * inNormal);
+    // Only works if the scale is uniform (sx == sy == sz)
+    //vec3 normalWorldSpace = normalize(mat3(push.modelMatrix) * inNormal);
+
+    vec3 normalWorldSpace = normalize(vec3(push.normalMatrix) * inNormal);
 
     // Calculate the light intensity based on the normal and the direction to the light
     // The dot product gives us the cosine of the angle between the normal and the light direction
@@ -32,7 +36,7 @@ void main()
     // when the light is behind the surface
     // The result is a value between 0.0 and 1.0
     // This is a simple Lambertian lighting model
-    float lightIntensity = max(dot(normalWorldSpace, DIRECTION_TO_LIGHT), 0.0);
+    float lightIntensity = AMBIENT_LIGHT_INTENSITY + max(dot(normalWorldSpace, DIRECTION_TO_LIGHT), 0.0);
     
     // Set the color of the vertex
     fragColor = lightIntensity * inColor;
