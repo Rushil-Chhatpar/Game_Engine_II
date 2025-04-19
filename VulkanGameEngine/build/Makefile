@@ -153,30 +153,6 @@ src/VGE_app.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_app.cpp.s
 .PHONY : src/VGE_app.cpp.s
 
-src/VGE_buffer.o: src/VGE_buffer.cpp.o
-.PHONY : src/VGE_buffer.o
-
-# target to build an object file
-src/VGE_buffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_buffer.cpp.o
-.PHONY : src/VGE_buffer.cpp.o
-
-src/VGE_buffer.i: src/VGE_buffer.cpp.i
-.PHONY : src/VGE_buffer.i
-
-# target to preprocess a source file
-src/VGE_buffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_buffer.cpp.i
-.PHONY : src/VGE_buffer.cpp.i
-
-src/VGE_buffer.s: src/VGE_buffer.cpp.s
-.PHONY : src/VGE_buffer.s
-
-# target to generate assembly for a file
-src/VGE_buffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_buffer.cpp.s
-.PHONY : src/VGE_buffer.cpp.s
-
 src/VGE_camera.o: src/VGE_camera.cpp.o
 .PHONY : src/VGE_camera.o
 
@@ -224,54 +200,6 @@ src/VGE_default_render_system.s: src/VGE_default_render_system.cpp.s
 src/VGE_default_render_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.s
 .PHONY : src/VGE_default_render_system.cpp.s
-
-src/VGE_descriptors.o: src/VGE_descriptors.cpp.o
-.PHONY : src/VGE_descriptors.o
-
-# target to build an object file
-src/VGE_descriptors.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_descriptors.cpp.o
-.PHONY : src/VGE_descriptors.cpp.o
-
-src/VGE_descriptors.i: src/VGE_descriptors.cpp.i
-.PHONY : src/VGE_descriptors.i
-
-# target to preprocess a source file
-src/VGE_descriptors.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_descriptors.cpp.i
-.PHONY : src/VGE_descriptors.cpp.i
-
-src/VGE_descriptors.s: src/VGE_descriptors.cpp.s
-.PHONY : src/VGE_descriptors.s
-
-# target to generate assembly for a file
-src/VGE_descriptors.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_descriptors.cpp.s
-.PHONY : src/VGE_descriptors.cpp.s
-
-src/VGE_device.o: src/VGE_device.cpp.o
-.PHONY : src/VGE_device.o
-
-# target to build an object file
-src/VGE_device.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_device.cpp.o
-.PHONY : src/VGE_device.cpp.o
-
-src/VGE_device.i: src/VGE_device.cpp.i
-.PHONY : src/VGE_device.i
-
-# target to preprocess a source file
-src/VGE_device.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_device.cpp.i
-.PHONY : src/VGE_device.cpp.i
-
-src/VGE_device.s: src/VGE_device.cpp.s
-.PHONY : src/VGE_device.s
-
-# target to generate assembly for a file
-src/VGE_device.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_device.cpp.s
-.PHONY : src/VGE_device.cpp.s
 
 src/VGE_frame_info.o: src/VGE_frame_info.cpp.o
 .PHONY : src/VGE_frame_info.o
@@ -345,78 +273,6 @@ src/VGE_mesh.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_mesh.cpp.s
 .PHONY : src/VGE_mesh.cpp.s
 
-src/VGE_pipeline.o: src/VGE_pipeline.cpp.o
-.PHONY : src/VGE_pipeline.o
-
-# target to build an object file
-src/VGE_pipeline.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_pipeline.cpp.o
-.PHONY : src/VGE_pipeline.cpp.o
-
-src/VGE_pipeline.i: src/VGE_pipeline.cpp.i
-.PHONY : src/VGE_pipeline.i
-
-# target to preprocess a source file
-src/VGE_pipeline.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_pipeline.cpp.i
-.PHONY : src/VGE_pipeline.cpp.i
-
-src/VGE_pipeline.s: src/VGE_pipeline.cpp.s
-.PHONY : src/VGE_pipeline.s
-
-# target to generate assembly for a file
-src/VGE_pipeline.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_pipeline.cpp.s
-.PHONY : src/VGE_pipeline.cpp.s
-
-src/VGE_renderer.o: src/VGE_renderer.cpp.o
-.PHONY : src/VGE_renderer.o
-
-# target to build an object file
-src/VGE_renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_renderer.cpp.o
-.PHONY : src/VGE_renderer.cpp.o
-
-src/VGE_renderer.i: src/VGE_renderer.cpp.i
-.PHONY : src/VGE_renderer.i
-
-# target to preprocess a source file
-src/VGE_renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_renderer.cpp.i
-.PHONY : src/VGE_renderer.cpp.i
-
-src/VGE_renderer.s: src/VGE_renderer.cpp.s
-.PHONY : src/VGE_renderer.s
-
-# target to generate assembly for a file
-src/VGE_renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_renderer.cpp.s
-.PHONY : src/VGE_renderer.cpp.s
-
-src/VGE_swap_chain.o: src/VGE_swap_chain.cpp.o
-.PHONY : src/VGE_swap_chain.o
-
-# target to build an object file
-src/VGE_swap_chain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_swap_chain.cpp.o
-.PHONY : src/VGE_swap_chain.cpp.o
-
-src/VGE_swap_chain.i: src/VGE_swap_chain.cpp.i
-.PHONY : src/VGE_swap_chain.i
-
-# target to preprocess a source file
-src/VGE_swap_chain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_swap_chain.cpp.i
-.PHONY : src/VGE_swap_chain.cpp.i
-
-src/VGE_swap_chain.s: src/VGE_swap_chain.cpp.s
-.PHONY : src/VGE_swap_chain.s
-
-# target to generate assembly for a file
-src/VGE_swap_chain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_swap_chain.cpp.s
-.PHONY : src/VGE_swap_chain.cpp.s
-
 src/VGE_window.o: src/VGE_window.cpp.o
 .PHONY : src/VGE_window.o
 
@@ -440,6 +296,150 @@ src/VGE_window.s: src/VGE_window.cpp.s
 src/VGE_window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_window.cpp.s
 .PHONY : src/VGE_window.cpp.s
+
+src/engine/VGE_buffer.o: src/engine/VGE_buffer.cpp.o
+.PHONY : src/engine/VGE_buffer.o
+
+# target to build an object file
+src/engine/VGE_buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_buffer.cpp.o
+.PHONY : src/engine/VGE_buffer.cpp.o
+
+src/engine/VGE_buffer.i: src/engine/VGE_buffer.cpp.i
+.PHONY : src/engine/VGE_buffer.i
+
+# target to preprocess a source file
+src/engine/VGE_buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_buffer.cpp.i
+.PHONY : src/engine/VGE_buffer.cpp.i
+
+src/engine/VGE_buffer.s: src/engine/VGE_buffer.cpp.s
+.PHONY : src/engine/VGE_buffer.s
+
+# target to generate assembly for a file
+src/engine/VGE_buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_buffer.cpp.s
+.PHONY : src/engine/VGE_buffer.cpp.s
+
+src/engine/VGE_descriptors.o: src/engine/VGE_descriptors.cpp.o
+.PHONY : src/engine/VGE_descriptors.o
+
+# target to build an object file
+src/engine/VGE_descriptors.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_descriptors.cpp.o
+.PHONY : src/engine/VGE_descriptors.cpp.o
+
+src/engine/VGE_descriptors.i: src/engine/VGE_descriptors.cpp.i
+.PHONY : src/engine/VGE_descriptors.i
+
+# target to preprocess a source file
+src/engine/VGE_descriptors.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_descriptors.cpp.i
+.PHONY : src/engine/VGE_descriptors.cpp.i
+
+src/engine/VGE_descriptors.s: src/engine/VGE_descriptors.cpp.s
+.PHONY : src/engine/VGE_descriptors.s
+
+# target to generate assembly for a file
+src/engine/VGE_descriptors.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_descriptors.cpp.s
+.PHONY : src/engine/VGE_descriptors.cpp.s
+
+src/engine/VGE_device.o: src/engine/VGE_device.cpp.o
+.PHONY : src/engine/VGE_device.o
+
+# target to build an object file
+src/engine/VGE_device.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_device.cpp.o
+.PHONY : src/engine/VGE_device.cpp.o
+
+src/engine/VGE_device.i: src/engine/VGE_device.cpp.i
+.PHONY : src/engine/VGE_device.i
+
+# target to preprocess a source file
+src/engine/VGE_device.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_device.cpp.i
+.PHONY : src/engine/VGE_device.cpp.i
+
+src/engine/VGE_device.s: src/engine/VGE_device.cpp.s
+.PHONY : src/engine/VGE_device.s
+
+# target to generate assembly for a file
+src/engine/VGE_device.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_device.cpp.s
+.PHONY : src/engine/VGE_device.cpp.s
+
+src/engine/VGE_pipeline.o: src/engine/VGE_pipeline.cpp.o
+.PHONY : src/engine/VGE_pipeline.o
+
+# target to build an object file
+src/engine/VGE_pipeline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_pipeline.cpp.o
+.PHONY : src/engine/VGE_pipeline.cpp.o
+
+src/engine/VGE_pipeline.i: src/engine/VGE_pipeline.cpp.i
+.PHONY : src/engine/VGE_pipeline.i
+
+# target to preprocess a source file
+src/engine/VGE_pipeline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_pipeline.cpp.i
+.PHONY : src/engine/VGE_pipeline.cpp.i
+
+src/engine/VGE_pipeline.s: src/engine/VGE_pipeline.cpp.s
+.PHONY : src/engine/VGE_pipeline.s
+
+# target to generate assembly for a file
+src/engine/VGE_pipeline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_pipeline.cpp.s
+.PHONY : src/engine/VGE_pipeline.cpp.s
+
+src/engine/VGE_renderer.o: src/engine/VGE_renderer.cpp.o
+.PHONY : src/engine/VGE_renderer.o
+
+# target to build an object file
+src/engine/VGE_renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_renderer.cpp.o
+.PHONY : src/engine/VGE_renderer.cpp.o
+
+src/engine/VGE_renderer.i: src/engine/VGE_renderer.cpp.i
+.PHONY : src/engine/VGE_renderer.i
+
+# target to preprocess a source file
+src/engine/VGE_renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_renderer.cpp.i
+.PHONY : src/engine/VGE_renderer.cpp.i
+
+src/engine/VGE_renderer.s: src/engine/VGE_renderer.cpp.s
+.PHONY : src/engine/VGE_renderer.s
+
+# target to generate assembly for a file
+src/engine/VGE_renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_renderer.cpp.s
+.PHONY : src/engine/VGE_renderer.cpp.s
+
+src/engine/VGE_swap_chain.o: src/engine/VGE_swap_chain.cpp.o
+.PHONY : src/engine/VGE_swap_chain.o
+
+# target to build an object file
+src/engine/VGE_swap_chain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_swap_chain.cpp.o
+.PHONY : src/engine/VGE_swap_chain.cpp.o
+
+src/engine/VGE_swap_chain.i: src/engine/VGE_swap_chain.cpp.i
+.PHONY : src/engine/VGE_swap_chain.i
+
+# target to preprocess a source file
+src/engine/VGE_swap_chain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_swap_chain.cpp.i
+.PHONY : src/engine/VGE_swap_chain.cpp.i
+
+src/engine/VGE_swap_chain.s: src/engine/VGE_swap_chain.cpp.s
+.PHONY : src/engine/VGE_swap_chain.s
+
+# target to generate assembly for a file
+src/engine/VGE_swap_chain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_swap_chain.cpp.s
+.PHONY : src/engine/VGE_swap_chain.cpp.s
 
 src/keyboard_controller.o: src/keyboard_controller.cpp.o
 .PHONY : src/keyboard_controller.o
@@ -501,21 +501,12 @@ help:
 	@echo "... src/VGE_app.o"
 	@echo "... src/VGE_app.i"
 	@echo "... src/VGE_app.s"
-	@echo "... src/VGE_buffer.o"
-	@echo "... src/VGE_buffer.i"
-	@echo "... src/VGE_buffer.s"
 	@echo "... src/VGE_camera.o"
 	@echo "... src/VGE_camera.i"
 	@echo "... src/VGE_camera.s"
 	@echo "... src/VGE_default_render_system.o"
 	@echo "... src/VGE_default_render_system.i"
 	@echo "... src/VGE_default_render_system.s"
-	@echo "... src/VGE_descriptors.o"
-	@echo "... src/VGE_descriptors.i"
-	@echo "... src/VGE_descriptors.s"
-	@echo "... src/VGE_device.o"
-	@echo "... src/VGE_device.i"
-	@echo "... src/VGE_device.s"
 	@echo "... src/VGE_frame_info.o"
 	@echo "... src/VGE_frame_info.i"
 	@echo "... src/VGE_frame_info.s"
@@ -525,18 +516,27 @@ help:
 	@echo "... src/VGE_mesh.o"
 	@echo "... src/VGE_mesh.i"
 	@echo "... src/VGE_mesh.s"
-	@echo "... src/VGE_pipeline.o"
-	@echo "... src/VGE_pipeline.i"
-	@echo "... src/VGE_pipeline.s"
-	@echo "... src/VGE_renderer.o"
-	@echo "... src/VGE_renderer.i"
-	@echo "... src/VGE_renderer.s"
-	@echo "... src/VGE_swap_chain.o"
-	@echo "... src/VGE_swap_chain.i"
-	@echo "... src/VGE_swap_chain.s"
 	@echo "... src/VGE_window.o"
 	@echo "... src/VGE_window.i"
 	@echo "... src/VGE_window.s"
+	@echo "... src/engine/VGE_buffer.o"
+	@echo "... src/engine/VGE_buffer.i"
+	@echo "... src/engine/VGE_buffer.s"
+	@echo "... src/engine/VGE_descriptors.o"
+	@echo "... src/engine/VGE_descriptors.i"
+	@echo "... src/engine/VGE_descriptors.s"
+	@echo "... src/engine/VGE_device.o"
+	@echo "... src/engine/VGE_device.i"
+	@echo "... src/engine/VGE_device.s"
+	@echo "... src/engine/VGE_pipeline.o"
+	@echo "... src/engine/VGE_pipeline.i"
+	@echo "... src/engine/VGE_pipeline.s"
+	@echo "... src/engine/VGE_renderer.o"
+	@echo "... src/engine/VGE_renderer.i"
+	@echo "... src/engine/VGE_renderer.s"
+	@echo "... src/engine/VGE_swap_chain.o"
+	@echo "... src/engine/VGE_swap_chain.i"
+	@echo "... src/engine/VGE_swap_chain.s"
 	@echo "... src/keyboard_controller.o"
 	@echo "... src/keyboard_controller.i"
 	@echo "... src/keyboard_controller.s"

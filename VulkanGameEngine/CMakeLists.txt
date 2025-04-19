@@ -9,10 +9,14 @@ find_package(Vulkan REQUIRED)
 find_package(glfw3 REQUIRED)
 
 # Add source files
-file(GLOB SOURCES src/*.cpp)
+file(GLOB SRC_FILES src/*.cpp)
+file(GLOB ENGINE_FILES src/engine/*.cpp)
+
+set(SOURCES ${SRC_FILES} ${ENGINE_FILES})
 
 # Add include directories
 include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/src/engine)
 
 # Create the executable
 add_executable(VGE ${SOURCES})

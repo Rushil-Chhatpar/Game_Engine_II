@@ -8,7 +8,7 @@
             "name": "Simple debug launch without building.",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/VulkanGameEngine/src/main",
+            "program": "${workspaceFolder}/VulkanGameEngine/bin/VGE",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

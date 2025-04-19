@@ -1,0 +1,15 @@
+src/engine/VGE_descriptors.cpp
+src/engine/VGE_buffer.cpp
+src/engine/VGE_device.cpp
+src/engine/VGE_swap_chain.cpp
+src/engine/VGE_pipeline.cpp
+src/engine/VGE_renderer.cpp
+src/VGE_camera.cpp
+src/VGE_default_render_system.cpp
+src/VGE_window.cpp
+src/keyboard_controller.cpp
+src/VGE_app.cpp
+src/VGE_mesh.cpp
+src/main.cpp
+src/VGE_frame_info.cpp
+src/VGE_game_object.cpp
