@@ -22,3 +22,16 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/constants.hpp>
 
+#define DECLARE_SINGLETON(type)		\
+private:							\
+	type() {}						\
+	~type() {}						\
+public:								\
+	static type* GetInstance()		\
+	{								\
+		static type instance;		\
+		return &instance;			\
+	}								\
+
+#define GET_SINGLETON(type)			\
+    type::GetInstance()			    \
