@@ -3,7 +3,7 @@ CMakeFiles/VGE.dir/src/engine/VGE_pipeline.cpp.o: \
  /usr/include/stdc-predef.h \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_pipeline.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_device.hpp \
- /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_window.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.hpp \
  /usr/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h \
@@ -25,7 +25,7 @@ CMakeFiles/VGE.dir/src/engine/VGE_pipeline.cpp.o: \
  /usr/include/GL/gl.h /usr/include/GL/glext.h \
  /usr/include/KHR/khrplatform.h /usr/include/c++/13/string \
  /usr/include/c++/13/vector \
- /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/VGE_mesh.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_mesh.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_buffer.hpp \
  /usr/include/glm/gtx/hash.hpp /usr/include/c++/13/functional \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \

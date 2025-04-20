@@ -144,174 +144,6 @@ cmake_pch.hxx.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/cmake_pch.hxx.s
 .PHONY : cmake_pch.hxx.s
 
-src/VGE_app.o: src/VGE_app.cpp.o
-.PHONY : src/VGE_app.o
-
-# target to build an object file
-src/VGE_app.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_app.cpp.o
-.PHONY : src/VGE_app.cpp.o
-
-src/VGE_app.i: src/VGE_app.cpp.i
-.PHONY : src/VGE_app.i
-
-# target to preprocess a source file
-src/VGE_app.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_app.cpp.i
-.PHONY : src/VGE_app.cpp.i
-
-src/VGE_app.s: src/VGE_app.cpp.s
-.PHONY : src/VGE_app.s
-
-# target to generate assembly for a file
-src/VGE_app.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_app.cpp.s
-.PHONY : src/VGE_app.cpp.s
-
-src/VGE_camera.o: src/VGE_camera.cpp.o
-.PHONY : src/VGE_camera.o
-
-# target to build an object file
-src/VGE_camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_camera.cpp.o
-.PHONY : src/VGE_camera.cpp.o
-
-src/VGE_camera.i: src/VGE_camera.cpp.i
-.PHONY : src/VGE_camera.i
-
-# target to preprocess a source file
-src/VGE_camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_camera.cpp.i
-.PHONY : src/VGE_camera.cpp.i
-
-src/VGE_camera.s: src/VGE_camera.cpp.s
-.PHONY : src/VGE_camera.s
-
-# target to generate assembly for a file
-src/VGE_camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_camera.cpp.s
-.PHONY : src/VGE_camera.cpp.s
-
-src/VGE_default_render_system.o: src/VGE_default_render_system.cpp.o
-.PHONY : src/VGE_default_render_system.o
-
-# target to build an object file
-src/VGE_default_render_system.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.o
-.PHONY : src/VGE_default_render_system.cpp.o
-
-src/VGE_default_render_system.i: src/VGE_default_render_system.cpp.i
-.PHONY : src/VGE_default_render_system.i
-
-# target to preprocess a source file
-src/VGE_default_render_system.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.i
-.PHONY : src/VGE_default_render_system.cpp.i
-
-src/VGE_default_render_system.s: src/VGE_default_render_system.cpp.s
-.PHONY : src/VGE_default_render_system.s
-
-# target to generate assembly for a file
-src/VGE_default_render_system.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_default_render_system.cpp.s
-.PHONY : src/VGE_default_render_system.cpp.s
-
-src/VGE_frame_info.o: src/VGE_frame_info.cpp.o
-.PHONY : src/VGE_frame_info.o
-
-# target to build an object file
-src/VGE_frame_info.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_frame_info.cpp.o
-.PHONY : src/VGE_frame_info.cpp.o
-
-src/VGE_frame_info.i: src/VGE_frame_info.cpp.i
-.PHONY : src/VGE_frame_info.i
-
-# target to preprocess a source file
-src/VGE_frame_info.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_frame_info.cpp.i
-.PHONY : src/VGE_frame_info.cpp.i
-
-src/VGE_frame_info.s: src/VGE_frame_info.cpp.s
-.PHONY : src/VGE_frame_info.s
-
-# target to generate assembly for a file
-src/VGE_frame_info.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_frame_info.cpp.s
-.PHONY : src/VGE_frame_info.cpp.s
-
-src/VGE_game_object.o: src/VGE_game_object.cpp.o
-.PHONY : src/VGE_game_object.o
-
-# target to build an object file
-src/VGE_game_object.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_game_object.cpp.o
-.PHONY : src/VGE_game_object.cpp.o
-
-src/VGE_game_object.i: src/VGE_game_object.cpp.i
-.PHONY : src/VGE_game_object.i
-
-# target to preprocess a source file
-src/VGE_game_object.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_game_object.cpp.i
-.PHONY : src/VGE_game_object.cpp.i
-
-src/VGE_game_object.s: src/VGE_game_object.cpp.s
-.PHONY : src/VGE_game_object.s
-
-# target to generate assembly for a file
-src/VGE_game_object.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_game_object.cpp.s
-.PHONY : src/VGE_game_object.cpp.s
-
-src/VGE_mesh.o: src/VGE_mesh.cpp.o
-.PHONY : src/VGE_mesh.o
-
-# target to build an object file
-src/VGE_mesh.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_mesh.cpp.o
-.PHONY : src/VGE_mesh.cpp.o
-
-src/VGE_mesh.i: src/VGE_mesh.cpp.i
-.PHONY : src/VGE_mesh.i
-
-# target to preprocess a source file
-src/VGE_mesh.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_mesh.cpp.i
-.PHONY : src/VGE_mesh.cpp.i
-
-src/VGE_mesh.s: src/VGE_mesh.cpp.s
-.PHONY : src/VGE_mesh.s
-
-# target to generate assembly for a file
-src/VGE_mesh.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_mesh.cpp.s
-.PHONY : src/VGE_mesh.cpp.s
-
-src/VGE_window.o: src/VGE_window.cpp.o
-.PHONY : src/VGE_window.o
-
-# target to build an object file
-src/VGE_window.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_window.cpp.o
-.PHONY : src/VGE_window.cpp.o
-
-src/VGE_window.i: src/VGE_window.cpp.i
-.PHONY : src/VGE_window.i
-
-# target to preprocess a source file
-src/VGE_window.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_window.cpp.i
-.PHONY : src/VGE_window.cpp.i
-
-src/VGE_window.s: src/VGE_window.cpp.s
-.PHONY : src/VGE_window.s
-
-# target to generate assembly for a file
-src/VGE_window.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/VGE_window.cpp.s
-.PHONY : src/VGE_window.cpp.s
-
 src/engine/VGE_buffer.o: src/engine/VGE_buffer.cpp.o
 .PHONY : src/engine/VGE_buffer.o
 
@@ -480,29 +312,197 @@ src/engine/VGE_swap_chain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_swap_chain.cpp.s
 .PHONY : src/engine/VGE_swap_chain.cpp.s
 
-src/keyboard_controller.o: src/keyboard_controller.cpp.o
-.PHONY : src/keyboard_controller.o
+src/engine/VGE_window.o: src/engine/VGE_window.cpp.o
+.PHONY : src/engine/VGE_window.o
 
 # target to build an object file
-src/keyboard_controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/keyboard_controller.cpp.o
-.PHONY : src/keyboard_controller.cpp.o
+src/engine/VGE_window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_window.cpp.o
+.PHONY : src/engine/VGE_window.cpp.o
 
-src/keyboard_controller.i: src/keyboard_controller.cpp.i
-.PHONY : src/keyboard_controller.i
+src/engine/VGE_window.i: src/engine/VGE_window.cpp.i
+.PHONY : src/engine/VGE_window.i
 
 # target to preprocess a source file
-src/keyboard_controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/keyboard_controller.cpp.i
-.PHONY : src/keyboard_controller.cpp.i
+src/engine/VGE_window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_window.cpp.i
+.PHONY : src/engine/VGE_window.cpp.i
 
-src/keyboard_controller.s: src/keyboard_controller.cpp.s
-.PHONY : src/keyboard_controller.s
+src/engine/VGE_window.s: src/engine/VGE_window.cpp.s
+.PHONY : src/engine/VGE_window.s
 
 # target to generate assembly for a file
-src/keyboard_controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/keyboard_controller.cpp.s
-.PHONY : src/keyboard_controller.cpp.s
+src/engine/VGE_window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_window.cpp.s
+.PHONY : src/engine/VGE_window.cpp.s
+
+src/game/VGE_app.o: src/game/VGE_app.cpp.o
+.PHONY : src/game/VGE_app.o
+
+# target to build an object file
+src/game/VGE_app.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_app.cpp.o
+.PHONY : src/game/VGE_app.cpp.o
+
+src/game/VGE_app.i: src/game/VGE_app.cpp.i
+.PHONY : src/game/VGE_app.i
+
+# target to preprocess a source file
+src/game/VGE_app.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_app.cpp.i
+.PHONY : src/game/VGE_app.cpp.i
+
+src/game/VGE_app.s: src/game/VGE_app.cpp.s
+.PHONY : src/game/VGE_app.s
+
+# target to generate assembly for a file
+src/game/VGE_app.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_app.cpp.s
+.PHONY : src/game/VGE_app.cpp.s
+
+src/game/VGE_camera.o: src/game/VGE_camera.cpp.o
+.PHONY : src/game/VGE_camera.o
+
+# target to build an object file
+src/game/VGE_camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_camera.cpp.o
+.PHONY : src/game/VGE_camera.cpp.o
+
+src/game/VGE_camera.i: src/game/VGE_camera.cpp.i
+.PHONY : src/game/VGE_camera.i
+
+# target to preprocess a source file
+src/game/VGE_camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_camera.cpp.i
+.PHONY : src/game/VGE_camera.cpp.i
+
+src/game/VGE_camera.s: src/game/VGE_camera.cpp.s
+.PHONY : src/game/VGE_camera.s
+
+# target to generate assembly for a file
+src/game/VGE_camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_camera.cpp.s
+.PHONY : src/game/VGE_camera.cpp.s
+
+src/game/VGE_default_render_system.o: src/game/VGE_default_render_system.cpp.o
+.PHONY : src/game/VGE_default_render_system.o
+
+# target to build an object file
+src/game/VGE_default_render_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_default_render_system.cpp.o
+.PHONY : src/game/VGE_default_render_system.cpp.o
+
+src/game/VGE_default_render_system.i: src/game/VGE_default_render_system.cpp.i
+.PHONY : src/game/VGE_default_render_system.i
+
+# target to preprocess a source file
+src/game/VGE_default_render_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_default_render_system.cpp.i
+.PHONY : src/game/VGE_default_render_system.cpp.i
+
+src/game/VGE_default_render_system.s: src/game/VGE_default_render_system.cpp.s
+.PHONY : src/game/VGE_default_render_system.s
+
+# target to generate assembly for a file
+src/game/VGE_default_render_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_default_render_system.cpp.s
+.PHONY : src/game/VGE_default_render_system.cpp.s
+
+src/game/VGE_frame_info.o: src/game/VGE_frame_info.cpp.o
+.PHONY : src/game/VGE_frame_info.o
+
+# target to build an object file
+src/game/VGE_frame_info.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_frame_info.cpp.o
+.PHONY : src/game/VGE_frame_info.cpp.o
+
+src/game/VGE_frame_info.i: src/game/VGE_frame_info.cpp.i
+.PHONY : src/game/VGE_frame_info.i
+
+# target to preprocess a source file
+src/game/VGE_frame_info.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_frame_info.cpp.i
+.PHONY : src/game/VGE_frame_info.cpp.i
+
+src/game/VGE_frame_info.s: src/game/VGE_frame_info.cpp.s
+.PHONY : src/game/VGE_frame_info.s
+
+# target to generate assembly for a file
+src/game/VGE_frame_info.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_frame_info.cpp.s
+.PHONY : src/game/VGE_frame_info.cpp.s
+
+src/game/VGE_game_object.o: src/game/VGE_game_object.cpp.o
+.PHONY : src/game/VGE_game_object.o
+
+# target to build an object file
+src/game/VGE_game_object.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_game_object.cpp.o
+.PHONY : src/game/VGE_game_object.cpp.o
+
+src/game/VGE_game_object.i: src/game/VGE_game_object.cpp.i
+.PHONY : src/game/VGE_game_object.i
+
+# target to preprocess a source file
+src/game/VGE_game_object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_game_object.cpp.i
+.PHONY : src/game/VGE_game_object.cpp.i
+
+src/game/VGE_game_object.s: src/game/VGE_game_object.cpp.s
+.PHONY : src/game/VGE_game_object.s
+
+# target to generate assembly for a file
+src/game/VGE_game_object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_game_object.cpp.s
+.PHONY : src/game/VGE_game_object.cpp.s
+
+src/game/VGE_mesh.o: src/game/VGE_mesh.cpp.o
+.PHONY : src/game/VGE_mesh.o
+
+# target to build an object file
+src/game/VGE_mesh.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_mesh.cpp.o
+.PHONY : src/game/VGE_mesh.cpp.o
+
+src/game/VGE_mesh.i: src/game/VGE_mesh.cpp.i
+.PHONY : src/game/VGE_mesh.i
+
+# target to preprocess a source file
+src/game/VGE_mesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_mesh.cpp.i
+.PHONY : src/game/VGE_mesh.cpp.i
+
+src/game/VGE_mesh.s: src/game/VGE_mesh.cpp.s
+.PHONY : src/game/VGE_mesh.s
+
+# target to generate assembly for a file
+src/game/VGE_mesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_mesh.cpp.s
+.PHONY : src/game/VGE_mesh.cpp.s
+
+src/game/keyboard_controller.o: src/game/keyboard_controller.cpp.o
+.PHONY : src/game/keyboard_controller.o
+
+# target to build an object file
+src/game/keyboard_controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/keyboard_controller.cpp.o
+.PHONY : src/game/keyboard_controller.cpp.o
+
+src/game/keyboard_controller.i: src/game/keyboard_controller.cpp.i
+.PHONY : src/game/keyboard_controller.i
+
+# target to preprocess a source file
+src/game/keyboard_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/keyboard_controller.cpp.i
+.PHONY : src/game/keyboard_controller.cpp.i
+
+src/game/keyboard_controller.s: src/game/keyboard_controller.cpp.s
+.PHONY : src/game/keyboard_controller.s
+
+# target to generate assembly for a file
+src/game/keyboard_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/keyboard_controller.cpp.s
+.PHONY : src/game/keyboard_controller.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -564,27 +564,6 @@ help:
 	@echo "... cmake_pch.hxx.gch"
 	@echo "... cmake_pch.hxx.i"
 	@echo "... cmake_pch.hxx.s"
-	@echo "... src/VGE_app.o"
-	@echo "... src/VGE_app.i"
-	@echo "... src/VGE_app.s"
-	@echo "... src/VGE_camera.o"
-	@echo "... src/VGE_camera.i"
-	@echo "... src/VGE_camera.s"
-	@echo "... src/VGE_default_render_system.o"
-	@echo "... src/VGE_default_render_system.i"
-	@echo "... src/VGE_default_render_system.s"
-	@echo "... src/VGE_frame_info.o"
-	@echo "... src/VGE_frame_info.i"
-	@echo "... src/VGE_frame_info.s"
-	@echo "... src/VGE_game_object.o"
-	@echo "... src/VGE_game_object.i"
-	@echo "... src/VGE_game_object.s"
-	@echo "... src/VGE_mesh.o"
-	@echo "... src/VGE_mesh.i"
-	@echo "... src/VGE_mesh.s"
-	@echo "... src/VGE_window.o"
-	@echo "... src/VGE_window.i"
-	@echo "... src/VGE_window.s"
 	@echo "... src/engine/VGE_buffer.o"
 	@echo "... src/engine/VGE_buffer.i"
 	@echo "... src/engine/VGE_buffer.s"
@@ -606,9 +585,30 @@ help:
 	@echo "... src/engine/VGE_swap_chain.o"
 	@echo "... src/engine/VGE_swap_chain.i"
 	@echo "... src/engine/VGE_swap_chain.s"
-	@echo "... src/keyboard_controller.o"
-	@echo "... src/keyboard_controller.i"
-	@echo "... src/keyboard_controller.s"
+	@echo "... src/engine/VGE_window.o"
+	@echo "... src/engine/VGE_window.i"
+	@echo "... src/engine/VGE_window.s"
+	@echo "... src/game/VGE_app.o"
+	@echo "... src/game/VGE_app.i"
+	@echo "... src/game/VGE_app.s"
+	@echo "... src/game/VGE_camera.o"
+	@echo "... src/game/VGE_camera.i"
+	@echo "... src/game/VGE_camera.s"
+	@echo "... src/game/VGE_default_render_system.o"
+	@echo "... src/game/VGE_default_render_system.i"
+	@echo "... src/game/VGE_default_render_system.s"
+	@echo "... src/game/VGE_frame_info.o"
+	@echo "... src/game/VGE_frame_info.i"
+	@echo "... src/game/VGE_frame_info.s"
+	@echo "... src/game/VGE_game_object.o"
+	@echo "... src/game/VGE_game_object.i"
+	@echo "... src/game/VGE_game_object.s"
+	@echo "... src/game/VGE_mesh.o"
+	@echo "... src/game/VGE_mesh.i"
+	@echo "... src/game/VGE_mesh.s"
+	@echo "... src/game/keyboard_controller.o"
+	@echo "... src/game/keyboard_controller.i"
+	@echo "... src/game/keyboard_controller.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

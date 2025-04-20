@@ -16,7 +16,7 @@
             "command": "bash",
             "args": [
                 "-c",
-                "mkdir -p bin && find src -name \"*.cpp\" > sources.txt && g++ -std=c++17 -fdiagnostics-color=always -Wall -g @sources.txt -Iinclude -Isrc -Isrc/engine -o bin/VGE -lglfw -lvulkan"
+                "mkdir -p bin && find src -name \"*.cpp\" > sources.txt && g++ -std=c++17 -fdiagnostics-color=always -Wall -g @sources.txt -Iinclude -Isrc -Isrc/engine -Isrc/game -o bin/VGE -lglfw -lvulkan"
             ],
             "options": {
                 "cwd": "${workspaceFolder}/VulkanGameEngine"

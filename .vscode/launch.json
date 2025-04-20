@@ -11,7 +11,7 @@
             "program": "${workspaceFolder}/VulkanGameEngine/bin/VGE",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}/VulkanGameEngine",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
