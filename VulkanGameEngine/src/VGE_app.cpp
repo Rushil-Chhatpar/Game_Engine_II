@@ -1,3 +1,5 @@
+#include "pch.h"
+
 #include "VGE_app.hpp"
 #include "VGE_default_render_system.hpp"
 #include "VGE_mesh.hpp"
@@ -6,16 +8,6 @@
 #include "VGE_buffer.hpp"
 #include "VGE_frame_info.hpp"
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_DEPTH_ZERO_TO_ONE
-#include <glm/glm.hpp>
-#include <glm/gtc/constants.hpp>
-
-#include <stdexcept>
-#include <iostream>
-#include <array>
-#include <chrono>
-#include <numeric>
 
 namespace VGE
 {
@@ -25,9 +17,10 @@ namespace VGE
         alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{1.0f, 1.0f, -1.0f});
     };
 
-    VgeApp::VgeApp()
+    VgeApp::VgeApp(VgeEngine& engine)
+        : _engine(engine)
     {
-        _globalPool = VgeDescriptorPool::Builder(_device)
+        _globalPool = VgeDescriptorPool::Builder(_engine.getDevice())
             .setMaxSets(VgeSwapChain::MAX_FRAMES_IN_FLIGHT)
             .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VgeSwapChain::MAX_FRAMES_IN_FLIGHT)
             .build();
@@ -42,20 +35,20 @@ namespace VGE
     void VgeApp::run()
     {
         auto minOffsetAlignment = std::lcm(
-            _device.properties.limits.minUniformBufferOffsetAlignment,
-            _device.properties.limits.nonCoherentAtomSize);
+            _engine.getDevice().properties.limits.minUniformBufferOffsetAlignment,
+            _engine.getDevice().properties.limits.nonCoherentAtomSize);
 
         std::cout << "minOffsetAlignment: " << minOffsetAlignment << std::endl;
 
         std::vector<std::unique_ptr<VgeBuffer>> uboBuffers(VgeSwapChain::MAX_FRAMES_IN_FLIGHT);
         for (int i = 0; i < VgeSwapChain::MAX_FRAMES_IN_FLIGHT; i++)
         {
-            uboBuffers[i] = std::make_unique<VgeBuffer>(_device, sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
+            uboBuffers[i] = std::make_unique<VgeBuffer>(_engine.getDevice(), sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
             uboBuffers[i]->map();
         }
 
         // create descriptor set layout
-        auto globalSetLayout = VgeDescriptorSetLayout::Builder(_device)
+        auto globalSetLayout = VgeDescriptorSetLayout::Builder(_engine.getDevice())
             .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT)
             .build();
 
@@ -69,7 +62,7 @@ namespace VGE
                 .build(globalDescriptorSets[i]);
         }
 
-        VgeDefaultRenderSystem renderSystem{_device, _renderer.getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
+        VgeDefaultRenderSystem renderSystem{_engine.getDevice(), _engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
         VgeCamera camera{};
 
         auto cameraObject = VgeGameObject::createGameObject();
@@ -77,7 +70,7 @@ namespace VGE
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
-        while (!_window.shouldClose())
+        while (!_engine.getWindow().shouldClose())
         {
             glfwPollEvents();
 
@@ -85,16 +78,16 @@ namespace VGE
             auto deltaTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
             currentTime = newTime;
 
-            cameraController.moveInPlaneXZ(_window.getGLFWwindow(), deltaTime, cameraObject);
+            cameraController.moveInPlaneXZ(_engine.getWindow().getGLFWwindow(), deltaTime, cameraObject);
             camera.setViewYXZ(cameraObject.Transform.translation, cameraObject.Transform.rotation);
 
-            float aspect = _renderer.getAspectRatio();
+            float aspect = _engine.getRenderer().getAspectRatio();
             //camera.setOrthographicProjection(-aspect, aspect, -1.0f, 1.0f, -1.0f, 1.0f);
             camera.setPerspectiveProjection(glm::radians(50.0f), aspect, 0.1f, 10.0f);
 
-            if (VkCommandBuffer commandBuffer = _renderer.beginFrame())
+            if (VkCommandBuffer commandBuffer = _engine.getRenderer().beginFrame())
             {
-                int frameIndex = _renderer.getFrameIndex();
+                int frameIndex = _engine.getRenderer().getFrameIndex();
 
                 // update objects in memory
                 GlobalUBO ubo{};
@@ -115,25 +108,25 @@ namespace VGE
                     .camera = camera,
                     .globalDescriptorSet = globalDescriptorSets[frameIndex],
                 };
-                _renderer.beginSwapChainRenderPass(commandBuffer);
+                _engine.getRenderer().beginSwapChainRenderPass(commandBuffer);
                 renderSystem.renderGameObjects(frameInfo, _gameObjects);
-                _renderer.endSwapChainRenderPass(commandBuffer);
-                _renderer.endFrame();
+                _engine.getRenderer().endSwapChainRenderPass(commandBuffer);
+                _engine.getRenderer().endFrame();
             }
         }
 
-        vkDeviceWaitIdle(_device.device());
+        vkDeviceWaitIdle(_engine.getDevice().device());
     }
 
     void VgeApp::loadGameObjects()
     {
-        // std::shared_ptr<VgeMesh> mesh = createCubeModel(_device, {0.0f, 0.0f, 0.0f});
+        // std::shared_ptr<VgeMesh> mesh = createCubeModel(_engine.getDevice(), {0.0f, 0.0f, 0.0f});
         // auto cube = VgeGameObject::createGameObject();
         // cube.setMesh(mesh);
         // cube.Transform.translation = {0.0f, 0.0f, 2.5f};
         // cube.Transform.scale = {0.5f, 0.5f, 0.5f};
 
-        std::shared_ptr<VgeMesh> mesh = VgeMesh::createModelFromFile(_device, "../assets/Sitting.obj");
+        std::shared_ptr<VgeMesh> mesh = VgeMesh::createModelFromFile(_engine.getDevice(), "../assets/Sitting.obj");
         auto go = VgeGameObject::createGameObject();
         go.setMesh(mesh);
         go.Transform.translation = {0.0f, 0.0f, 0.0f};
@@ -232,7 +225,7 @@ namespace VGE
     //     };
         
     //     VgeMesh::sierpinskiTriangle(vertices, 5, {-0.5f, -0.5f}, {0.5f, -0.5f}, {0.f, 0.5f});
-    //     std::shared_ptr<VgeMesh> mesh = std::make_shared<VgeMesh>(_device, vertices);
+    //     std::shared_ptr<VgeMesh> mesh = std::make_shared<VgeMesh>(_engine.getDevice(), vertices);
 
     //     std::vector<glm::vec3> colors
     //     {

@@ -1,11 +1,9 @@
+#include "pch.h"
 #include "VGE_pipeline.hpp"
 #include "VGE_mesh.hpp"
 
-#include <iostream>
 #include <fstream>
-#include <stdexcept>
-#include <vector>
-#include <cassert>
+
 
 namespace VGE
 {

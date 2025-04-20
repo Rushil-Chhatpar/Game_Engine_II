@@ -1,7 +1,6 @@
+#include "pch.h"
 #include "VGE_descriptors.hpp"
 
-#include <cassert>
-#include <stdexcept>
 
 namespace VGE
 {

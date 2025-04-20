@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "VGE_game_object.hpp"
 
 namespace VGE

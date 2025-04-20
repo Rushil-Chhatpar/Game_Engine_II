@@ -66,7 +66,6 @@ namespace VGE
         };
 
         VgeMesh(VgeDevice& device, const MeshBuilder& builder);
-        VgeMesh(VgeDevice& device, const char* filename);
         ~VgeMesh();
 
         VgeMesh(const VgeMesh&) = delete;

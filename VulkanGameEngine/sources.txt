@@ -1,6 +1,8 @@
+src/pch.cpp
 src/engine/VGE_descriptors.cpp
 src/engine/VGE_buffer.cpp
 src/engine/VGE_device.cpp
+src/engine/VGE_engine.cpp
 src/engine/VGE_swap_chain.cpp
 src/engine/VGE_pipeline.cpp
 src/engine/VGE_renderer.cpp

@@ -1,5 +1,5 @@
+#include "pch.h"
 #include "VGE_window.hpp"
-#include <stdexcept>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>

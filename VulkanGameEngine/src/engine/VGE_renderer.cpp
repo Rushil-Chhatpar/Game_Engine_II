@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "VGE_renderer.hpp"
-#include <stdexcept>
-#include <array>
+
 
 
 namespace VGE

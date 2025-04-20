@@ -129,6 +129,21 @@ VGE/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/build
 .PHONY : VGE/fast
 
+# target to build an object file
+cmake_pch.hxx.gch:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/cmake_pch.hxx.gch
+.PHONY : cmake_pch.hxx.gch
+
+# target to preprocess a source file
+cmake_pch.hxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/cmake_pch.hxx.i
+.PHONY : cmake_pch.hxx.i
+
+# target to generate assembly for a file
+cmake_pch.hxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/cmake_pch.hxx.s
+.PHONY : cmake_pch.hxx.s
+
 src/VGE_app.o: src/VGE_app.cpp.o
 .PHONY : src/VGE_app.o
 
@@ -369,6 +384,30 @@ src/engine/VGE_device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_device.cpp.s
 .PHONY : src/engine/VGE_device.cpp.s
 
+src/engine/VGE_engine.o: src/engine/VGE_engine.cpp.o
+.PHONY : src/engine/VGE_engine.o
+
+# target to build an object file
+src/engine/VGE_engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_engine.cpp.o
+.PHONY : src/engine/VGE_engine.cpp.o
+
+src/engine/VGE_engine.i: src/engine/VGE_engine.cpp.i
+.PHONY : src/engine/VGE_engine.i
+
+# target to preprocess a source file
+src/engine/VGE_engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_engine.cpp.i
+.PHONY : src/engine/VGE_engine.cpp.i
+
+src/engine/VGE_engine.s: src/engine/VGE_engine.cpp.s
+.PHONY : src/engine/VGE_engine.s
+
+# target to generate assembly for a file
+src/engine/VGE_engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/engine/VGE_engine.cpp.s
+.PHONY : src/engine/VGE_engine.cpp.s
+
 src/engine/VGE_pipeline.o: src/engine/VGE_pipeline.cpp.o
 .PHONY : src/engine/VGE_pipeline.o
 
@@ -489,6 +528,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/pch.o: src/pch.cpp.o
+.PHONY : src/pch.o
+
+# target to build an object file
+src/pch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/pch.cpp.o
+.PHONY : src/pch.cpp.o
+
+src/pch.i: src/pch.cpp.i
+.PHONY : src/pch.i
+
+# target to preprocess a source file
+src/pch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/pch.cpp.i
+.PHONY : src/pch.cpp.i
+
+src/pch.s: src/pch.cpp.s
+.PHONY : src/pch.s
+
+# target to generate assembly for a file
+src/pch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/pch.cpp.s
+.PHONY : src/pch.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -498,6 +561,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... VGE"
+	@echo "... cmake_pch.hxx.gch"
+	@echo "... cmake_pch.hxx.i"
+	@echo "... cmake_pch.hxx.s"
 	@echo "... src/VGE_app.o"
 	@echo "... src/VGE_app.i"
 	@echo "... src/VGE_app.s"
@@ -528,6 +594,9 @@ help:
 	@echo "... src/engine/VGE_device.o"
 	@echo "... src/engine/VGE_device.i"
 	@echo "... src/engine/VGE_device.s"
+	@echo "... src/engine/VGE_engine.o"
+	@echo "... src/engine/VGE_engine.i"
+	@echo "... src/engine/VGE_engine.s"
 	@echo "... src/engine/VGE_pipeline.o"
 	@echo "... src/engine/VGE_pipeline.i"
 	@echo "... src/engine/VGE_pipeline.s"
@@ -543,6 +612,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/pch.o"
+	@echo "... src/pch.i"
+	@echo "... src/pch.s"
 .PHONY : help
 
 

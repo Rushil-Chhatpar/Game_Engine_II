@@ -1,9 +1,7 @@
+#include "pch.h"
 #include "VGE_device.hpp"
 
-// std headers
-#include <cstring>
-#include <iostream>
-#include <set>
+
 #include <unordered_set>
 
 namespace VGE {

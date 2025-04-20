@@ -6,10 +6,9 @@
  */
 
 
-#include "VGE_buffer.hpp"
+ #include "pch.h"
+ #include "VGE_buffer.hpp"
 
-#include <cassert>
-#include <cstring>
 
 namespace VGE
 {

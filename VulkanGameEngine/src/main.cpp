@@ -1,14 +1,12 @@
+#include "pch.h"
 
-#include <iostream>
-#include <cstdlib>
-#include <stdexcept>
-#include <cstdint>
-
+#include <VGE_engine.hpp>
 #include "VGE_app.hpp"
 
 int main()
 {
-    VGE::VgeApp app{};
+    std::shared_ptr<VGE::VgeEngine> engine = std::make_shared<VGE::VgeEngine>(VGE::VgeApp::WIDTH, VGE::VgeApp::HEIGHT, "Vulkan Game Engine");
+    VGE::VgeApp app{*engine};
 
     try
     {

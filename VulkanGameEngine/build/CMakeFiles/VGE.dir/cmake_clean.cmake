@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/VGE.dir/cmake_pch.hxx.gch"
+  "CMakeFiles/VGE.dir/cmake_pch.hxx.gch.d"
   "CMakeFiles/VGE.dir/src/VGE_app.cpp.o"
   "CMakeFiles/VGE.dir/src/VGE_app.cpp.o.d"
   "CMakeFiles/VGE.dir/src/VGE_camera.cpp.o"
@@ -19,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VGE.dir/src/engine/VGE_descriptors.cpp.o.d"
   "CMakeFiles/VGE.dir/src/engine/VGE_device.cpp.o"
   "CMakeFiles/VGE.dir/src/engine/VGE_device.cpp.o.d"
+  "CMakeFiles/VGE.dir/src/engine/VGE_engine.cpp.o"
+  "CMakeFiles/VGE.dir/src/engine/VGE_engine.cpp.o.d"
   "CMakeFiles/VGE.dir/src/engine/VGE_pipeline.cpp.o"
   "CMakeFiles/VGE.dir/src/engine/VGE_pipeline.cpp.o.d"
   "CMakeFiles/VGE.dir/src/engine/VGE_renderer.cpp.o"
@@ -29,6 +33,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VGE.dir/src/keyboard_controller.cpp.o.d"
   "CMakeFiles/VGE.dir/src/main.cpp.o"
   "CMakeFiles/VGE.dir/src/main.cpp.o.d"
+  "CMakeFiles/VGE.dir/src/pch.cpp.o"
+  "CMakeFiles/VGE.dir/src/pch.cpp.o.d"
   "VGE"
   "VGE.pdb"
 )

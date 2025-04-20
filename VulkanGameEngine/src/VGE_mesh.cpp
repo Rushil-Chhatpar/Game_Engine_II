@@ -1,11 +1,10 @@
+#include "pch.h"
 #include "VGE_mesh.hpp"
-
-#include <cassert>
-#include <cstring>
-#include <unordered_map>
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <tiny_obj_loader.h>
+
+#include <unordered_map>
 
 namespace VGE
 {
@@ -14,20 +13,6 @@ namespace VGE
     {
         createVertexBuffer(builder.vertices);
         createIndexBuffer(builder.indices);
-    }
-
-    VgeMesh::VgeMesh(VgeDevice& device, const char* filename)
-        : _device(device)
-    {
-        // tinyobj::attrib_t attrib;
-        // std::vector<tinyobj::shape_t> shapes;
-        // std::vector<tinyobj::material_t> materials;
-        // std::string warning, error;
-    
-        // if(!tinyobj::LoadObj(&attrib, &shapes, &materials, &warning, &error, filename))
-        // {
-        //     throw std::runtime_error("Failed to load obj!!!   " + warning + error);
-        // }
     }
 
     VgeMesh::~VgeMesh()

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "VGE_camera.hpp"
 
 namespace VGE
