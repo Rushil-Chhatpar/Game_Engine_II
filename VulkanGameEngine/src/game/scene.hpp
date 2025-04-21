@@ -1,6 +1,6 @@
 #pragma once
 
-namespace VGE
+namespace game
 {
     class Scene
     {

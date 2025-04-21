@@ -65,8 +65,8 @@ namespace VGE
         VgeDefaultRenderSystem renderSystem{_engine.getDevice(), _engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
         VgeCamera camera{};
 
-        auto cameraObject = VgeGameObject::createGameObject();
-        KeyboardController cameraController{};
+        auto cameraObject = game::GameObject::createGameObject();
+        game::KeyboardController cameraController{};
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
@@ -127,14 +127,14 @@ namespace VGE
         // cube.Transform.scale = {0.5f, 0.5f, 0.5f};
 
         std::shared_ptr<VgeMesh> mesh = VgeMesh::createModelFromFile(_engine.getDevice(), "assets/Sitting.obj");
-        auto go = VgeGameObject::createGameObject();
+        auto go = game::GameObject::createGameObject();
         go.setMesh(mesh);
         go.Transform.translation = {0.0f, 0.0f, 0.0f};
         go.Transform.scale = glm::vec3{0.2f};
         go.Transform.rotation = {glm::pi<float>(), 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
 
-        go = VgeGameObject::createGameObject();
+        go = game::GameObject::createGameObject();
         go.setMesh(mesh);
         go.Transform.translation = {2.0f, 0.0f, 0.0f};
         go.Transform.scale = glm::vec3{0.2f};

@@ -3,7 +3,7 @@
 #include "VGE_camera.hpp"
 #include "VGE_device.hpp"
 #include "VGE_pipeline.hpp"
-#include "VGE_game_object.hpp"
+#include "game_object.hpp"
 #include "VGE_frame_info.hpp"
 
 #include <memory>
@@ -22,7 +22,7 @@ namespace VGE
         VgeDefaultRenderSystem& operator=(const VgeDefaultRenderSystem &) = delete;
 
         // We don't make the camera a member variable as I want to able to share camera between multiple render systems
-        void renderGameObjects(FrameInfo& frameInfo, std::vector<VgeGameObject>& gameObjects);
+        void renderGameObjects(FrameInfo& frameInfo, std::vector<game::GameObject>& gameObjects);
     private:
     
         void createPipelineLayout(VkDescriptorSetLayout globalSetLayout);

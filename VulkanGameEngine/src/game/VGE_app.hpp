@@ -3,7 +3,7 @@
 #include "VGE_device.hpp"
 #include "VGE_window.hpp"
 #include "VGE_renderer.hpp"
-#include "VGE_game_object.hpp"
+#include "game_object.hpp"
 #include "VGE_descriptors.hpp"
 #include <VGE_engine.hpp>
 
@@ -40,6 +40,6 @@ namespace VGE
         VkClearColorValue _defaultClearColor = {{0.0f, 0.0f, 0.0f, 1.0f}};
         
         std::unique_ptr<VgeDescriptorPool> _globalPool;
-        std::vector<VgeGameObject> _gameObjects;
+        std::vector<game::GameObject> _gameObjects;
     };
 }

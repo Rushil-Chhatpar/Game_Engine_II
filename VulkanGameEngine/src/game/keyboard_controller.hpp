@@ -1,9 +1,9 @@
 #pragma once
 
-#include "VGE_game_object.hpp"
+#include "game_object.hpp"
 #include "VGE_window.hpp"
 
-namespace VGE
+namespace game
 {
     class KeyboardController
     {
@@ -22,7 +22,7 @@ namespace VGE
             int lookDown = GLFW_KEY_DOWN;
         };
 
-        void moveInPlaneXZ(GLFWwindow* window, float deltaTime, VgeGameObject& gameObject);
+        void moveInPlaneXZ(GLFWwindow* window, float deltaTime, GameObject& gameObject);
 
         KeyMappings Keys{};
         float MoveSpeed{3.0f};

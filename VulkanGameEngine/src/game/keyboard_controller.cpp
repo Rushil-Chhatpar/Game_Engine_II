@@ -2,10 +2,10 @@
 #include "keyboard_controller.hpp"
 
 
-namespace VGE
+namespace game
 {
 
-    void KeyboardController::moveInPlaneXZ(GLFWwindow *window, float deltaTime, VgeGameObject &gameObject)
+    void KeyboardController::moveInPlaneXZ(GLFWwindow *window, float deltaTime, GameObject &gameObject)
     {
 
         // rotate

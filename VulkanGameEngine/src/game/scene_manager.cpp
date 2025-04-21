@@ -2,7 +2,7 @@
 
 #include "scene_manager.hpp"
 
-namespace VGE
+namespace game
 {
     void SceneManager::Update()
     {
