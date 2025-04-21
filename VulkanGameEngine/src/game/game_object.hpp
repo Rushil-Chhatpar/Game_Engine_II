@@ -3,6 +3,7 @@
 #include "VGE_mesh.hpp"
 
 #include <glm/gtc/matrix_transform.hpp>
+#include "component_manager.hpp"
 #include "component.hpp"
 
 #include <memory>
@@ -80,6 +81,7 @@ namespace game
             std::unique_ptr<T> component = std::make_unique<T>(*this, std::forward<Args>(args)...);
             T* ptr = component.get();
             _components.emplace_back(std::move(component));
+            GET_SINGLETON(ComponentManager)->Register(ptr);
             return ptr;
         }
 
@@ -100,6 +102,14 @@ namespace game
         {
             auto it = std::remove_if(_components.begin(), _components.end(),
                 [](const std::unique_ptr<Component>& component) { return dynamic_cast<T*>(component.get()) != nullptr; });
+            
+            if(it == _components.end())
+            {
+                return; // Component not found
+            }
+            // Unregister the component from the ComponentManager
+            GET_SINGLETON(ComponentManager)->Unregister(it->get());
+            // Remove the component from the vector
             _components.erase(it, _components.end());
         }
         

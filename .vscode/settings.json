@@ -61,7 +61,8 @@
         "format": "cpp",
         "iomanip": "cpp",
         "span": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "list": "cpp"
     },
     "C_Cpp.default.includePath": [
         "${workspaceFolder}/VulkanGameEngine/include",
