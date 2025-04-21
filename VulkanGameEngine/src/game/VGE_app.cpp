@@ -7,6 +7,7 @@
 #include "keyboard_controller.hpp"
 #include "VGE_buffer.hpp"
 #include "VGE_frame_info.hpp"
+#include "component.hpp"
 
 
 namespace VGE
@@ -63,9 +64,9 @@ namespace VGE
         }
 
         VgeDefaultRenderSystem renderSystem{_engine.getDevice(), _engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
-        VgeCamera camera{};
 
         auto cameraObject = game::GameObject::createGameObject();
+        cameraObject.addComponent<game::CameraComponent>();
         game::KeyboardController cameraController{};
 
         auto currentTime = std::chrono::high_resolution_clock::now();
@@ -79,11 +80,10 @@ namespace VGE
             currentTime = newTime;
 
             cameraController.moveInPlaneXZ(_engine.getWindow().getGLFWwindow(), deltaTime, cameraObject);
-            camera.setViewYXZ(cameraObject.Transform.translation, cameraObject.Transform.rotation);
+            cameraObject.getComponent<game::CameraComponent>()->setViewYXZ();
 
             float aspect = _engine.getRenderer().getAspectRatio();
-            //camera.setOrthographicProjection(-aspect, aspect, -1.0f, 1.0f, -1.0f, 1.0f);
-            camera.setPerspectiveProjection(glm::radians(50.0f), aspect, 0.1f, 10.0f);
+            cameraObject.getComponent<game::CameraComponent>()->setPerspectiveProjection(glm::radians(50.0f), aspect, 0.1f, 10.0f);
 
             if (VkCommandBuffer commandBuffer = _engine.getRenderer().beginFrame())
             {
@@ -91,7 +91,7 @@ namespace VGE
 
                 // update objects in memory
                 GlobalUBO ubo{};
-                ubo.projectionViewMatrix = camera.getProjectionMatrix() * camera.getViewMatrix();
+                ubo.projectionViewMatrix = cameraObject.getComponent<game::CameraComponent>()->getProjectionMatrix() * cameraObject.getComponent<game::CameraComponent>()->getViewMatrix();
                 uboBuffers[frameIndex]->writeToBuffer(&ubo);
                 uboBuffers[frameIndex]->flush();
 
@@ -105,7 +105,7 @@ namespace VGE
                     .frameIndex = frameIndex,
                     .frameTime = deltaTime,
                     .commandBuffer = commandBuffer,
-                    .camera = camera,
+                    .camera = *cameraObject.getComponent<game::CameraComponent>(),
                     .globalDescriptorSet = globalDescriptorSets[frameIndex],
                 };
                 _engine.getRenderer().beginSwapChainRenderPass(commandBuffer);
@@ -120,25 +120,19 @@ namespace VGE
 
     void VgeApp::loadGameObjects()
     {
-        // std::shared_ptr<VgeMesh> mesh = createCubeModel(_engine.getDevice(), {0.0f, 0.0f, 0.0f});
-        // auto cube = VgeGameObject::createGameObject();
-        // cube.setMesh(mesh);
-        // cube.Transform.translation = {0.0f, 0.0f, 2.5f};
-        // cube.Transform.scale = {0.5f, 0.5f, 0.5f};
-
         std::shared_ptr<VgeMesh> mesh = VgeMesh::createModelFromFile(_engine.getDevice(), "assets/Sitting.obj");
         auto go = game::GameObject::createGameObject();
         go.setMesh(mesh);
-        go.Transform.translation = {0.0f, 0.0f, 0.0f};
-        go.Transform.scale = glm::vec3{0.2f};
-        go.Transform.rotation = {glm::pi<float>(), 0.0f, 0.0f};
+        go.Transform->translation = {0.0f, 0.0f, 0.0f};
+        go.Transform->scale = glm::vec3{0.2f};
+        go.Transform->rotation = {glm::pi<float>(), 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
 
         go = game::GameObject::createGameObject();
         go.setMesh(mesh);
-        go.Transform.translation = {2.0f, 0.0f, 0.0f};
-        go.Transform.scale = glm::vec3{0.2f};
-        go.Transform.rotation = {glm::pi<float>(), 0.0f, 0.0f};
+        go.Transform->translation = {2.0f, 0.0f, 0.0f};
+        go.Transform->scale = glm::vec3{0.2f};
+        go.Transform->rotation = {glm::pi<float>(), 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
 
     }

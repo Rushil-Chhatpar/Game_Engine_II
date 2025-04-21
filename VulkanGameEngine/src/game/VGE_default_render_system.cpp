@@ -1,5 +1,6 @@
 #include "pch.h"
 #include  "VGE_default_render_system.hpp"
+#include "component.hpp"
 
 
 namespace VGE
@@ -64,8 +65,8 @@ namespace VGE
         for(auto& gameObject : gameObjects)
         {
             SimplePushConstantData push{};
-            push.modelMatrix = gameObject.Transform.mat4();
-            push.normalMatrix = gameObject.Transform.normalMatrix();
+            push.modelMatrix = gameObject.Transform->mat4();
+            push.normalMatrix = gameObject.Transform->normalMatrix();
 
             vkCmdPushConstants(frameInfo.commandBuffer, _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
             gameObject.getMesh()->bind(frameInfo.commandBuffer);

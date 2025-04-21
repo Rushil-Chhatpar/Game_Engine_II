@@ -4,6 +4,8 @@
 
 #include <vulkan/vulkan.h>
 
+#include "component.hpp"
+
 namespace VGE
 {
     struct FrameInfo
@@ -11,7 +13,7 @@ namespace VGE
         int frameIndex;
         float frameTime;
         VkCommandBuffer commandBuffer;
-        VgeCamera& camera;
+        game::CameraComponent& camera;
         VkDescriptorSet globalDescriptorSet = VK_NULL_HANDLE;
     };
 }

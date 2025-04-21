@@ -10,27 +10,27 @@
 namespace game
 {
 
-    struct TransformComponent
-    {
-        glm::vec3 translation{};
-        glm::vec3 scale{1.0f, 1.0f, 1.0f};
-        glm::vec3 rotation{};
+    // struct TransformComponent
+    // {
+    //     glm::vec3 translation{};
+    //     glm::vec3 scale{1.0f, 1.0f, 1.0f};
+    //     glm::vec3 rotation{};
 
-        /*
-        Use the property values (translation, scale, rotation) to create a 4x4 transformation matrix
-        The order of transformations is:
-        1. Scale
-        2. Rotate on Z axis
-        3. Rotate on X axis
-        4. Rotate on Y axis
-        5. Translate
+    //     /*
+    //     Use the property values (translation, scale, rotation) to create a 4x4 transformation matrix
+    //     The order of transformations is:
+    //     1. Scale
+    //     2. Rotate on Z axis
+    //     3. Rotate on X axis
+    //     4. Rotate on Y axis
+    //     5. Translate
 
-        The order of transformations is important because matrix multiplication is not commutative.
-        Rotation convention uses tait-bryan angles with axix order Y(1), X(2), Z(3)
-        */
-        glm::mat4 mat4();
-        glm::mat3 normalMatrix();
-    };
+    //     The order of transformations is important because matrix multiplication is not commutative.
+    //     Rotation convention uses tait-bryan angles with axix order Y(1), X(2), Z(3)
+    //     */
+    //     glm::mat4 mat4();
+    //     glm::mat3 normalMatrix();
+    // };
 
 
     class GameObject
@@ -42,13 +42,15 @@ namespace game
         static GameObject createGameObject()
         {
             static id_t currentId = 0;
-            return GameObject(currentId++);
+
+            GameObject obj(currentId++);
+            obj.Transform = obj.addComponent<TransformComponent>();
+
+            return obj;
         }
         
         // Get the ID of the game object
         id_t getId() const { return _id; }
-        
-        TransformComponent Transform{};
 
         GameObject(const GameObject&) = delete;
         GameObject& operator=(const GameObject&) = delete;
@@ -66,12 +68,43 @@ namespace game
         template<typename T, typename... Args>
         T* addComponent(Args&&... args)
         {
-            std::unique_ptr<Component> component = std::make_unique<T>(*this, std::forward<Args>(args)...);
+            static_assert(std::is_base_of<Component, T>::value, "T must be a derived class of Component");
+            static_assert(!std::is_same<T, Component>::value, "T cannot be Component itself");
+            
+            // Check if the component already exists
+            if (getComponent<T>() != nullptr)
+            {
+                return nullptr; // or throw an exception
+            }
+
+            std::unique_ptr<T> component = std::make_unique<T>(*this, std::forward<Args>(args)...);
             T* ptr = component.get();
             _components.emplace_back(std::move(component));
-            return *component;
+            return ptr;
+        }
+
+        template<typename T>
+        T* getComponent()
+        {
+            for (const auto& component : _components)
+            {
+                if (T* casted = dynamic_cast<T*>(component.get()))
+                {
+                    return casted;
+                }
+            }
+            return nullptr;
+        }
+        template<typename T>
+        void removeComponent()
+        {
+            auto it = std::remove_if(_components.begin(), _components.end(),
+                [](const std::unique_ptr<Component>& component) { return dynamic_cast<T*>(component.get()) != nullptr; });
+            _components.erase(it, _components.end());
         }
         
+    public:
+        TransformComponent* Transform = nullptr;
     private:
         GameObject(id_t id) : _id(id) {}
 
@@ -85,68 +118,3 @@ namespace game
 
     };
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // #pragma region Slow method
-            // /*
-            // create a 4x4 identity matrix and add translation to it
-            
-            // | 1 0 0 x |
-            // | 0 1 0 y |
-            // | 0 0 1 z |
-            // | 0 0 0 1 |
-            // */
-            // glm::mat4 transform = glm::translate(glm::mat4(1.0f), translation);
-
-            // // rotation
-            // transform = glm::rotate(transform, rotation.y, {0.0f, 1.0f, 0.0f});
-            // transform = glm::rotate(transform, rotation.x, {1.0f, 0.0f, 0.0f});
-            // transform = glm::rotate(transform, rotation.z, {0.0f, 0.0f, 1.0f});
-            
-            // // scale
-            // transform = glm::scale(transform, scale);
-            // return transform;
-            // #pragma endregion
-
-
-
-
-                    // 2D ONLY
-        // glm::mat2 mat2() 
-        // {
-        //     const float s = glm::sin(rotation);
-        //     const float c = glm::cos(rotation);
-
-        //     /*
-        //     this is the rotation matrix in conventional math
-        //     | c -s |
-        //     | s  c |
-
-        //     However, in Vulkan, the Y axis is flipped.
-        //     So, I have used the following matrix instead
-        //     | c  s |
-        //     | -s c |
-        //     */
-        //     glm::mat2 rotationMatrix{
-        //         {c, -s},
-        //         {s, c}
-        //     };
-
-        //     glm::mat2 scaleMatrix{
-        //         {scale.x, 0.0f},
-        //         {0.0f, scale.y}
-        //     };
-        //     return rotationMatrix * scaleMatrix;
-        // }

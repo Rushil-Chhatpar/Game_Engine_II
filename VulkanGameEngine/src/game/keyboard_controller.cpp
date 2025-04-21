@@ -22,16 +22,16 @@ namespace game
             rotate.x -= 1.0f;
 
         if(glm::dot(rotate, rotate) > std::numeric_limits<float>::epsilon())
-            gameObject.Transform.rotation += LookSpeed * deltaTime * glm::normalize(rotate);
+            gameObject.Transform->rotation += LookSpeed * deltaTime * glm::normalize(rotate);
 
         // limit rotation to ~80 degrees
-        gameObject.Transform.rotation.x = glm::clamp(gameObject.Transform.rotation.x, -1.5f, 1.5f);
-        gameObject.Transform.rotation.y = glm::mod(gameObject.Transform.rotation.y, glm::two_pi<float>());
+        gameObject.Transform->rotation.x = glm::clamp(gameObject.Transform->rotation.x, -1.5f, 1.5f);
+        gameObject.Transform->rotation.y = glm::mod(gameObject.Transform->rotation.y, glm::two_pi<float>());
 
 
         // move
 
-        float yaw = gameObject.Transform.rotation.y;
+        float yaw = gameObject.Transform->rotation.y;
         const glm::vec3 forwardDir{
             glm::sin(yaw),
             0.f,
@@ -60,6 +60,6 @@ namespace game
             moveDir -= upDir;
 
         if (glm::dot(moveDir, moveDir) > std::numeric_limits<float>::epsilon())
-            gameObject.Transform.translation += MoveSpeed * deltaTime * glm::normalize(moveDir);
+            gameObject.Transform->translation += MoveSpeed * deltaTime * glm::normalize(moveDir);
     }
 }
