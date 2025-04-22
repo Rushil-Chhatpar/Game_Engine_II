@@ -130,25 +130,6 @@ namespace VGE
         DESTROY_SINGLETON(game::ComponentManager);
     }
 
-    void VgeApp::loadGameObjects()
-    {
-        std::shared_ptr<VgeMesh> mesh = VgeMesh::createModelFromFile(Engine.getDevice(), "assets/Sitting.obj");
-        auto go = game::GameObject::createGameObject();
-        go.setMesh(mesh);
-        go.Transform->translation = {0.0f, 0.0f, 0.0f};
-        go.Transform->scale = glm::vec3{0.2f};
-        go.Transform->rotation = {glm::pi<float>(), 0.0f, 0.0f};
-        _gameObjects.push_back(std::move(go));
-
-        go = game::GameObject::createGameObject();
-        go.setMesh(mesh);
-        go.Transform->translation = {2.0f, 0.0f, 0.0f};
-        go.Transform->scale = glm::vec3{0.2f};
-        go.Transform->rotation = {glm::pi<float>(), 0.0f, 0.0f};
-        _gameObjects.push_back(std::move(go));
-
-    }
-
     // temporary helper function, creates a 1x1x1 cube centered at offset
     std::unique_ptr<VgeMesh> VgeApp::createCubeModel(VgeDevice& device, glm::vec3 offset) 
     {

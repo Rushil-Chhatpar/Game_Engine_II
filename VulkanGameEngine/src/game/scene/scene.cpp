@@ -25,7 +25,7 @@ namespace game
 
         for (auto& gameObject : _gameObjects)
         {
-            if (gameObject->isActive() && gameObject->getMesh() != nullptr)
+            if (gameObject->isActive() && gameObject->getComponent<MeshComponent>() != nullptr)
             {
                 renderables.push_back(gameObject.get());
             }

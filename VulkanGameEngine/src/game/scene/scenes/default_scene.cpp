@@ -30,14 +30,14 @@ namespace game
     {
         std::shared_ptr<VGE::VgeMesh> mesh = VGE::VgeMesh::createModelFromFile(_app.Engine.getDevice(), "assets/Sitting.obj");
         auto go = game::GameObject::createGameObjectPtr();
-        go->setMesh(mesh);
+        go->addComponent<game::MeshComponent>(_app.Engine.getDevice(), "assets/Sitting.obj");
         go->Transform->translation = {0.0f, 0.0f, 0.0f};
         go->Transform->scale = glm::vec3{0.2f};
         go->Transform->rotation = {glm::pi<float>(), 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
 
         go = game::GameObject::createGameObjectPtr();
-        go->setMesh(mesh);
+        go->addComponent<game::MeshComponent>(_app.Engine.getDevice(), "assets/Sitting.obj");
         go->Transform->translation = {2.0f, 0.0f, 0.0f};
         go->Transform->scale = glm::vec3{0.2f};
         go->Transform->rotation = {glm::pi<float>(), 0.0f, 0.0f};

@@ -3,7 +3,11 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "VGE_window.hpp"
 
-
+namespace VGE
+{
+    class VgeDevice;
+    class VgeMesh;
+}
 namespace game
 {
     class GameObject;
@@ -77,7 +81,6 @@ namespace game
         virtual void awake() override {}
         virtual void update(float deltaTime) override
         {
-            // TODO:
             setViewYXZ();
         }
     private:
@@ -123,6 +126,21 @@ namespace game
         KeyMappings Keys{};
         float _moveSpeed{3.0f};
         float _lookSpeed{1.5f};
+    };
+
+    class MeshComponent : public Component
+    {
+    public:
+        MeshComponent(GameObject& owner, VGE::VgeDevice& device, const char *filename);
+        ~MeshComponent() override = default;
+
+        virtual void awake() override {}
+        virtual void update(float deltaTime) override {}
+
+        VGE::VgeMesh* getMesh() const { return _mesh.get(); }
+
+    private:
+        std::unique_ptr<VGE::VgeMesh> _mesh;
     };
 
 }

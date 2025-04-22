@@ -11,17 +11,6 @@
 
 #include <memory>
 
-// #define MAKE_HASHABLE(type, ...) \
-//     namespace std {\
-//         template<> struct hash<type> {\
-//             std::size_t operator()(const type &t) const {\
-//                 std::size_t ret = 0;\
-//                 hash_combine(ret, __VA_ARGS__);\
-//                 return ret;\
-//             }\
-//         };\
-//     }
-
 namespace VGE
 {
     class VgeMesh
@@ -75,16 +64,10 @@ namespace VGE
         void draw(VkCommandBuffer commandBuffer);
 
         static std::unique_ptr<VgeMesh> createModelFromFile(VgeDevice& device, const char* filename);        
-
-        //static void sierpinskiTriangle(std::vector<Vertex>& vertices, uint32_t depth, const glm::vec2& left, const glm::vec2& right, const glm::vec2& top);
-    
+            
     private:
         void createVertexBuffer(const std::vector<Vertex>& vertices);
         void createIndexBuffer(const std::vector<uint32_t>& indices);
-        // void copyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size);
-        // void createBuffer(VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer& buffer, VkDeviceMemory& bufferMemory);
-        // void createCommandBuffer();
-        // void createCommandPool();
 
     private:
         VgeDevice& _device;

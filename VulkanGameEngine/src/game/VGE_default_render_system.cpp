@@ -69,8 +69,8 @@ namespace VGE
             push.normalMatrix = gameObject->Transform->normalMatrix();
 
             vkCmdPushConstants(frameInfo.commandBuffer, _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
-            gameObject->getMesh()->bind(frameInfo.commandBuffer);
-            gameObject->getMesh()->draw(frameInfo.commandBuffer);
+            gameObject->getComponent<game::MeshComponent>()->getMesh()->bind(frameInfo.commandBuffer);
+            gameObject->getComponent<game::MeshComponent>()->getMesh()->draw(frameInfo.commandBuffer);
         }
     }
 }

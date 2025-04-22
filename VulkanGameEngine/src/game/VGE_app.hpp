@@ -26,10 +26,7 @@ namespace VGE
 
         void run();
 
-        private:
-        
-        void loadGameObjects();
-        
+        private:        
         
         std::unique_ptr<VgeMesh> createCubeModel(VgeDevice& device, glm::vec3 offset);
         

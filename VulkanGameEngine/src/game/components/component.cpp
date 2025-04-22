@@ -1,8 +1,9 @@
 #include "pch.h"
 #include "component.hpp"
 
+#include "VGE_device.hpp"
 #include "game_object.hpp"
-
+#include "VGE_mesh.hpp"
 
 namespace game
 {
@@ -211,5 +212,12 @@ namespace game
 
         if (glm::dot(moveDir, moveDir) > std::numeric_limits<float>::epsilon())
             _owner.Transform->translation += _moveSpeed * deltaTime * glm::normalize(moveDir);
+    }
+
+    MeshComponent::MeshComponent(GameObject& owner, VGE::VgeDevice& device, const char *filename)
+        : Component(owner)
+    {
+        _mesh = VGE::VgeMesh::createModelFromFile(device, filename);
+        
     }
 }

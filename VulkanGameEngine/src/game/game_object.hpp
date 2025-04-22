@@ -10,30 +10,6 @@
 
 namespace game
 {
-
-    // struct TransformComponent
-    // {
-    //     glm::vec3 translation{};
-    //     glm::vec3 scale{1.0f, 1.0f, 1.0f};
-    //     glm::vec3 rotation{};
-
-    //     /*
-    //     Use the property values (translation, scale, rotation) to create a 4x4 transformation matrix
-    //     The order of transformations is:
-    //     1. Scale
-    //     2. Rotate on Z axis
-    //     3. Rotate on X axis
-    //     4. Rotate on Y axis
-    //     5. Translate
-
-    //     The order of transformations is important because matrix multiplication is not commutative.
-    //     Rotation convention uses tait-bryan angles with axix order Y(1), X(2), Z(3)
-    //     */
-    //     glm::mat4 mat4();
-    //     glm::mat3 normalMatrix();
-    // };
-
-
     class GameObject
     {
     public:
@@ -73,12 +49,10 @@ namespace game
         GameObject& operator=(GameObject&&) = default;
 
         // setters
-        void setMesh(std::shared_ptr<VGE::VgeMesh> mesh) { _mesh = std::move(mesh); }
         void setColor(const glm::vec3& color) { this->color = color; }
         void setActive(bool isActive) { _isActive = isActive; }
         
         // getters
-        std::shared_ptr<VGE::VgeMesh> getMesh() const { return _mesh; }
         const glm::vec3& getColor() const { return color; }
         bool isActive() const { return _isActive; }
 
@@ -136,8 +110,6 @@ namespace game
     private:
         GameObject(id_t id, std::string name) : _id(id), _name(name) {}
 
-        // TODO: make a MeshComponent
-        std::shared_ptr<VGE::VgeMesh> _mesh;
         glm::vec3 color{};
         
         id_t _id;
