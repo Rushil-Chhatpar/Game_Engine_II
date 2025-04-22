@@ -8,6 +8,10 @@
 #include "VGE_buffer.hpp"
 #include "VGE_frame_info.hpp"
 #include "component.hpp"
+#include "component_manager.hpp"
+#include "scene.hpp"
+#include "scene_manager.hpp"
+#include "default_scene.hpp"
 
 
 namespace VGE
@@ -19,14 +23,18 @@ namespace VGE
     };
 
     VgeApp::VgeApp(VgeEngine& engine)
-        : _engine(engine)
+        : Engine(engine)
     {
-        _globalPool = VgeDescriptorPool::Builder(_engine.getDevice())
+        _globalPool = VgeDescriptorPool::Builder(Engine.getDevice())
             .setMaxSets(VgeSwapChain::MAX_FRAMES_IN_FLIGHT)
             .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VgeSwapChain::MAX_FRAMES_IN_FLIGHT)
             .build();
             
-        loadGameObjects();
+        // initialize the Managers
+        // idk if this is necessary
+        // but i'll figure it out later
+        GET_SINGLETON(game::ComponentManager);
+        GET_SINGLETON(game::SceneManager)->makeScene<game::DefaultScene>(*this);
     }
 
     VgeApp::~VgeApp()
@@ -35,21 +43,26 @@ namespace VGE
 
     void VgeApp::run()
     {
+        // Awake all components
+        GET_SINGLETON(game::SceneManager)->Awake();
+        GET_SINGLETON(game::ComponentManager)->Awake();
+
+
         auto minOffsetAlignment = std::lcm(
-            _engine.getDevice().properties.limits.minUniformBufferOffsetAlignment,
-            _engine.getDevice().properties.limits.nonCoherentAtomSize);
+            Engine.getDevice().properties.limits.minUniformBufferOffsetAlignment,
+            Engine.getDevice().properties.limits.nonCoherentAtomSize);
 
         std::cout << "minOffsetAlignment: " << minOffsetAlignment << std::endl;
 
         std::vector<std::unique_ptr<VgeBuffer>> uboBuffers(VgeSwapChain::MAX_FRAMES_IN_FLIGHT);
         for (int i = 0; i < VgeSwapChain::MAX_FRAMES_IN_FLIGHT; i++)
         {
-            uboBuffers[i] = std::make_unique<VgeBuffer>(_engine.getDevice(), sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
+            uboBuffers[i] = std::make_unique<VgeBuffer>(Engine.getDevice(), sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
             uboBuffers[i]->map();
         }
 
         // create descriptor set layout
-        auto globalSetLayout = VgeDescriptorSetLayout::Builder(_engine.getDevice())
+        auto globalSetLayout = VgeDescriptorSetLayout::Builder(Engine.getDevice())
             .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT)
             .build();
 
@@ -63,15 +76,11 @@ namespace VGE
                 .build(globalDescriptorSets[i]);
         }
 
-        VgeDefaultRenderSystem renderSystem{_engine.getDevice(), _engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
-
-        auto cameraObject = game::GameObject::createGameObject();
-        cameraObject.addComponent<game::CameraComponent>();
-        game::KeyboardController cameraController{};
+        VgeDefaultRenderSystem renderSystem{Engine.getDevice(), Engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
-        while (!_engine.getWindow().shouldClose())
+        while (!Engine.getWindow().shouldClose())
         {
             glfwPollEvents();
 
@@ -79,19 +88,18 @@ namespace VGE
             auto deltaTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
             currentTime = newTime;
 
-            cameraController.moveInPlaneXZ(_engine.getWindow().getGLFWwindow(), deltaTime, cameraObject);
-            cameraObject.getComponent<game::CameraComponent>()->setViewYXZ();
+            GET_SINGLETON(game::ComponentManager)->Update(deltaTime);
+            GET_SINGLETON(game::SceneManager)->Update(deltaTime);
 
-            float aspect = _engine.getRenderer().getAspectRatio();
-            cameraObject.getComponent<game::CameraComponent>()->setPerspectiveProjection(glm::radians(50.0f), aspect, 0.1f, 10.0f);
+            game::CameraComponent* camera = GET_SINGLETON(game::SceneManager)->getActiveScene()->getCamera();
 
-            if (VkCommandBuffer commandBuffer = _engine.getRenderer().beginFrame())
+            if (VkCommandBuffer commandBuffer = Engine.getRenderer().beginFrame())
             {
-                int frameIndex = _engine.getRenderer().getFrameIndex();
+                int frameIndex = Engine.getRenderer().getFrameIndex();
 
                 // update objects in memory
                 GlobalUBO ubo{};
-                ubo.projectionViewMatrix = cameraObject.getComponent<game::CameraComponent>()->getProjectionMatrix() * cameraObject.getComponent<game::CameraComponent>()->getViewMatrix();
+                ubo.projectionViewMatrix = camera->getProjectionMatrix() * camera->getViewMatrix();
                 uboBuffers[frameIndex]->writeToBuffer(&ubo);
                 uboBuffers[frameIndex]->flush();
 
@@ -105,22 +113,26 @@ namespace VGE
                     .frameIndex = frameIndex,
                     .frameTime = deltaTime,
                     .commandBuffer = commandBuffer,
-                    .camera = *cameraObject.getComponent<game::CameraComponent>(),
+                    .camera = *camera,
                     .globalDescriptorSet = globalDescriptorSets[frameIndex],
                 };
-                _engine.getRenderer().beginSwapChainRenderPass(commandBuffer);
-                renderSystem.renderGameObjects(frameInfo, _gameObjects);
-                _engine.getRenderer().endSwapChainRenderPass(commandBuffer);
-                _engine.getRenderer().endFrame();
+                Engine.getRenderer().beginSwapChainRenderPass(commandBuffer);
+                GET_SINGLETON(game::SceneManager)->Render(frameInfo, renderSystem);
+                Engine.getRenderer().endSwapChainRenderPass(commandBuffer);
+                Engine.getRenderer().endFrame();
             }
         }
 
-        vkDeviceWaitIdle(_engine.getDevice().device());
+        vkDeviceWaitIdle(Engine.getDevice().device());
+
+        // cleanup
+        DESTROY_SINGLETON(game::SceneManager);
+        DESTROY_SINGLETON(game::ComponentManager);
     }
 
     void VgeApp::loadGameObjects()
     {
-        std::shared_ptr<VgeMesh> mesh = VgeMesh::createModelFromFile(_engine.getDevice(), "assets/Sitting.obj");
+        std::shared_ptr<VgeMesh> mesh = VgeMesh::createModelFromFile(Engine.getDevice(), "assets/Sitting.obj");
         auto go = game::GameObject::createGameObject();
         go.setMesh(mesh);
         go.Transform->translation = {0.0f, 0.0f, 0.0f};

@@ -23,16 +23,46 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/constants.hpp>
 
-#define DECLARE_SINGLETON(type)		\
-private:							\
-	type() {}						\
-	~type() {}						\
-public:								\
-	static type* GetInstance()		\
-	{								\
-		static type instance;		\
-		return &instance;			\
-	}								\
+// #define DECLARE_SINGLETON(type)		\
+// private:							\
+// 	type() {}						\
+// 	~type() {}						\
+// public:								\
+// 	static type* GetInstance()		\
+// 	{								\
+// 		static type instance;		\
+// 		return &instance;			\
+// 	}								\
 
-#define GET_SINGLETON(type)			\
-    type::GetInstance()			    
+// #define GET_SINGLETON(type)			\
+//     type::GetInstance()			 
+
+#define DECLARE_SINGLETON(type)             \
+private:                                    \
+    static type* instance;                  \
+    type() {}                               \
+    ~type() {}                              \
+public:                                     \
+    static type* GetInstance()              \
+    {                                       \
+        if (!instance)                      \
+            instance = new type();          \
+        return instance;                    \
+    }                                       \
+    static void DestroyInstance()           \
+    {                                       \
+        if(instance)						\
+		{									\
+			delete instance;                \
+        	instance = nullptr;             \
+		}									\
+    }
+
+#define DEFINE_SINGLETON(type)              \
+    type* type::instance = nullptr;
+
+#define GET_SINGLETON(type)                 \
+    type::GetInstance()
+
+#define DESTROY_SINGLETON(type)             \
+    type::DestroyInstance()

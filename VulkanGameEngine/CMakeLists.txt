@@ -43,31 +43,35 @@ find_package(Vulkan REQUIRED)
 find_package(glfw3 REQUIRED)
 
 # Add source files
-file(GLOB ENGINE_FILES src/engine/*.cpp)
-file(GLOB GAME_FILES src/game/*.cpp)
-file(GLOB SRC_FILES src/*.cpp)
+file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS src/*.cpp src/*.c src/*.h)
 
-set(SOURCES ${SRC_FILES} ${ENGINE_FILES} ${GAME_FILES})
+set(SOURCES ${SRC_FILES})
 
-# Add include directories
-include_directories(${CMAKE_SOURCE_DIR}/include)
-include_directories(${CMAKE_SOURCE_DIR}/src)
-include_directories(${CMAKE_SOURCE_DIR}/src/engine)
-include_directories(${CMAKE_SOURCE_DIR}/src/game)
-include_directories(${CMAKE_SOURCE_DIR}/assets)
+# Collect all include directories under src/
+file(GLOB_RECURSE SRC_SUBDIRS LIST_DIRECTORIES true CONFIGURE_DEPENDS ${CMAKE_SOURCE_DIR}/src/*)
+set(INCLUDE_DIRS "")
+foreach(dir ${SRC_SUBDIRS})
+    if(IS_DIRECTORY ${dir})
+        list(APPEND INCLUDE_DIRS ${dir})
+    endif()
+endforeach()
+
+# Add include/ and assets/ as well
+list(APPEND INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include)
+list(APPEND INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/assets)
 
 # Create the executable
 add_executable(${PROJECT_TARGET_NAME} ${SOURCES})
+
+# Link Vulkan and GLFW libraries
+link_directories(/usr/lib/x86_64-linux-gnu)
+target_link_libraries(${PROJECT_TARGET_NAME} /usr/lib/x86_64-linux-gnu/libglfw.so ${Vulkan_LIBRARIES})
+target_include_directories(${PROJECT_TARGET_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src ${INCLUDE_DIRS})
+
+# Add precompiled header
+target_precompile_headers(${PROJECT_TARGET_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src/pch.h)
 
 # Copy resource folders to binary output dir
 copy_resources(${PROJECT_TARGET_NAME} assets)
 # Copy SPIR-V shaders to binary output dir
 copy_spv_shaders(${PROJECT_TARGET_NAME} shaders)
-
-# Link Vulkan and GLFW libraries
-link_directories(/usr/lib/x86_64-linux-gnu)
-target_link_libraries(${PROJECT_TARGET_NAME} /usr/lib/x86_64-linux-gnu/libglfw.so ${Vulkan_LIBRARIES})
-target_include_directories(${PROJECT_TARGET_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
-
-# Add precompiled header
-target_precompile_headers(${PROJECT_TARGET_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src/pch.h)

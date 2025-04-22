@@ -40,12 +40,25 @@ namespace game
         using id_t = unsigned int;
         
         // Factory method to create a new game object
-        static GameObject createGameObject()
+        static GameObject createGameObject(std::string name = "GameObject")
         {
             static id_t currentId = 0;
 
-            GameObject obj(currentId++);
+            GameObject obj(currentId++, name);
             obj.Transform = obj.addComponent<TransformComponent>();
+
+            return obj;
+        }
+
+        // Factory method to create a new game object with a unique pointer
+        // This is useful for managing the lifetime of the game object
+        // and its components automatically
+        static std::unique_ptr<GameObject> createGameObjectPtr(std::string name = "GameObject")
+        {
+            static id_t currentId = 0;
+
+            std::unique_ptr<GameObject> obj(new GameObject(currentId++, name));
+            obj->Transform = obj->addComponent<TransformComponent>();
 
             return obj;
         }
@@ -59,11 +72,15 @@ namespace game
         GameObject(GameObject&&) = default;
         GameObject& operator=(GameObject&&) = default;
 
-        // setters and getters
+        // setters
         void setMesh(std::shared_ptr<VGE::VgeMesh> mesh) { _mesh = std::move(mesh); }
-        std::shared_ptr<VGE::VgeMesh> getMesh() const { return _mesh; }
         void setColor(const glm::vec3& color) { this->color = color; }
+        void setActive(bool isActive) { _isActive = isActive; }
+        
+        // getters
+        std::shared_ptr<VGE::VgeMesh> getMesh() const { return _mesh; }
         const glm::vec3& getColor() const { return color; }
+        bool isActive() const { return _isActive; }
 
         // Components
         template<typename T, typename... Args>
@@ -97,6 +114,7 @@ namespace game
             }
             return nullptr;
         }
+
         template<typename T>
         void removeComponent()
         {
@@ -116,15 +134,20 @@ namespace game
     public:
         TransformComponent* Transform = nullptr;
     private:
-        GameObject(id_t id) : _id(id) {}
+        GameObject(id_t id, std::string name) : _id(id), _name(name) {}
 
+        // TODO: make a MeshComponent
         std::shared_ptr<VGE::VgeMesh> _mesh;
         glm::vec3 color{};
         
         id_t _id;
 
+        std::string _name;
+
         // Components
         std::vector<std::unique_ptr<Component>> _components;
+
+        bool _isActive = true;
 
     };
 }

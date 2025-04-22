@@ -55,17 +55,8 @@ CMakeFiles/VGE.dir/src/engine/VGE_engine.cpp.o: \
  /usr/include/c++/13/bits/range_access.h \
  /usr/include/c++/13/bits/erase_if.h \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/array \
- /usr/include/c++/13/bits/stl_algo.h \
- /usr/include/c++/13/bits/algorithmfwd.h \
- /usr/include/c++/13/bits/stl_iterator_base_types.h \
- /usr/include/c++/13/bits/stl_heap.h /usr/include/c++/13/debug/debug.h \
- /usr/include/c++/13/bits/move.h \
- /usr/include/c++/13/bits/predefined_ops.h \
- /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/13/bits/uniform_int_dist.h \
- /usr/include/c++/13/bits/concept_check.h \
- /usr/include/c++/13/bits/stl_tempbuf.h /usr/include/c++/13/cstdlib \
- /usr/include/glm/gtc/vec1.hpp /usr/include/glm/ext/vector_bool1.hpp \
+ /usr/include/c++/13/bits/stl_algo.h /usr/include/glm/gtc/vec1.hpp \
+ /usr/include/glm/ext/vector_bool1.hpp \
  /usr/include/glm/ext/vector_bool1_precision.hpp \
  /usr/include/glm/ext/vector_float1.hpp \
  /usr/include/glm/ext/vector_float1_precision.hpp \

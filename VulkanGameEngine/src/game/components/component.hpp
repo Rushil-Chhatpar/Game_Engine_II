@@ -1,6 +1,8 @@
 #pragma once
 
 #include <glm/gtc/matrix_transform.hpp>
+#include "VGE_window.hpp"
+
 
 namespace game
 {
@@ -76,12 +78,51 @@ namespace game
         virtual void update(float deltaTime) override
         {
             // TODO:
-            // setViewYXZ();
+            setViewYXZ();
         }
     private:
         glm::mat4 _projectionMatrix{1.0f};
         glm::mat4 _viewMatrix{1.0f};       
     };
 
+    class KeyboardController : public Component
+    {
+    public:
+        struct KeyMappings
+        {
+            int moveLeft = GLFW_KEY_A;
+            int moveRight = GLFW_KEY_D;
+            int moveForward = GLFW_KEY_W;
+            int moveBackward = GLFW_KEY_S;
+            int moveUp = GLFW_KEY_E;
+            int moveDown = GLFW_KEY_Q;
+            int lookLeft = GLFW_KEY_LEFT;
+            int lookRight = GLFW_KEY_RIGHT;
+            int lookUp = GLFW_KEY_UP;
+            int lookDown = GLFW_KEY_DOWN;
+        };
+
+        KeyboardController(GameObject& owner, GLFWwindow* window, float moveSpeed, float lookSpeed) 
+            : Component(owner)
+            , _window(window)
+            , _moveSpeed(moveSpeed)
+            , _lookSpeed(lookSpeed)
+        {}
+        ~KeyboardController() override = default;
+
+        virtual void awake() override {}
+        virtual void update(float deltaTime) override;
+        
+        
+        private:
+        void moveInPlaneXZ(float deltaTime);
+        
+        
+    private:
+        GLFWwindow* _window;
+        KeyMappings Keys{};
+        float _moveSpeed{3.0f};
+        float _lookSpeed{1.5f};
+    };
 
 }

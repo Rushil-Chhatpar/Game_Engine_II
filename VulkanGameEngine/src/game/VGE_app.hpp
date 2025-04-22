@@ -26,16 +26,16 @@ namespace VGE
 
         void run();
 
-    private:
-    
+        private:
+        
         void loadGameObjects();
-
-
+        
+        
         std::unique_ptr<VgeMesh> createCubeModel(VgeDevice& device, glm::vec3 offset);
-
-    protected:
-        VgeEngine& _engine;
-
+        
+    public:
+        VgeEngine& Engine;
+        
     private: 
         VkClearColorValue _defaultClearColor = {{0.0f, 0.0f, 0.0f, 1.0f}};
         

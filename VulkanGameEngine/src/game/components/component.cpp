@@ -3,6 +3,7 @@
 
 #include "game_object.hpp"
 
+
 namespace game
 {
     Component::Component(GameObject& owner)
@@ -148,5 +149,67 @@ namespace game
     void CameraComponent::setViewYXZ()
     {
         setViewYXZ(_owner.Transform->translation, _owner.Transform->rotation);
+    }
+
+    void KeyboardController::update(float deltaTime)
+    {
+        moveInPlaneXZ(deltaTime);
+    }
+
+    void KeyboardController::moveInPlaneXZ(float deltaTime)
+    {
+        // rotate
+
+        glm::vec3 rotate{0.f};
+
+        if (glfwGetKey(_window, Keys.lookLeft) == GLFW_PRESS)
+            rotate.y -= 1.0f;
+        if (glfwGetKey(_window, Keys.lookRight) == GLFW_PRESS)
+            rotate.y += 1.0f;
+        if (glfwGetKey(_window, Keys.lookUp) == GLFW_PRESS)
+            rotate.x += 1.0f;
+        if (glfwGetKey(_window, Keys.lookDown) == GLFW_PRESS)
+            rotate.x -= 1.0f;
+
+        if(glm::dot(rotate, rotate) > std::numeric_limits<float>::epsilon())
+            _owner.Transform->rotation += _lookSpeed * deltaTime * glm::normalize(rotate);
+
+        // limit rotation to ~80 degrees
+        _owner.Transform->rotation.x = glm::clamp(_owner.Transform->rotation.x, -1.5f, 1.5f);
+        _owner.Transform->rotation.y = glm::mod(_owner.Transform->rotation.y, glm::two_pi<float>());
+
+
+        // move
+
+        float yaw = _owner.Transform->rotation.y;
+        const glm::vec3 forwardDir{
+            glm::sin(yaw),
+            0.f,
+            glm::cos(yaw)
+        };
+        const glm::vec3 rightDir{
+            forwardDir.z,
+            0.f,
+            -forwardDir.x
+        };
+        const glm::vec3 upDir{0.f, -1.f, 0.f};
+
+        glm::vec3 moveDir{0.f};
+
+        if (glfwGetKey(_window, Keys.moveLeft) == GLFW_PRESS)
+            moveDir -= rightDir;
+        if (glfwGetKey(_window, Keys.moveRight) == GLFW_PRESS)
+            moveDir += rightDir;
+        if (glfwGetKey(_window, Keys.moveForward) == GLFW_PRESS)
+            moveDir += forwardDir;
+        if (glfwGetKey(_window, Keys.moveBackward) == GLFW_PRESS)
+            moveDir -= forwardDir;
+        if (glfwGetKey(_window, Keys.moveUp) == GLFW_PRESS)
+            moveDir += upDir;
+        if (glfwGetKey(_window, Keys.moveDown) == GLFW_PRESS)
+            moveDir -= upDir;
+
+        if (glm::dot(moveDir, moveDir) > std::numeric_limits<float>::epsilon())
+            _owner.Transform->translation += _moveSpeed * deltaTime * glm::normalize(moveDir);
     }
 }

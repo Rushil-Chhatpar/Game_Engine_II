@@ -56,7 +56,7 @@ namespace VGE
         _pipeline = std::make_unique<VgePipeline>(_device, "shaders/simple_shader.vert.spv", "shaders/simple_shader.frag.spv", pipelineConfig);
     }
 
-    void VgeDefaultRenderSystem::renderGameObjects(FrameInfo& frameInfo, std::vector<game::GameObject>& gameObjects)
+    void VgeDefaultRenderSystem::renderGameObjects(FrameInfo& frameInfo, std::vector<game::GameObject*>& gameObjects)
     {
         _pipeline->bind(frameInfo.commandBuffer);
 
@@ -65,12 +65,12 @@ namespace VGE
         for(auto& gameObject : gameObjects)
         {
             SimplePushConstantData push{};
-            push.modelMatrix = gameObject.Transform->mat4();
-            push.normalMatrix = gameObject.Transform->normalMatrix();
+            push.modelMatrix = gameObject->Transform->mat4();
+            push.normalMatrix = gameObject->Transform->normalMatrix();
 
             vkCmdPushConstants(frameInfo.commandBuffer, _pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
-            gameObject.getMesh()->bind(frameInfo.commandBuffer);
-            gameObject.getMesh()->draw(frameInfo.commandBuffer);
+            gameObject->getMesh()->bind(frameInfo.commandBuffer);
+            gameObject->getMesh()->draw(frameInfo.commandBuffer);
         }
     }
 }

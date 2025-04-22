@@ -22,7 +22,7 @@ namespace VGE
         VgeDefaultRenderSystem& operator=(const VgeDefaultRenderSystem &) = delete;
 
         // We don't make the camera a member variable as I want to able to share camera between multiple render systems
-        void renderGameObjects(FrameInfo& frameInfo, std::vector<game::GameObject>& gameObjects);
+        void renderGameObjects(FrameInfo& frameInfo, std::vector<game::GameObject*>& gameObjects);
     private:
     
         void createPipelineLayout(VkDescriptorSetLayout globalSetLayout);

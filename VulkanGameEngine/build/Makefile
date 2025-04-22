@@ -113,6 +113,7 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -432,30 +433,6 @@ src/game/VGE_frame_info.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_frame_info.cpp.s
 .PHONY : src/game/VGE_frame_info.cpp.s
 
-src/game/VGE_game_object.o: src/game/VGE_game_object.cpp.o
-.PHONY : src/game/VGE_game_object.o
-
-# target to build an object file
-src/game/VGE_game_object.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_game_object.cpp.o
-.PHONY : src/game/VGE_game_object.cpp.o
-
-src/game/VGE_game_object.i: src/game/VGE_game_object.cpp.i
-.PHONY : src/game/VGE_game_object.i
-
-# target to preprocess a source file
-src/game/VGE_game_object.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_game_object.cpp.i
-.PHONY : src/game/VGE_game_object.cpp.i
-
-src/game/VGE_game_object.s: src/game/VGE_game_object.cpp.s
-.PHONY : src/game/VGE_game_object.s
-
-# target to generate assembly for a file
-src/game/VGE_game_object.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_game_object.cpp.s
-.PHONY : src/game/VGE_game_object.cpp.s
-
 src/game/VGE_mesh.o: src/game/VGE_mesh.cpp.o
 .PHONY : src/game/VGE_mesh.o
 
@@ -480,6 +457,78 @@ src/game/VGE_mesh.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_mesh.cpp.s
 .PHONY : src/game/VGE_mesh.cpp.s
 
+src/game/components/component.o: src/game/components/component.cpp.o
+.PHONY : src/game/components/component.o
+
+# target to build an object file
+src/game/components/component.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/components/component.cpp.o
+.PHONY : src/game/components/component.cpp.o
+
+src/game/components/component.i: src/game/components/component.cpp.i
+.PHONY : src/game/components/component.i
+
+# target to preprocess a source file
+src/game/components/component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/components/component.cpp.i
+.PHONY : src/game/components/component.cpp.i
+
+src/game/components/component.s: src/game/components/component.cpp.s
+.PHONY : src/game/components/component.s
+
+# target to generate assembly for a file
+src/game/components/component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/components/component.cpp.s
+.PHONY : src/game/components/component.cpp.s
+
+src/game/components/component_manager.o: src/game/components/component_manager.cpp.o
+.PHONY : src/game/components/component_manager.o
+
+# target to build an object file
+src/game/components/component_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/components/component_manager.cpp.o
+.PHONY : src/game/components/component_manager.cpp.o
+
+src/game/components/component_manager.i: src/game/components/component_manager.cpp.i
+.PHONY : src/game/components/component_manager.i
+
+# target to preprocess a source file
+src/game/components/component_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/components/component_manager.cpp.i
+.PHONY : src/game/components/component_manager.cpp.i
+
+src/game/components/component_manager.s: src/game/components/component_manager.cpp.s
+.PHONY : src/game/components/component_manager.s
+
+# target to generate assembly for a file
+src/game/components/component_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/components/component_manager.cpp.s
+.PHONY : src/game/components/component_manager.cpp.s
+
+src/game/game_object.o: src/game/game_object.cpp.o
+.PHONY : src/game/game_object.o
+
+# target to build an object file
+src/game/game_object.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/game_object.cpp.o
+.PHONY : src/game/game_object.cpp.o
+
+src/game/game_object.i: src/game/game_object.cpp.i
+.PHONY : src/game/game_object.i
+
+# target to preprocess a source file
+src/game/game_object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/game_object.cpp.i
+.PHONY : src/game/game_object.cpp.i
+
+src/game/game_object.s: src/game/game_object.cpp.s
+.PHONY : src/game/game_object.s
+
+# target to generate assembly for a file
+src/game/game_object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/game_object.cpp.s
+.PHONY : src/game/game_object.cpp.s
+
 src/game/keyboard_controller.o: src/game/keyboard_controller.cpp.o
 .PHONY : src/game/keyboard_controller.o
 
@@ -503,6 +552,78 @@ src/game/keyboard_controller.s: src/game/keyboard_controller.cpp.s
 src/game/keyboard_controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/keyboard_controller.cpp.s
 .PHONY : src/game/keyboard_controller.cpp.s
+
+src/game/scene/scene.o: src/game/scene/scene.cpp.o
+.PHONY : src/game/scene/scene.o
+
+# target to build an object file
+src/game/scene/scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scene.cpp.o
+.PHONY : src/game/scene/scene.cpp.o
+
+src/game/scene/scene.i: src/game/scene/scene.cpp.i
+.PHONY : src/game/scene/scene.i
+
+# target to preprocess a source file
+src/game/scene/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scene.cpp.i
+.PHONY : src/game/scene/scene.cpp.i
+
+src/game/scene/scene.s: src/game/scene/scene.cpp.s
+.PHONY : src/game/scene/scene.s
+
+# target to generate assembly for a file
+src/game/scene/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scene.cpp.s
+.PHONY : src/game/scene/scene.cpp.s
+
+src/game/scene/scene_manager.o: src/game/scene/scene_manager.cpp.o
+.PHONY : src/game/scene/scene_manager.o
+
+# target to build an object file
+src/game/scene/scene_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scene_manager.cpp.o
+.PHONY : src/game/scene/scene_manager.cpp.o
+
+src/game/scene/scene_manager.i: src/game/scene/scene_manager.cpp.i
+.PHONY : src/game/scene/scene_manager.i
+
+# target to preprocess a source file
+src/game/scene/scene_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scene_manager.cpp.i
+.PHONY : src/game/scene/scene_manager.cpp.i
+
+src/game/scene/scene_manager.s: src/game/scene/scene_manager.cpp.s
+.PHONY : src/game/scene/scene_manager.s
+
+# target to generate assembly for a file
+src/game/scene/scene_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scene_manager.cpp.s
+.PHONY : src/game/scene/scene_manager.cpp.s
+
+src/game/scene/scenes/default_scene.o: src/game/scene/scenes/default_scene.cpp.o
+.PHONY : src/game/scene/scenes/default_scene.o
+
+# target to build an object file
+src/game/scene/scenes/default_scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene.cpp.o
+.PHONY : src/game/scene/scenes/default_scene.cpp.o
+
+src/game/scene/scenes/default_scene.i: src/game/scene/scenes/default_scene.cpp.i
+.PHONY : src/game/scene/scenes/default_scene.i
+
+# target to preprocess a source file
+src/game/scene/scenes/default_scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene.cpp.i
+.PHONY : src/game/scene/scenes/default_scene.cpp.i
+
+src/game/scene/scenes/default_scene.s: src/game/scene/scenes/default_scene.cpp.s
+.PHONY : src/game/scene/scenes/default_scene.s
+
+# target to generate assembly for a file
+src/game/scene/scenes/default_scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene.cpp.s
+.PHONY : src/game/scene/scenes/default_scene.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -600,15 +721,30 @@ help:
 	@echo "... src/game/VGE_frame_info.o"
 	@echo "... src/game/VGE_frame_info.i"
 	@echo "... src/game/VGE_frame_info.s"
-	@echo "... src/game/VGE_game_object.o"
-	@echo "... src/game/VGE_game_object.i"
-	@echo "... src/game/VGE_game_object.s"
 	@echo "... src/game/VGE_mesh.o"
 	@echo "... src/game/VGE_mesh.i"
 	@echo "... src/game/VGE_mesh.s"
+	@echo "... src/game/components/component.o"
+	@echo "... src/game/components/component.i"
+	@echo "... src/game/components/component.s"
+	@echo "... src/game/components/component_manager.o"
+	@echo "... src/game/components/component_manager.i"
+	@echo "... src/game/components/component_manager.s"
+	@echo "... src/game/game_object.o"
+	@echo "... src/game/game_object.i"
+	@echo "... src/game/game_object.s"
 	@echo "... src/game/keyboard_controller.o"
 	@echo "... src/game/keyboard_controller.i"
 	@echo "... src/game/keyboard_controller.s"
+	@echo "... src/game/scene/scene.o"
+	@echo "... src/game/scene/scene.i"
+	@echo "... src/game/scene/scene.s"
+	@echo "... src/game/scene/scene_manager.o"
+	@echo "... src/game/scene/scene_manager.i"
+	@echo "... src/game/scene/scene_manager.s"
+	@echo "... src/game/scene/scenes/default_scene.o"
+	@echo "... src/game/scene/scenes/default_scene.i"
+	@echo "... src/game/scene/scenes/default_scene.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -626,6 +762,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
