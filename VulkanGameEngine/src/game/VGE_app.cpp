@@ -4,7 +4,6 @@
 #include "VGE_default_render_system.hpp"
 #include "VGE_mesh.hpp"
 #include "VGE_camera.hpp"
-#include "keyboard_controller.hpp"
 #include "VGE_buffer.hpp"
 #include "VGE_frame_info.hpp"
 #include "component.hpp"
@@ -19,7 +18,7 @@ namespace VGE
     struct GlobalUBO
     {
         alignas(16) glm::mat4 projectionViewMatrix{1.0f};
-        alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{1.0f, 1.0f, -1.0f});
+        alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{1.0f, -5.0f, 5.0f});
     };
 
     VgeApp::VgeApp(VgeEngine& engine)
