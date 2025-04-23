@@ -3,7 +3,6 @@
 #include "VGE_app.hpp"
 #include "VGE_default_render_system.hpp"
 #include "VGE_mesh.hpp"
-#include "VGE_camera.hpp"
 #include "VGE_buffer.hpp"
 #include "VGE_frame_info.hpp"
 #include "component.hpp"
@@ -11,6 +10,7 @@
 #include "scene.hpp"
 #include "scene_manager.hpp"
 #include "default_scene.hpp"
+#include "default_scene_2.hpp"
 #include "gui_manager.hpp"
 
 
@@ -46,7 +46,12 @@ namespace VGE
         // idk if this is necessary
         // but i'll figure it out later
         GET_SINGLETON(game::ComponentManager);
+
+        // Make Scenes
         GET_SINGLETON(game::SceneManager)->makeScene<game::DefaultScene>(*this);
+        GET_SINGLETON(game::SceneManager)->makeScene<game::DefaultScene2>(*this);
+
+
         game::GuiInitInfo guiInitInfo{};
         guiInitInfo.instance = Engine.getDevice().getInstance();
         guiInitInfo.physicalDevice = ImGui_ImplVulkanH_SelectPhysicalDevice(Engine.getDevice().getInstance());
@@ -137,8 +142,7 @@ namespace VGE
                 };
                 Engine.getRenderer().beginSwapChainRenderPass(commandBuffer);
 
-                bool showDemoWindow = true;
-                ImGui::ShowDemoWindow(&showDemoWindow);
+                drawAppUI();
 
                 GET_SINGLETON(game::SceneManager)->Render(frameInfo, renderSystem);
                 GET_SINGLETON(game::GuiManager)->EndFrame(commandBuffer);
@@ -154,6 +158,29 @@ namespace VGE
         DESTROY_SINGLETON(game::GuiManager);
         DESTROY_SINGLETON(game::SceneManager);
         DESTROY_SINGLETON(game::ComponentManager);
+    }
+
+    void VgeApp::drawAppUI()
+    {
+        bool showDemoWindow = true;
+        //ImGui::ShowDemoWindow(&showDemoWindow);
+
+        if (ImGui::BeginMainMenuBar())
+        {
+            if (ImGui::BeginMenu("Scenes"))
+            {
+                if (ImGui::MenuItem("Default Scene"))
+                {
+                    GET_SINGLETON(game::SceneManager)->setActiveScene<game::DefaultScene>();
+                }
+                if (ImGui::MenuItem("Default Scene 2"))
+                {
+                    GET_SINGLETON(game::SceneManager)->setActiveScene<game::DefaultScene2>();
+                }
+                ImGui::EndMenu();
+            }
+            ImGui::EndMainMenuBar();
+        }
     }
 
     // temporary helper function, creates a 1x1x1 cube centered at offset

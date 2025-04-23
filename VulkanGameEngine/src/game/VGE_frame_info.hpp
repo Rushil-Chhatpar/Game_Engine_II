@@ -1,7 +1,5 @@
 #pragma once
 
-#include "VGE_camera.hpp"
-
 #include <vulkan/vulkan.h>
 
 #include "component.hpp"

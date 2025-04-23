@@ -13,9 +13,9 @@ namespace game
     
     void SceneManager::Awake()
     {
-        if (_activeScene)
+        for(const auto& scene : _scenes)
         {
-            _activeScene->Awake();
+            scene->Awake();
         }
     }
 

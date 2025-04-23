@@ -28,6 +28,7 @@ namespace VGE
 
         private:        
         
+        void drawAppUI();
         std::unique_ptr<VgeMesh> createCubeModel(VgeDevice& device, glm::vec3 offset);
         
     public:

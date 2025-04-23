@@ -1,6 +1,5 @@
 #pragma once
 
-#include "VGE_camera.hpp"
 #include "VGE_device.hpp"
 #include "VGE_pipeline.hpp"
 #include "game_object.hpp"
