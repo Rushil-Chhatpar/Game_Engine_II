@@ -42,17 +42,11 @@ namespace VGE
 
     void VgeApp::run()
     {
-        // Awake all components
+        // Awake all scenes, gameobjects, and components
         GET_SINGLETON(game::SceneManager)->Awake();
         GET_SINGLETON(game::ComponentManager)->Awake();
 
-
-        auto minOffsetAlignment = std::lcm(
-            Engine.getDevice().properties.limits.minUniformBufferOffsetAlignment,
-            Engine.getDevice().properties.limits.nonCoherentAtomSize);
-
-        std::cout << "minOffsetAlignment: " << minOffsetAlignment << std::endl;
-
+        // Create Uniform Buffer Objects
         std::vector<std::unique_ptr<VgeBuffer>> uboBuffers(VgeSwapChain::MAX_FRAMES_IN_FLIGHT);
         for (int i = 0; i < VgeSwapChain::MAX_FRAMES_IN_FLIGHT; i++)
         {
