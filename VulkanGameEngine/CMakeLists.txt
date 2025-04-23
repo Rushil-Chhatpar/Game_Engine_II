@@ -45,7 +45,19 @@ find_package(glfw3 REQUIRED)
 # Add source files
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS src/*.cpp src/*.c src/*.h)
 
+# ImGui source files
+set(IMGUI_SRC
+    ${CMAKE_SOURCE_DIR}/include/imgui/imgui.cpp
+    ${CMAKE_SOURCE_DIR}/include/imgui/imgui_draw.cpp
+    ${CMAKE_SOURCE_DIR}/include/imgui/imgui_tables.cpp
+    ${CMAKE_SOURCE_DIR}/include/imgui/imgui_widgets.cpp
+    ${CMAKE_SOURCE_DIR}/include/imgui/imgui_demo.cpp
+    ${CMAKE_SOURCE_DIR}/include/imgui/backends/imgui_impl_glfw.cpp
+    ${CMAKE_SOURCE_DIR}/include/imgui/backends/imgui_impl_vulkan.cpp
+)
+
 set(SOURCES ${SRC_FILES})
+list(APPEND SOURCES ${IMGUI_SRC})
 
 # Collect all include directories under src/
 file(GLOB_RECURSE SRC_SUBDIRS LIST_DIRECTORIES true CONFIGURE_DEPENDS ${CMAKE_SOURCE_DIR}/src/*)
@@ -59,6 +71,12 @@ endforeach()
 # Add include/ and assets/ as well
 list(APPEND INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include)
 list(APPEND INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/assets)
+
+# Include ImGui headers
+list(APPEND INCLUDE_DIRS
+    ${CMAKE_SOURCE_DIR}/include/imgui
+    ${CMAKE_SOURCE_DIR}/include/imgui/backends
+)
 
 # Create the executable
 add_executable(${PROJECT_TARGET_NAME} ${SOURCES})

@@ -98,4 +98,11 @@ CMakeFiles/VGE.dir/src/engine/VGE_renderer.cpp.o: \
  /usr/include/glm/gtx/dual_quaternion.hpp \
  /usr/include/glm/gtx/dual_quaternion.inl /usr/include/glm/gtx/hash.inl \
  /usr/include/c++/13/cassert /usr/include/assert.h \
- /usr/include/features.h
+ /usr/include/features.h \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imgui.h \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imconfig.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h /usr/include/string.h \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_glfw.h \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_vulkan.h

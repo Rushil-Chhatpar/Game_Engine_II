@@ -106,10 +106,16 @@ CMakeFiles/VGE.dir/src/game/VGE_app.cpp.o: \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_descriptors.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_engine.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.hpp \
- /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_camera.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_pipeline.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.hpp \
- /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/keyboard_controller.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene_manager.hpp \
- /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes/default_scene.hpp
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes/default_scene.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes/default_scene_2.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imgui.h \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imconfig.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h /usr/include/string.h \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_glfw.h \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_vulkan.h

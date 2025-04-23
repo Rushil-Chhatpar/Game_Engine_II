@@ -145,6 +145,174 @@ cmake_pch.hxx.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/cmake_pch.hxx.s
 .PHONY : cmake_pch.hxx.s
 
+include/imgui/backends/imgui_impl_glfw.o: include/imgui/backends/imgui_impl_glfw.cpp.o
+.PHONY : include/imgui/backends/imgui_impl_glfw.o
+
+# target to build an object file
+include/imgui/backends/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/backends/imgui_impl_glfw.cpp.o
+.PHONY : include/imgui/backends/imgui_impl_glfw.cpp.o
+
+include/imgui/backends/imgui_impl_glfw.i: include/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : include/imgui/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+include/imgui/backends/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : include/imgui/backends/imgui_impl_glfw.cpp.i
+
+include/imgui/backends/imgui_impl_glfw.s: include/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : include/imgui/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+include/imgui/backends/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : include/imgui/backends/imgui_impl_glfw.cpp.s
+
+include/imgui/backends/imgui_impl_vulkan.o: include/imgui/backends/imgui_impl_vulkan.cpp.o
+.PHONY : include/imgui/backends/imgui_impl_vulkan.o
+
+# target to build an object file
+include/imgui/backends/imgui_impl_vulkan.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/backends/imgui_impl_vulkan.cpp.o
+.PHONY : include/imgui/backends/imgui_impl_vulkan.cpp.o
+
+include/imgui/backends/imgui_impl_vulkan.i: include/imgui/backends/imgui_impl_vulkan.cpp.i
+.PHONY : include/imgui/backends/imgui_impl_vulkan.i
+
+# target to preprocess a source file
+include/imgui/backends/imgui_impl_vulkan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/backends/imgui_impl_vulkan.cpp.i
+.PHONY : include/imgui/backends/imgui_impl_vulkan.cpp.i
+
+include/imgui/backends/imgui_impl_vulkan.s: include/imgui/backends/imgui_impl_vulkan.cpp.s
+.PHONY : include/imgui/backends/imgui_impl_vulkan.s
+
+# target to generate assembly for a file
+include/imgui/backends/imgui_impl_vulkan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/backends/imgui_impl_vulkan.cpp.s
+.PHONY : include/imgui/backends/imgui_impl_vulkan.cpp.s
+
+include/imgui/imgui.o: include/imgui/imgui.cpp.o
+.PHONY : include/imgui/imgui.o
+
+# target to build an object file
+include/imgui/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui.cpp.o
+.PHONY : include/imgui/imgui.cpp.o
+
+include/imgui/imgui.i: include/imgui/imgui.cpp.i
+.PHONY : include/imgui/imgui.i
+
+# target to preprocess a source file
+include/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui.cpp.i
+.PHONY : include/imgui/imgui.cpp.i
+
+include/imgui/imgui.s: include/imgui/imgui.cpp.s
+.PHONY : include/imgui/imgui.s
+
+# target to generate assembly for a file
+include/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui.cpp.s
+.PHONY : include/imgui/imgui.cpp.s
+
+include/imgui/imgui_demo.o: include/imgui/imgui_demo.cpp.o
+.PHONY : include/imgui/imgui_demo.o
+
+# target to build an object file
+include/imgui/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_demo.cpp.o
+.PHONY : include/imgui/imgui_demo.cpp.o
+
+include/imgui/imgui_demo.i: include/imgui/imgui_demo.cpp.i
+.PHONY : include/imgui/imgui_demo.i
+
+# target to preprocess a source file
+include/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_demo.cpp.i
+.PHONY : include/imgui/imgui_demo.cpp.i
+
+include/imgui/imgui_demo.s: include/imgui/imgui_demo.cpp.s
+.PHONY : include/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+include/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_demo.cpp.s
+.PHONY : include/imgui/imgui_demo.cpp.s
+
+include/imgui/imgui_draw.o: include/imgui/imgui_draw.cpp.o
+.PHONY : include/imgui/imgui_draw.o
+
+# target to build an object file
+include/imgui/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_draw.cpp.o
+.PHONY : include/imgui/imgui_draw.cpp.o
+
+include/imgui/imgui_draw.i: include/imgui/imgui_draw.cpp.i
+.PHONY : include/imgui/imgui_draw.i
+
+# target to preprocess a source file
+include/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_draw.cpp.i
+.PHONY : include/imgui/imgui_draw.cpp.i
+
+include/imgui/imgui_draw.s: include/imgui/imgui_draw.cpp.s
+.PHONY : include/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+include/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_draw.cpp.s
+.PHONY : include/imgui/imgui_draw.cpp.s
+
+include/imgui/imgui_tables.o: include/imgui/imgui_tables.cpp.o
+.PHONY : include/imgui/imgui_tables.o
+
+# target to build an object file
+include/imgui/imgui_tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_tables.cpp.o
+.PHONY : include/imgui/imgui_tables.cpp.o
+
+include/imgui/imgui_tables.i: include/imgui/imgui_tables.cpp.i
+.PHONY : include/imgui/imgui_tables.i
+
+# target to preprocess a source file
+include/imgui/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_tables.cpp.i
+.PHONY : include/imgui/imgui_tables.cpp.i
+
+include/imgui/imgui_tables.s: include/imgui/imgui_tables.cpp.s
+.PHONY : include/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+include/imgui/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_tables.cpp.s
+.PHONY : include/imgui/imgui_tables.cpp.s
+
+include/imgui/imgui_widgets.o: include/imgui/imgui_widgets.cpp.o
+.PHONY : include/imgui/imgui_widgets.o
+
+# target to build an object file
+include/imgui/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_widgets.cpp.o
+.PHONY : include/imgui/imgui_widgets.cpp.o
+
+include/imgui/imgui_widgets.i: include/imgui/imgui_widgets.cpp.i
+.PHONY : include/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+include/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_widgets.cpp.i
+.PHONY : include/imgui/imgui_widgets.cpp.i
+
+include/imgui/imgui_widgets.s: include/imgui/imgui_widgets.cpp.s
+.PHONY : include/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+include/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/include/imgui/imgui_widgets.cpp.s
+.PHONY : include/imgui/imgui_widgets.cpp.s
+
 src/engine/VGE_buffer.o: src/engine/VGE_buffer.cpp.o
 .PHONY : src/engine/VGE_buffer.o
 
@@ -361,30 +529,6 @@ src/game/VGE_app.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_app.cpp.s
 .PHONY : src/game/VGE_app.cpp.s
 
-src/game/VGE_camera.o: src/game/VGE_camera.cpp.o
-.PHONY : src/game/VGE_camera.o
-
-# target to build an object file
-src/game/VGE_camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_camera.cpp.o
-.PHONY : src/game/VGE_camera.cpp.o
-
-src/game/VGE_camera.i: src/game/VGE_camera.cpp.i
-.PHONY : src/game/VGE_camera.i
-
-# target to preprocess a source file
-src/game/VGE_camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_camera.cpp.i
-.PHONY : src/game/VGE_camera.cpp.i
-
-src/game/VGE_camera.s: src/game/VGE_camera.cpp.s
-.PHONY : src/game/VGE_camera.s
-
-# target to generate assembly for a file
-src/game/VGE_camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_camera.cpp.s
-.PHONY : src/game/VGE_camera.cpp.s
-
 src/game/VGE_default_render_system.o: src/game/VGE_default_render_system.cpp.o
 .PHONY : src/game/VGE_default_render_system.o
 
@@ -529,29 +673,29 @@ src/game/game_object.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/game_object.cpp.s
 .PHONY : src/game/game_object.cpp.s
 
-src/game/keyboard_controller.o: src/game/keyboard_controller.cpp.o
-.PHONY : src/game/keyboard_controller.o
+src/game/gui/gui_manager.o: src/game/gui/gui_manager.cpp.o
+.PHONY : src/game/gui/gui_manager.o
 
 # target to build an object file
-src/game/keyboard_controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/keyboard_controller.cpp.o
-.PHONY : src/game/keyboard_controller.cpp.o
+src/game/gui/gui_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/gui/gui_manager.cpp.o
+.PHONY : src/game/gui/gui_manager.cpp.o
 
-src/game/keyboard_controller.i: src/game/keyboard_controller.cpp.i
-.PHONY : src/game/keyboard_controller.i
+src/game/gui/gui_manager.i: src/game/gui/gui_manager.cpp.i
+.PHONY : src/game/gui/gui_manager.i
 
 # target to preprocess a source file
-src/game/keyboard_controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/keyboard_controller.cpp.i
-.PHONY : src/game/keyboard_controller.cpp.i
+src/game/gui/gui_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/gui/gui_manager.cpp.i
+.PHONY : src/game/gui/gui_manager.cpp.i
 
-src/game/keyboard_controller.s: src/game/keyboard_controller.cpp.s
-.PHONY : src/game/keyboard_controller.s
+src/game/gui/gui_manager.s: src/game/gui/gui_manager.cpp.s
+.PHONY : src/game/gui/gui_manager.s
 
 # target to generate assembly for a file
-src/game/keyboard_controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/keyboard_controller.cpp.s
-.PHONY : src/game/keyboard_controller.cpp.s
+src/game/gui/gui_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/gui/gui_manager.cpp.s
+.PHONY : src/game/gui/gui_manager.cpp.s
 
 src/game/scene/scene.o: src/game/scene/scene.cpp.o
 .PHONY : src/game/scene/scene.o
@@ -625,6 +769,30 @@ src/game/scene/scenes/default_scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene.cpp.s
 .PHONY : src/game/scene/scenes/default_scene.cpp.s
 
+src/game/scene/scenes/default_scene_2.o: src/game/scene/scenes/default_scene_2.cpp.o
+.PHONY : src/game/scene/scenes/default_scene_2.o
+
+# target to build an object file
+src/game/scene/scenes/default_scene_2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene_2.cpp.o
+.PHONY : src/game/scene/scenes/default_scene_2.cpp.o
+
+src/game/scene/scenes/default_scene_2.i: src/game/scene/scenes/default_scene_2.cpp.i
+.PHONY : src/game/scene/scenes/default_scene_2.i
+
+# target to preprocess a source file
+src/game/scene/scenes/default_scene_2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene_2.cpp.i
+.PHONY : src/game/scene/scenes/default_scene_2.cpp.i
+
+src/game/scene/scenes/default_scene_2.s: src/game/scene/scenes/default_scene_2.cpp.s
+.PHONY : src/game/scene/scenes/default_scene_2.s
+
+# target to generate assembly for a file
+src/game/scene/scenes/default_scene_2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene_2.cpp.s
+.PHONY : src/game/scene/scenes/default_scene_2.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -685,6 +853,27 @@ help:
 	@echo "... cmake_pch.hxx.gch"
 	@echo "... cmake_pch.hxx.i"
 	@echo "... cmake_pch.hxx.s"
+	@echo "... include/imgui/backends/imgui_impl_glfw.o"
+	@echo "... include/imgui/backends/imgui_impl_glfw.i"
+	@echo "... include/imgui/backends/imgui_impl_glfw.s"
+	@echo "... include/imgui/backends/imgui_impl_vulkan.o"
+	@echo "... include/imgui/backends/imgui_impl_vulkan.i"
+	@echo "... include/imgui/backends/imgui_impl_vulkan.s"
+	@echo "... include/imgui/imgui.o"
+	@echo "... include/imgui/imgui.i"
+	@echo "... include/imgui/imgui.s"
+	@echo "... include/imgui/imgui_demo.o"
+	@echo "... include/imgui/imgui_demo.i"
+	@echo "... include/imgui/imgui_demo.s"
+	@echo "... include/imgui/imgui_draw.o"
+	@echo "... include/imgui/imgui_draw.i"
+	@echo "... include/imgui/imgui_draw.s"
+	@echo "... include/imgui/imgui_tables.o"
+	@echo "... include/imgui/imgui_tables.i"
+	@echo "... include/imgui/imgui_tables.s"
+	@echo "... include/imgui/imgui_widgets.o"
+	@echo "... include/imgui/imgui_widgets.i"
+	@echo "... include/imgui/imgui_widgets.s"
 	@echo "... src/engine/VGE_buffer.o"
 	@echo "... src/engine/VGE_buffer.i"
 	@echo "... src/engine/VGE_buffer.s"
@@ -712,9 +901,6 @@ help:
 	@echo "... src/game/VGE_app.o"
 	@echo "... src/game/VGE_app.i"
 	@echo "... src/game/VGE_app.s"
-	@echo "... src/game/VGE_camera.o"
-	@echo "... src/game/VGE_camera.i"
-	@echo "... src/game/VGE_camera.s"
 	@echo "... src/game/VGE_default_render_system.o"
 	@echo "... src/game/VGE_default_render_system.i"
 	@echo "... src/game/VGE_default_render_system.s"
@@ -733,9 +919,9 @@ help:
 	@echo "... src/game/game_object.o"
 	@echo "... src/game/game_object.i"
 	@echo "... src/game/game_object.s"
-	@echo "... src/game/keyboard_controller.o"
-	@echo "... src/game/keyboard_controller.i"
-	@echo "... src/game/keyboard_controller.s"
+	@echo "... src/game/gui/gui_manager.o"
+	@echo "... src/game/gui/gui_manager.i"
+	@echo "... src/game/gui/gui_manager.s"
 	@echo "... src/game/scene/scene.o"
 	@echo "... src/game/scene/scene.i"
 	@echo "... src/game/scene/scene.s"
@@ -745,6 +931,9 @@ help:
 	@echo "... src/game/scene/scenes/default_scene.o"
 	@echo "... src/game/scene/scenes/default_scene.i"
 	@echo "... src/game/scene/scenes/default_scene.s"
+	@echo "... src/game/scene/scenes/default_scene_2.o"
+	@echo "... src/game/scene/scenes/default_scene_2.i"
+	@echo "... src/game/scene/scenes/default_scene_2.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

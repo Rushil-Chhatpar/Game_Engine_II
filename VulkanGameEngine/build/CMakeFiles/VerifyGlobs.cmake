@@ -23,17 +23,17 @@ set(OLD_GLOB
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_swap_chain.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_app.cpp"
-  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_camera.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_mesh.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component_manager.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.cpp"
-  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/keyboard_controller.cpp"
+  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene_manager.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes/default_scene.cpp"
+  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes/default_scene_2.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/main.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/pch.cpp"
   )
@@ -52,7 +52,7 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/cmake.verify_globs")
 endif()
 
-# SRC_SUBDIRS at CMakeLists.txt:51 (file)
+# SRC_SUBDIRS at CMakeLists.txt:63 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES true "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/*")
 set(OLD_GLOB
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine"
@@ -75,8 +75,6 @@ set(OLD_GLOB
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_app.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_app.hpp"
-  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_camera.cpp"
-  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_camera.hpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.hpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.cpp"
@@ -90,8 +88,9 @@ set(OLD_GLOB
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component_manager.hpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.hpp"
-  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/keyboard_controller.cpp"
-  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/keyboard_controller.hpp"
+  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui"
+  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.cpp"
+  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.hpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.hpp"
@@ -100,6 +99,8 @@ set(OLD_GLOB
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes/default_scene.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes/default_scene.hpp"
+  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes/default_scene_2.cpp"
+  "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes/default_scene_2.hpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/main.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/pch.cpp"
   "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/pch.h"

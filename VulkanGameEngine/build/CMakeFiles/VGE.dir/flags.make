@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/assets
+CXX_INCLUDES = -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/assets -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui -I/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends
 
 CXX_FLAGS = -std=gnu++17
 
@@ -28,8 +28,6 @@ CXX_FLAGS = -std=gnu++17
 
 # PCH options: CMakeFiles/VGE.dir/src/game/VGE_app.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
 
-# PCH options: CMakeFiles/VGE.dir/src/game/VGE_camera.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
-
 # PCH options: CMakeFiles/VGE.dir/src/game/VGE_default_render_system.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
 
 # PCH options: CMakeFiles/VGE.dir/src/game/VGE_frame_info.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
@@ -42,7 +40,7 @@ CXX_FLAGS = -std=gnu++17
 
 # PCH options: CMakeFiles/VGE.dir/src/game/game_object.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
 
-# PCH options: CMakeFiles/VGE.dir/src/game/keyboard_controller.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
+# PCH options: CMakeFiles/VGE.dir/src/game/gui/gui_manager.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
 
 # PCH options: CMakeFiles/VGE.dir/src/game/scene/scene.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
 
@@ -50,7 +48,23 @@ CXX_FLAGS = -std=gnu++17
 
 # PCH options: CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
 
+# PCH options: CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene_2.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
+
 # PCH options: CMakeFiles/VGE.dir/src/main.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
 
 # PCH options: CMakeFiles/VGE.dir/src/pch.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/VGE.dir/include/imgui/imgui.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/VGE.dir/include/imgui/imgui_draw.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/VGE.dir/include/imgui/imgui_tables.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/VGE.dir/include/imgui/imgui_widgets.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/VGE.dir/include/imgui/imgui_demo.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/VGE.dir/include/imgui/backends/imgui_impl_glfw.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/VGE.dir/include/imgui/backends/imgui_impl_vulkan.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/CMakeFiles/VGE.dir/cmake_pch.hxx
 

@@ -2,7 +2,6 @@ CMakeFiles/VGE.dir/src/game/VGE_default_render_system.cpp.o: \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.cpp \
  /usr/include/stdc-predef.h \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.hpp \
- /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_camera.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_device.hpp \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.hpp \
  /usr/include/GLFW/glfw3.h \

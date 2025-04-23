@@ -2,7 +2,6 @@ CMakeFiles/VGE.dir/src/game/VGE_frame_info.cpp.o: \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.cpp \
  /usr/include/stdc-predef.h \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.hpp \
- /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_camera.hpp \
  /usr/include/vulkan/vulkan.h /usr/include/vulkan/vk_platform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h \
