@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "VGE_renderer.hpp"
-
+#include "gui_manager.hpp"
 
 
 namespace VGE

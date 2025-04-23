@@ -39,6 +39,9 @@ class VgeDevice {
   VgeDevice(VgeDevice &&) = delete;
   VgeDevice &operator=(VgeDevice &&) = delete;
 
+  VkInstance getInstance() { return instance; }
+  VkPhysicalDevice getPhysicalDevice() { return physicalDevice; }
+
   VkCommandPool getCommandPool() { return commandPool; }
   VkDevice device() { return device_; }
   VkSurfaceKHR surface() { return surface_; }

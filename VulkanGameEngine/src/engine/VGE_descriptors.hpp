@@ -56,6 +56,8 @@ namespace VGE
 
             std::unique_ptr<VgeDescriptorPool> build();
 
+            uint32_t poolSizeCount() { return static_cast<uint32_t>(_poolSizes.size()); } 
+
         private:
             VgeDevice& _device;
             std::vector<VkDescriptorPoolSize> _poolSizes{};
@@ -72,6 +74,8 @@ namespace VGE
         bool allocateDescriptorSet(const VkDescriptorSetLayout descriptorSetLayout, VkDescriptorSet& descriptor) const;
         void freeDescriptors(std::vector<VkDescriptorSet>& descriptors) const;
         void resetPool();
+
+        VkDescriptorPool getPool() { return _descriptorPool; }
 
     private:
         VgeDevice& _device;

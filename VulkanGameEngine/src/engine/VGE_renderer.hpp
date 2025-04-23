@@ -42,6 +42,8 @@ namespace VGE
             return _currentFrameIndex;
         }
 
+        uint32_t getSwapChainImageCount() { return _swapChain->imageCount(); }
+
     private:
         void createCommandBuffers();
         void freeCommandBuffers();

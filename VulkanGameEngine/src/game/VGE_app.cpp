@@ -11,6 +11,7 @@
 #include "scene.hpp"
 #include "scene_manager.hpp"
 #include "default_scene.hpp"
+#include "gui_manager.hpp"
 
 
 namespace VGE
@@ -18,15 +19,27 @@ namespace VGE
     struct GlobalUBO
     {
         alignas(16) glm::mat4 projectionViewMatrix{1.0f};
-        alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{1.0f, -5.0f, 5.0f});
+        alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{1.0f, -2.0f, 2.0f});
     };
 
     VgeApp::VgeApp(VgeEngine& engine)
         : Engine(engine)
     {
         _globalPool = VgeDescriptorPool::Builder(Engine.getDevice())
-            .setMaxSets(VgeSwapChain::MAX_FRAMES_IN_FLIGHT)
-            .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VgeSwapChain::MAX_FRAMES_IN_FLIGHT)
+            .addPoolSize(VK_DESCRIPTOR_TYPE_SAMPLER, 1000) // For ImGui
+            .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 1000) // For ImGui
+            .addPoolSize(VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, 1000) // For ImGui
+            .addPoolSize(VK_DESCRIPTOR_TYPE_STORAGE_IMAGE, 1000) // For ImGui
+            .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER, 1000) // For ImGui
+            .addPoolSize(VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER, 1000) // For ImGui
+            .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 1000) // For ImGui
+            .addPoolSize(VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 1000) // For ImGui
+            .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC, 1000) // For ImGui
+            .addPoolSize(VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC, 1000) // For ImGui
+            .addPoolSize(VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT, 1000) // For ImGui
+            //.addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VgeSwapChain::MAX_FRAMES_IN_FLIGHT)
+            .setMaxSets(1000 * 11)
+            .setPoolFlags(VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT)
             .build();
             
         // initialize the Managers
@@ -34,6 +47,17 @@ namespace VGE
         // but i'll figure it out later
         GET_SINGLETON(game::ComponentManager);
         GET_SINGLETON(game::SceneManager)->makeScene<game::DefaultScene>(*this);
+        game::GuiInitInfo guiInitInfo{};
+        guiInitInfo.instance = Engine.getDevice().getInstance();
+        guiInitInfo.physicalDevice = ImGui_ImplVulkanH_SelectPhysicalDevice(Engine.getDevice().getInstance());
+        guiInitInfo.logicalDevice = Engine.getDevice().device();
+        guiInitInfo.queueFamily = ImGui_ImplVulkanH_SelectQueueFamilyIndex(Engine.getDevice().getPhysicalDevice());
+        guiInitInfo.queue = Engine.getDevice().graphicsQueue();
+        guiInitInfo.descriptorPool = _globalPool->getPool();
+        guiInitInfo.renderPass = Engine.getRenderer().getSwapChainRenderPass();
+        guiInitInfo.minImageCount = Engine.getDevice().getSwapChainSupport().capabilities.minImageCount;
+        guiInitInfo.imageCount = Engine.getRenderer().getSwapChainImageCount();
+        GET_SINGLETON(game::GuiManager)->Init(Engine.getWindow().getGLFWwindow(), guiInitInfo);
     }
 
     VgeApp::~VgeApp()
@@ -81,6 +105,8 @@ namespace VGE
             auto deltaTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
             currentTime = newTime;
 
+            GET_SINGLETON(game::GuiManager)->BeginFrame();
+
             GET_SINGLETON(game::ComponentManager)->Update(deltaTime);
             GET_SINGLETON(game::SceneManager)->Update(deltaTime);
 
@@ -110,7 +136,12 @@ namespace VGE
                     .globalDescriptorSet = globalDescriptorSets[frameIndex],
                 };
                 Engine.getRenderer().beginSwapChainRenderPass(commandBuffer);
+
+                bool showDemoWindow = true;
+                ImGui::ShowDemoWindow(&showDemoWindow);
+
                 GET_SINGLETON(game::SceneManager)->Render(frameInfo, renderSystem);
+                GET_SINGLETON(game::GuiManager)->EndFrame(commandBuffer);
                 Engine.getRenderer().endSwapChainRenderPass(commandBuffer);
                 Engine.getRenderer().endFrame();
             }
@@ -119,6 +150,8 @@ namespace VGE
         vkDeviceWaitIdle(Engine.getDevice().device());
 
         // cleanup
+        GET_SINGLETON(game::GuiManager)->Cleanup();
+        DESTROY_SINGLETON(game::GuiManager);
         DESTROY_SINGLETON(game::SceneManager);
         DESTROY_SINGLETON(game::ComponentManager);
     }

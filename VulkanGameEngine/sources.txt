@@ -17,5 +17,13 @@ src/game/scene/scenes/default_scene.cpp
 src/game/scene/scene_manager.cpp
 src/game/scene/scene.cpp
 src/game/VGE_mesh.cpp
+src/game/gui/gui_manager.cpp
 src/game/VGE_frame_info.cpp
 src/main.cpp
+include/imgui/imgui_widgets.cpp
+include/imgui/imgui.cpp
+include/imgui/backends/imgui_impl_glfw.cpp
+include/imgui/backends/imgui_impl_vulkan.cpp
+include/imgui/imgui_demo.cpp
+include/imgui/imgui_tables.cpp
+include/imgui/imgui_draw.cpp
