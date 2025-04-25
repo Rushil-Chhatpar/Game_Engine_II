@@ -19,7 +19,7 @@ layout(push_constant) uniform Push
     mat4 normalMatrix;
 } push;
 
-const float AMBIENT_LIGHT_INTENSITY = 0.02;
+const float AMBIENT_LIGHT_INTENSITY = 0.2;
 
 void main()
 {
