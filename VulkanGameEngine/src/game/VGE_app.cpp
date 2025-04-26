@@ -102,6 +102,8 @@ namespace VGE
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
+        glm::vec3 lightDirection{1.0f, -2.0f, 2.0f};
+
         while (!Engine.getWindow().shouldClose())
         {
             glfwPollEvents();
@@ -124,6 +126,7 @@ namespace VGE
                 // update objects in memory
                 GlobalUBO ubo{};
                 ubo.projectionViewMatrix = camera->getProjectionMatrix() * camera->getViewMatrix();
+                ubo.lightDirection = glm::normalize(lightDirection);
                 uboBuffers[frameIndex]->writeToBuffer(&ubo);
                 uboBuffers[frameIndex]->flush();
 
@@ -141,6 +144,10 @@ namespace VGE
                     .globalDescriptorSet = globalDescriptorSets[frameIndex],
                 };
                 Engine.getRenderer().beginSwapChainRenderPass(commandBuffer);
+
+                ImGui::Begin("Light");
+                ImGui::DragFloat3("Light Direction", &lightDirection.x);
+                ImGui::End();
 
                 drawAppUI();
 

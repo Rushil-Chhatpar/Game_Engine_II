@@ -32,7 +32,7 @@ void main()
     // Only works if the scale is uniform (sx == sy == sz)
     //vec3 normalWorldSpace = normalize(mat3(push.modelMatrix) * inNormal);
 
-    vec3 normalWorldSpace = normalize(vec3(push.normalMatrix) * inNormal);
+    vec3 normalWorldSpace = normalize(mat3(push.normalMatrix) * inNormal);
 
     // Calculate the light intensity based on the normal and the direction to the light
     // The dot product gives us the cosine of the angle between the normal and the light direction
