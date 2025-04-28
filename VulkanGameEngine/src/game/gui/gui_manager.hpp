@@ -33,5 +33,7 @@ namespace game
 
         void BeginFrame();
         void EndFrame(VkCommandBuffer commandBuffer);
+
+        void RenderMainFrame();
     };
 }

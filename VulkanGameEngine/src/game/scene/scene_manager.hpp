@@ -21,6 +21,8 @@ namespace game
         void Awake();
         void Update(float deltaTime);
         void Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem& renderSystem);
+
+        void RenderGUIonActiveScene();
         
         // get active scene
         Scene* getActiveScene() const
@@ -41,6 +43,8 @@ namespace game
             std::unique_ptr<T> scene = std::make_unique<T>(app, std::forward<Args>(args)...);
             T* ptr = scene.get();
             _scenes.emplace_back(std::move(scene));
+            if(_activeScene)
+                _activeScene->Deactivate();
             _activeScene = ptr;
             return ptr;
         }
@@ -65,7 +69,9 @@ namespace game
             {
                 if (T* casted = dynamic_cast<T*>(scene.get()))
                 {
+                    _activeScene->Deactivate();
                     _activeScene = casted;
+                    _activeScene->Activate();
                     return;
                 }
             }
@@ -73,7 +79,7 @@ namespace game
 
     private:
         std::vector<std::unique_ptr<Scene>> _scenes;
-        Scene* _activeScene;
+        Scene* _activeScene = nullptr;
 
     };
 }

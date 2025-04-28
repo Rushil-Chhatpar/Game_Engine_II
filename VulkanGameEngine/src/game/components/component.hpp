@@ -20,8 +20,12 @@ namespace game
         virtual void awake() = 0;
         virtual void update(float deltaTime) = 0;
 
+        void setActive(bool isActive) { _isActive = isActive; }
+        bool isActive() const { return _isActive; }
+
     protected:
         GameObject& _owner;
+        bool _isActive = true;
     };
 
     class TransformComponent : public Component

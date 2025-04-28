@@ -34,4 +34,9 @@ namespace game
             _activeScene->Render(frameInfo, renderSystem);
         }
     }
+
+    void SceneManager::RenderGUIonActiveScene()
+    {
+
+    }
 }

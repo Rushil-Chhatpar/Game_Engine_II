@@ -51,4 +51,23 @@ namespace game
         ImDrawData* draw_data = ImGui::GetDrawData();
         ImGui_ImplVulkan_RenderDrawData(draw_data, commandBuffer);
     }
+
+    void GuiManager::RenderMainFrame()
+    {
+        // Setup a main window with no frame and a dockspace that covers the entire viewport.
+        ImGuiWindowFlags flags = ImGuiWindowFlags_NoTitleBar
+            | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove
+            | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+    
+        ImGuiViewport* viewport = ImGui::GetMainViewport();
+        ImGui::SetNextWindowPos(viewport->WorkPos);
+        ImGui::SetNextWindowSize(viewport->WorkSize);
+    
+        if (ImGui::Begin("Main Dock", nullptr, flags))
+        {
+            ImGuiID dockspaceID = ImGui::GetID("My Dockspace");
+            ImGui::DockSpace(dockspaceID);
+        }
+        ImGui::End();
+    }
 }

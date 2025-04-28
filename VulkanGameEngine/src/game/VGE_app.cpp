@@ -19,7 +19,7 @@ namespace VGE
     struct GlobalUBO
     {
         alignas(16) glm::mat4 projectionViewMatrix{1.0f};
-        alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{1.0f, -2.0f, 2.0f});
+        alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{4.0f, -15.0f, -3.0f});
     };
 
     VgeApp::VgeApp(VgeEngine& engine)
@@ -51,7 +51,6 @@ namespace VGE
         GET_SINGLETON(game::SceneManager)->makeScene<game::DefaultScene>(*this);
         GET_SINGLETON(game::SceneManager)->makeScene<game::DefaultScene2>(*this);
 
-
         game::GuiInitInfo guiInitInfo{};
         guiInitInfo.instance = Engine.getDevice().getInstance();
         guiInitInfo.physicalDevice = ImGui_ImplVulkanH_SelectPhysicalDevice(Engine.getDevice().getInstance());
@@ -74,6 +73,9 @@ namespace VGE
         // Awake all scenes, gameobjects, and components
         GET_SINGLETON(game::SceneManager)->Awake();
         GET_SINGLETON(game::ComponentManager)->Awake();
+
+        // Set the active scene
+        GET_SINGLETON(game::SceneManager)->setActiveScene<game::DefaultScene>();
 
         // Create Uniform Buffer Objects
         std::vector<std::unique_ptr<VgeBuffer>> uboBuffers(VgeSwapChain::MAX_FRAMES_IN_FLIGHT);

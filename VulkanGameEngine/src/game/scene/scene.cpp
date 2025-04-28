@@ -33,4 +33,22 @@ namespace game
 
         renderSystem.renderGameObjects(frameInfo, renderables);
     }
+
+    void Scene::Activate()
+    {
+        _isActive = true;
+        for(auto& gameObject : _gameObjects)
+        {
+            gameObject->SetActive(true);
+        }
+    }
+
+    void Scene::Deactivate()
+    {
+        _isActive = false;
+        for(auto& gameObject : _gameObjects)
+        {
+            gameObject->SetActive(false);
+        }
+    }
 }

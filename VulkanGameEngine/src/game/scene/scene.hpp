@@ -15,6 +15,7 @@ namespace game
     class GameObject;
     class Scene
     {
+        friend class SceneManager;
     public:
         Scene(VGE::VgeApp& app) : _app(app) {};
         virtual ~Scene() {};
@@ -25,6 +26,9 @@ namespace game
         virtual void Awake();
         virtual void Update(float deltaTime);
         virtual void Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem& renderSystem);
+
+        void Activate();
+        void Deactivate();
 
         CameraComponent* getCamera() const
         {
@@ -39,5 +43,6 @@ namespace game
 
         std::vector<std::unique_ptr<GameObject>> _gameObjects;
         GameObject* _cameraObject = nullptr;
+        bool _isActive = true;
     };
 }

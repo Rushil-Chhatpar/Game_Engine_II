@@ -48,6 +48,8 @@ namespace game
         GameObject(GameObject&&) = default;
         GameObject& operator=(GameObject&&) = default;
 
+        void SetActive(bool isActive);
+
         // setters
         void setColor(const glm::vec3& color) { this->color = color; }
         void setActive(bool isActive) { _isActive = isActive; }

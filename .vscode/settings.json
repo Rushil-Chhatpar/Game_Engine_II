@@ -69,4 +69,5 @@
         "${workspaceFolder}/VulkanGameEngine/**",
     ],
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cmake.sourceDirectory": "/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine",
 }

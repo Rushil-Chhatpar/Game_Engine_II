@@ -33,7 +33,8 @@ namespace game
     {
         for (auto& component : _components)
         {
-            component->update(deltaTime);
+            if(component->isActive())
+                component->update(deltaTime);
         }
     }
 }
