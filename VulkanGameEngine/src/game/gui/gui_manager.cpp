@@ -11,7 +11,7 @@ namespace game
         ImGui::CreateContext();
 
         ImGuiIO& io = ImGui::GetIO();
-        io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+        io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard | ImGuiConfigFlags_DockingEnable;
         ImGui::StyleColorsDark();
 
         ImGui_ImplGlfw_InitForVulkan(window, true);
@@ -54,20 +54,41 @@ namespace game
 
     void GuiManager::RenderMainFrame()
     {
-        // Setup a main window with no frame and a dockspace that covers the entire viewport.
-        ImGuiWindowFlags flags = ImGuiWindowFlags_NoTitleBar
-            | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove
-            | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
-    
-        ImGuiViewport* viewport = ImGui::GetMainViewport();
-        ImGui::SetNextWindowPos(viewport->WorkPos);
-        ImGui::SetNextWindowSize(viewport->WorkSize);
-    
-        if (ImGui::Begin("Main Dock", nullptr, flags))
+        static bool dockspaceOpen = true;
+        static bool opt_fullscreen_persistant = false;
+        bool opt_fullscreen = opt_fullscreen_persistant;
+        ImGuiWindowFlags windowFlags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
+
+        if(opt_fullscreen)
         {
-            ImGuiID dockspaceID = ImGui::GetID("My Dockspace");
-            ImGui::DockSpace(dockspaceID);
+            ImGuiViewport* viewport = ImGui::GetMainViewport();
+            ImGui::SetNextWindowPos(viewport->Pos);
+            ImGui::SetNextWindowSize(viewport->Size);
+            ImGui::SetNextWindowViewport(viewport->ID);
+            ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+            ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+            windowFlags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+            windowFlags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
         }
+
+        ImGui::Begin("DockSpace", &dockspaceOpen, windowFlags);
+        if(opt_fullscreen)
+        {
+            ImGui::PopStyleVar(2);
+        }
+        ImGuiIO& io = ImGui::GetIO();
+        if(io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
+        {
+            ImGuiID dockspaceID = ImGui::GetID(_dockspaceName);
+            ImGui::DockSpace(dockspaceID, ImVec2(0.0f, 0.0f), ImGuiDockNodeFlags_None);
+        }
+        ImGui::End();
+    }
+
+    void GuiManager::RenderInspectorFrame()
+    {
+        ImGui::Begin("Inspector");
+        ImGui::Text("Inspector");
         ImGui::End();
     }
 }

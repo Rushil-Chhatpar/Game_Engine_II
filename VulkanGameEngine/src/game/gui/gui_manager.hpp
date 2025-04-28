@@ -35,5 +35,9 @@ namespace game
         void EndFrame(VkCommandBuffer commandBuffer);
 
         void RenderMainFrame();
+        void RenderInspectorFrame();
+
+    private:
+        const char* _dockspaceName = "MyDockSpace";
     };
 }

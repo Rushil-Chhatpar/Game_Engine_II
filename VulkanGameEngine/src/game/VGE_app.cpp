@@ -115,6 +115,7 @@ namespace VGE
             currentTime = newTime;
 
             GET_SINGLETON(game::GuiManager)->BeginFrame();
+            GET_SINGLETON(game::GuiManager)->RenderInspectorFrame();
 
             GET_SINGLETON(game::ComponentManager)->Update(deltaTime);
             GET_SINGLETON(game::SceneManager)->Update(deltaTime);
