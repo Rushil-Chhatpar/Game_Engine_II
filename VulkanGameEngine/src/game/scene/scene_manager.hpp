@@ -21,8 +21,10 @@ namespace game
         void Awake();
         void Update(float deltaTime);
         void Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem& renderSystem);
+        void LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem& renderSystem);
 
         void RenderGUIonActiveScene();
+        
         
         // get active scene
         Scene* getActiveScene() const

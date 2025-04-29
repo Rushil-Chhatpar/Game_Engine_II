@@ -32,6 +32,23 @@ namespace game
         }
 
         renderSystem.renderGameObjects(frameInfo, renderables);
+        //renderSystem.renderGameObjectsinBatch(frameInfo, renderables);
+    }
+
+    void Scene::LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem &renderSystem)
+    {
+        std::vector<GameObject*> renderables;
+        renderables.reserve(_gameObjects.size());
+
+        for (auto& gameObject : _gameObjects)
+        {
+            if (gameObject->isActive() && gameObject->getComponent<MeshComponent>() != nullptr)
+            {
+                renderables.push_back(gameObject.get());
+            }
+        }
+
+        renderSystem.createBatchBuffers(renderables);
     }
 
     void Scene::Activate()

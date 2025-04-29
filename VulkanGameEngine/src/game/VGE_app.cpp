@@ -77,6 +77,7 @@ namespace VGE
         // Set the active scene
         GET_SINGLETON(game::SceneManager)->setActiveScene<game::DefaultScene>();
 
+        
         // Create Uniform Buffer Objects
         std::vector<std::unique_ptr<VgeBuffer>> uboBuffers(VgeSwapChain::MAX_FRAMES_IN_FLIGHT);
         for (int i = 0; i < VgeSwapChain::MAX_FRAMES_IN_FLIGHT; i++)
@@ -84,24 +85,27 @@ namespace VGE
             uboBuffers[i] = std::make_unique<VgeBuffer>(Engine.getDevice(), sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
             uboBuffers[i]->map();
         }
-
+        
         // create descriptor set layout
         auto globalSetLayout = VgeDescriptorSetLayout::Builder(Engine.getDevice())
-            .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT)
-            .build();
-
+        .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT)
+        .addBinding(1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, VK_SHADER_STAGE_VERTEX_BIT)
+        .build();
+        
         // create descriptor sets
         std::vector<VkDescriptorSet> globalDescriptorSets(VgeSwapChain::MAX_FRAMES_IN_FLIGHT);
         for (int i = 0; i < VgeSwapChain::MAX_FRAMES_IN_FLIGHT; i++)
         {
             VkDescriptorBufferInfo bufferInfo = uboBuffers[i]->descriptorInfo();
             VgeDescriptorWriter(*globalSetLayout, *_globalPool)
-                .writeBuffer(0, &bufferInfo)
-                .build(globalDescriptorSets[i]);
+            .writeBuffer(0, &bufferInfo)
+            .build(globalDescriptorSets[i]);
         }
-
+        
         VgeDefaultRenderSystem renderSystem{Engine.getDevice(), Engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
-
+        
+        //GET_SINGLETON(game::SceneManager)->LoadMeshesOnRenderSystem(renderSystem);
+        
         auto currentTime = std::chrono::high_resolution_clock::now();
 
         glm::vec3 lightDirection{1.0f, -2.0f, 2.0f};

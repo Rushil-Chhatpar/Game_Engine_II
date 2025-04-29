@@ -35,6 +35,14 @@ namespace game
         }
     }
 
+    void SceneManager::LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem &renderSystem)
+    {
+        for(const auto& scene : _scenes)
+        {
+            scene->LoadMeshesOnRenderSystem(renderSystem);
+        }
+    }
+
     void SceneManager::RenderGUIonActiveScene()
     {
 

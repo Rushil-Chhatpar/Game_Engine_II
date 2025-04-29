@@ -63,7 +63,13 @@ namespace VGE
         void bind(VkCommandBuffer commandBuffer);
         void draw(VkCommandBuffer commandBuffer);
 
-        static std::unique_ptr<VgeMesh> createModelFromFile(VgeDevice& device, const char* filename);        
+        static std::unique_ptr<VgeMesh> createModelFromFile(VgeDevice& device, const char* filename);
+
+        uint32_t getVertexCount() const { return _vertexCount; }
+        uint32_t getIndexCount() const { return _indexCount; }
+
+        VgeBuffer* getVertexBuffer() const { return _vertexBuffer.get(); }
+        VgeBuffer* getIndexBuffer() const { return _indexBuffer.get(); }
             
     private:
         void createVertexBuffer(const std::vector<Vertex>& vertices);

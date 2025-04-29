@@ -18,6 +18,8 @@ namespace game
         cameraObject->addComponent<game::KeyboardController>(_app.Engine.getWindow().getGLFWwindow(), 3.0f, 1.5f);
         _cameraObject = cameraObject.get();
         _gameObjects.push_back(std::move(cameraObject));
+
+        
     }
 
     void DefaultScene2::Update(float deltaTime)

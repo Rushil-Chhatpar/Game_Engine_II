@@ -26,6 +26,7 @@ namespace game
         virtual void Awake();
         virtual void Update(float deltaTime);
         virtual void Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem& renderSystem);
+        virtual void LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem& renderSystem);
 
         void Activate();
         void Deactivate();
