@@ -621,6 +621,8 @@ VGE: CMakeFiles/VGE.dir/link.txt
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VGE.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying folder: assets to binary output directory"
 	/usr/bin/cmake -E copy_directory /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/assets /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/assets
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying SPIR-V shader: simple_batch_shader.vert.spv"
+	/usr/bin/cmake -E copy /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/shaders/simple_batch_shader.vert.spv /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/shaders/simple_batch_shader.vert.spv
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying SPIR-V shader: simple_shader.frag.spv"
 	/usr/bin/cmake -E copy /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/shaders/simple_shader.frag.spv /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/build/shaders/simple_shader.frag.spv
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying SPIR-V shader: simple_shader.vert.spv"
