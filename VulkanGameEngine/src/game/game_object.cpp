@@ -11,4 +11,12 @@ namespace game
             component->setActive(isActive);
         }
     }
+
+    void GameObject::GUI_RenderComponentProperties()
+    {
+        for(auto& component : _components)
+        {
+            component->GUI_RenderProperties();
+        }
+    }
 }

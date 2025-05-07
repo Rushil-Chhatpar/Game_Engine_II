@@ -15,8 +15,8 @@ namespace VGE
     class VgeApp
     {
     public:
-        static constexpr int WIDTH = 1920;
-        static constexpr int HEIGHT = 1080;
+        static constexpr int WIDTH = 800;
+        static constexpr int HEIGHT = 800;
 
         VgeApp(VgeEngine& engine);
         ~VgeApp();

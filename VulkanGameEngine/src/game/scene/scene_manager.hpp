@@ -20,8 +20,8 @@ namespace game
         void Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem& renderSystem);
         void LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem& renderSystem);
 
-        void RenderGUIonActiveScene();
-        
+        void GUI_DisplayObjectList();
+        void GUI_DisplayObjectProperties();
         
         // get active scene
         Scene* getActiveScene() const

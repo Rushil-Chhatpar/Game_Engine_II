@@ -19,8 +19,8 @@ namespace game
         static GameObject createGameObject(std::string name = "GameObject")
         {
             static id_t currentId = 0;
-
-            GameObject obj(currentId++, name);
+            currentId++;
+            GameObject obj(currentId, std::to_string(currentId) + ". " + name);
             obj.Transform = obj.addComponent<TransformComponent>();
 
             return obj;
@@ -32,8 +32,8 @@ namespace game
         static std::unique_ptr<GameObject> createGameObjectPtr(std::string name = "GameObject")
         {
             static id_t currentId = 0;
-
-            std::unique_ptr<GameObject> obj(new GameObject(currentId++, name));
+            currentId++;
+            std::unique_ptr<GameObject> obj(new GameObject(currentId, std::to_string(currentId) + ". " + name));
             obj->Transform = obj->addComponent<TransformComponent>();
 
             return obj;
@@ -50,6 +50,8 @@ namespace game
 
         void SetActive(bool isActive);
 
+        void GUI_RenderComponentProperties();
+
         // setters
         void setColor(const glm::vec3& color) { this->color = color; }
         void setActive(bool isActive) { _isActive = isActive; }
@@ -57,6 +59,7 @@ namespace game
         // getters
         const glm::vec3& getColor() const { return color; }
         bool isActive() const { return _isActive; }
+        const std::string& getName() const { return _name; }
 
         // Components
         template<typename T, typename... Args>

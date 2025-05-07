@@ -73,6 +73,17 @@ namespace game
         };
     }
 
+    void TransformComponent::GUI_RenderProperties()
+    {
+        if(ImGui::TreeNode("Transform"))
+        {
+            ImGui::DragFloat3("Translation", &translation.x, 0.1f);
+            ImGui::DragFloat3("Rotation", &rotation.x, 0.1f);
+            ImGui::DragFloat3("Scale", &scale.x, 0.1f);
+            ImGui::TreePop();
+        }
+    }
+
     void CameraComponent::setOrthographicProjection(float left, float right, float top, float bottom, float near, float far)
     {
         _projectionMatrix[0][0] = 2.0f / (right - left);
@@ -152,6 +163,36 @@ namespace game
         setViewYXZ(_owner.Transform->translation, _owner.Transform->rotation);
     }
 
+    void CameraComponent::GUI_RenderProperties()
+    {
+        if(ImGui::TreeNode("Camera Component"))
+        {
+            ImGui::Text("Projection Matrix: ");
+            {
+                const float* matPtr = glm::value_ptr(_projectionMatrix); // Get raw float pointer
+                for (int row = 0; row < 4; ++row) {
+                    ImGui::Text("[% .3f % .3f % .3f % .3f]",
+                        matPtr[row], 
+                        matPtr[4 + row], 
+                        matPtr[8 + row], 
+                        matPtr[12 + row]);
+                }
+            }
+            ImGui::Text("View Matrix: ");
+            {
+                const float* matPtr = glm::value_ptr(_viewMatrix); // Get raw float pointer
+                for (int row = 0; row < 4; ++row) {
+                    ImGui::Text("[% .3f % .3f % .3f % .3f]",
+                        matPtr[row], 
+                        matPtr[4 + row], 
+                        matPtr[8 + row], 
+                        matPtr[12 + row]);
+                }
+            }
+            ImGui::TreePop();
+        }
+    }
+
     void KeyboardController::update(float deltaTime)
     {
         moveInPlaneXZ(deltaTime);
@@ -214,10 +255,29 @@ namespace game
             _owner.Transform->translation += _moveSpeed * deltaTime * glm::normalize(moveDir);
     }
 
+    void KeyboardController::GUI_RenderProperties()
+    {
+        if(ImGui::TreeNode("Keyboard Controller"))
+        {
+            ImGui::DragFloat("Move Speed", &_moveSpeed, 0.1f);
+            ImGui::DragFloat("Look Speed", &_lookSpeed, 0.1f);
+            ImGui::TreePop();
+        }
+    }
+
     MeshComponent::MeshComponent(GameObject& owner, VGE::VgeDevice& device, const char *filename)
         : Component(owner)
     {
         _mesh = VGE::VgeMesh::createModelFromFile(device, filename);
         
+    }
+
+    void MeshComponent::GUI_RenderProperties()
+    {
+        if(ImGui::TreeNode("Mesh Component"))
+        {
+            ImGui::Text("Vertex Count: %d", _mesh->getVertexCount());
+            ImGui::TreePop();
+        }
     }
 }

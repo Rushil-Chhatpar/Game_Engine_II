@@ -43,8 +43,19 @@ namespace game
         }
     }
 
-    void SceneManager::RenderGUIonActiveScene()
+    void SceneManager::GUI_DisplayObjectList()
     {
+        if (_activeScene)
+        {
+            _activeScene->GUI_DisplayObjectList();
+        }
+    }
 
+    void SceneManager::GUI_DisplayObjectProperties()
+    {
+        if (_activeScene)
+        {
+            _activeScene->GUI_DisplayObjectProperties();
+        }        
     }
 }

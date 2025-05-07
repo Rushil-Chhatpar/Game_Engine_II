@@ -2,6 +2,9 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 #include "VGE_window.hpp"
+#include "gui_manager.hpp"
+#include <glm/gtc/type_ptr.hpp>
+
 
 namespace VGE
 {
@@ -19,9 +22,11 @@ namespace game
         virtual ~Component() = default;
         virtual void awake() = 0;
         virtual void update(float deltaTime) = 0;
+        virtual void GUI_RenderProperties() = 0;
 
         void setActive(bool isActive) { _isActive = isActive; }
         bool isActive() const { return _isActive; }
+
 
     protected:
         GameObject& _owner;
@@ -39,6 +44,7 @@ namespace game
 
         virtual void awake() override {}
         virtual void update(float deltaTime) override {}
+        virtual void GUI_RenderProperties() override;
 
         glm::vec3 translation{};
         glm::vec3 scale{1.0f, 1.0f, 1.0f};
@@ -87,6 +93,8 @@ namespace game
         {
             setViewYXZ();
         }
+        virtual void GUI_RenderProperties() override;
+
     private:
         glm::mat4 _projectionMatrix{1.0f};
         glm::mat4 _viewMatrix{1.0f};       
@@ -119,7 +127,7 @@ namespace game
 
         virtual void awake() override {}
         virtual void update(float deltaTime) override;
-        
+        virtual void GUI_RenderProperties() override;
         
         private:
         void moveInPlaneXZ(float deltaTime);
@@ -140,6 +148,7 @@ namespace game
 
         virtual void awake() override {}
         virtual void update(float deltaTime) override {}
+        virtual void GUI_RenderProperties() override;
 
         VGE::VgeMesh* getMesh() const { return _mesh.get(); }
 

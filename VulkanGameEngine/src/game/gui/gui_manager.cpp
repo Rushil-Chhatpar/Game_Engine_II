@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "gui_manager.hpp"
+#include "scene_manager.hpp"
 
 namespace game
 {
@@ -88,7 +89,11 @@ namespace game
     void GuiManager::RenderInspectorFrame()
     {
         ImGui::Begin("Inspector");
-        ImGui::Text("Inspector");
+        GET_SINGLETON(SceneManager)->GUI_DisplayObjectList();
+        ImGui::End();
+
+        ImGui::Begin("Properties");
+        GET_SINGLETON(SceneManager)->GUI_DisplayObjectProperties();
         ImGui::End();
     }
 }

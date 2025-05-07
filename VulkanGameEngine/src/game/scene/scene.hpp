@@ -31,6 +31,9 @@ namespace game
         void Activate();
         void Deactivate();
 
+        void GUI_DisplayObjectList();
+        void GUI_DisplayObjectProperties();
+
         CameraComponent* getCamera() const
         {
             return _cameraObject ? _cameraObject->getComponent<CameraComponent>() : nullptr;
@@ -44,6 +47,7 @@ namespace game
 
         std::vector<std::unique_ptr<GameObject>> _gameObjects;
         GameObject* _cameraObject = nullptr;
+        GameObject* _guiSelectedObject = nullptr;
         bool _isActive = true;
     };
 }
