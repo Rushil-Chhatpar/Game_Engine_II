@@ -38,10 +38,11 @@ namespace VGE
 
     private:
         GLFWwindow* _window;
-        std::string _windowName;
-
+        
         int _width;
         int _height;
+        std::string _windowName;
+        
         bool _framebufferResized = false;
     };
 }

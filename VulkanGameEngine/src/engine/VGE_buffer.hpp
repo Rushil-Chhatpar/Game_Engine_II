@@ -48,11 +48,11 @@ namespace VGE
          VkBuffer _buffer = VK_NULL_HANDLE;
          VkDeviceMemory _memory = VK_NULL_HANDLE;
         
-         VkDeviceSize _bufferSize;
-         uint32_t _instanceCount;
          VkDeviceSize _instanceSize;
-         VkDeviceSize _alignmentSize;
+         uint32_t _instanceCount;
          VkBufferUsageFlags _usageFlags;
          VkMemoryPropertyFlags _memoryPropertyFlags;
+         VkDeviceSize _alignmentSize;
+         VkDeviceSize _bufferSize;
     };
 }

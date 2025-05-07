@@ -1,5 +1,5 @@
 #pragma once
-
+#include "scene.hpp"
 
 namespace VGE
 {
@@ -10,9 +10,6 @@ namespace VGE
 
 namespace game
 {
-
-    class Scene;
-
     class SceneManager
     {
         DECLARE_SINGLETON(SceneManager);
