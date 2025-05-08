@@ -10,7 +10,9 @@ layout(location = 0) out vec3 fragColor;
 layout(set = 0, binding = 0) uniform GlobalUBO
 {
     mat4 projectionViewMatrix;
-    vec3 directionToLight;
+    vec4 ambientLightColor;
+    vec3 lightPosition;
+    vec4 lightColor;
 } ubo;
 
 layout(push_constant) uniform Push
@@ -23,9 +25,10 @@ const float AMBIENT_LIGHT_INTENSITY = 0.2;
 
 void main()
 {
+    vec4 worldPosion = push.modelMatrix * vec4(inPosition, 1.0);
     // Set the position of the vertex
     //gl_Position = vec4(push.transform * inPosition + push.offset, 0.0, 1.0);
-    gl_Position = ubo.projectionViewMatrix * push.modelMatrix * vec4(inPosition, 1.0);
+    gl_Position = ubo.projectionViewMatrix * worldPosion;
 
     // transform normals from model space to world space to properly calculate lighting
     // since lighting is done in world space
@@ -34,6 +37,15 @@ void main()
 
     vec3 normalWorldSpace = normalize(mat3(push.normalMatrix) * inNormal);
 
+    vec3 directionToLight = ubo.lightPosition - worldPosion.xyz;
+
+    // light falloff based on the distance to the light
+    float attenuation = 1.0 / dot(directionToLight, directionToLight); // distance squared
+
+    // Light color is the color multiplied by the light intensity (alpha)
+    vec3 lightColor = ubo.lightColor.xyz * ubo.lightColor.w * attenuation;
+    vec3 ambientLight = ubo.ambientLightColor.xyz * ubo.ambientLightColor.w;
+
     // Calculate the light intensity based on the normal and the direction to the light
     // The dot product gives us the cosine of the angle between the normal and the light direction
     // which is used to calculate the intensity of the light on the surface
@@ -41,8 +53,9 @@ void main()
     // when the light is behind the surface
     // The result is a value between 0.0 and 1.0
     // This is a simple Lambertian lighting model
-    float lightIntensity = AMBIENT_LIGHT_INTENSITY + max(dot(normalWorldSpace, ubo.directionToLight), 0.0);
+    // light intensity is basically the dot product of the surface normal and the light direction
+    vec3 diffuseLight = lightColor * max(dot(normalWorldSpace, normalize(directionToLight)), 0.0);
     
     // Set the color of the vertex
-    fragColor = lightIntensity * inColor;
+    fragColor = (diffuseLight + ambientLight) * inColor;
 }

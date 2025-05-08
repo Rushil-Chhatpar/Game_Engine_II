@@ -19,7 +19,10 @@ namespace VGE
     struct GlobalUBO
     {
         alignas(16) glm::mat4 projectionViewMatrix{1.0f};
-        alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{4.0f, -15.0f, -3.0f});
+        alignas(16) glm::vec4 ambientLightColor{1.0f, 1.0f, 1.0f, 0.02f};
+        alignas(16) glm::vec3 lightPosition{-1.0f};
+        alignas(16) glm::vec4 lightColor{1.0f};
+        //alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{4.0f, -15.0f, -3.0f});
     };
 
     VgeApp::VgeApp(VgeEngine& engine)
@@ -133,7 +136,7 @@ namespace VGE
                 // update objects in memory
                 GlobalUBO ubo{};
                 ubo.projectionViewMatrix = camera->getProjectionMatrix() * camera->getViewMatrix();
-                ubo.lightDirection = glm::normalize(lightDirection);
+                //ubo.lightDirection = glm::normalize(lightDirection);
                 uboBuffers[frameIndex]->writeToBuffer(&ubo);
                 uboBuffers[frameIndex]->flush();
 
@@ -153,7 +156,7 @@ namespace VGE
                 Engine.getRenderer().beginSwapChainRenderPass(commandBuffer);
 
                 ImGui::Begin("Light");
-                ImGui::DragFloat3("Light Direction", &lightDirection.x);
+                //ImGui::DragFloat3("Light Direction", &lightDirection.x);
                 ImGui::End();
 
                 drawAppUI();
