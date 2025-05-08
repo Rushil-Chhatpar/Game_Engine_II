@@ -66,8 +66,8 @@ namespace VGE
         shaderStages[1].flags = 0;
         shaderStages[1].pNext = nullptr;
 
-        auto bindingDescriptions = VgeMesh::Vertex::getBindingDescriptions();
-        auto attributeDescriptions = VgeMesh::Vertex::getAttributeDescriptions();
+        auto& bindingDescriptions = configInfo.bindingDescription;
+        auto& attributeDescriptions = configInfo.attributeDescriptions;
 
         VkPipelineVertexInputStateCreateInfo vertexInputInfo{};
         vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
@@ -187,6 +187,9 @@ namespace VGE
         configInfo.dynamicStateInfo.pDynamicStates = configInfo.dynamicStateEnables.data();
         configInfo.dynamicStateInfo.pNext = nullptr;
         configInfo.dynamicStateInfo.flags = 0;
+
+        configInfo.bindingDescription = VgeMesh::Vertex::getBindingDescriptions();
+        configInfo.attributeDescriptions = VgeMesh::Vertex::getAttributeDescriptions();
     }
 
     void VgePipeline::bind(VkCommandBuffer commandBuffer)

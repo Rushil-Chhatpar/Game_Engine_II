@@ -9,9 +9,10 @@ src/engine/VGE_pipeline.cpp
 src/engine/VGE_renderer.cpp
 src/game/components/component.cpp
 src/game/components/component_manager.cpp
-src/game/VGE_default_render_system.cpp
 src/game/game_object.cpp
 src/game/VGE_app.cpp
+src/game/render_systems/VGE_default_render_system.cpp
+src/game/render_systems/VGE_pointlight_render_system.cpp
 src/game/scene/scenes/default_scene_2.cpp
 src/game/scene/scenes/default_scene.cpp
 src/game/scene/scene_manager.cpp

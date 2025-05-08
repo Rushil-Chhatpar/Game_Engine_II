@@ -2,6 +2,7 @@
 
 #include "VGE_app.hpp"
 #include "VGE_default_render_system.hpp"
+#include "VGE_pointlight_render_system.hpp"
 #include "VGE_mesh.hpp"
 #include "VGE_buffer.hpp"
 #include "VGE_frame_info.hpp"
@@ -18,7 +19,8 @@ namespace VGE
 {
     struct GlobalUBO
     {
-        alignas(16) glm::mat4 projectionViewMatrix{1.0f};
+        alignas(16) glm::mat4 projectionMatrix{1.0f};
+        alignas(16) glm::mat4 ViewMatrix{1.0f};
         alignas(16) glm::vec4 ambientLightColor{1.0f, 1.0f, 1.0f, 0.02f};
         alignas(16) glm::vec3 lightPosition{-1.0f};
         alignas(16) glm::vec4 lightColor{1.0f};
@@ -91,7 +93,7 @@ namespace VGE
         
         // create descriptor set layout
         auto globalSetLayout = VgeDescriptorSetLayout::Builder(Engine.getDevice())
-        .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT)
+        .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
         .addBinding(1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, VK_SHADER_STAGE_VERTEX_BIT)
         .build();
         
@@ -106,6 +108,7 @@ namespace VGE
         }
         
         VgeDefaultRenderSystem renderSystem{Engine.getDevice(), Engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
+        VgePointLightRenderSystem pointLightRenderSystem{Engine.getDevice(), Engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
         
         //GET_SINGLETON(game::SceneManager)->LoadMeshesOnRenderSystem(renderSystem);
         
@@ -127,15 +130,16 @@ namespace VGE
             GET_SINGLETON(game::ComponentManager)->Update(deltaTime);
             GET_SINGLETON(game::SceneManager)->Update(deltaTime);
 
-            game::CameraComponent* camera = GET_SINGLETON(game::SceneManager)->getActiveScene()->getCamera();
-
+            
             if (VkCommandBuffer commandBuffer = Engine.getRenderer().beginFrame())
             {
                 int frameIndex = Engine.getRenderer().getFrameIndex();
-
+                
                 // update objects in memory
+                game::CameraComponent* camera = GET_SINGLETON(game::SceneManager)->getActiveScene()->getCamera();
                 GlobalUBO ubo{};
-                ubo.projectionViewMatrix = camera->getProjectionMatrix() * camera->getViewMatrix();
+                ubo.projectionMatrix = camera->getProjectionMatrix();
+                ubo.ViewMatrix = camera->getViewMatrix();
                 //ubo.lightDirection = glm::normalize(lightDirection);
                 uboBuffers[frameIndex]->writeToBuffer(&ubo);
                 uboBuffers[frameIndex]->flush();
@@ -162,6 +166,7 @@ namespace VGE
                 drawAppUI();
 
                 GET_SINGLETON(game::SceneManager)->Render(frameInfo, renderSystem);
+                pointLightRenderSystem.render(frameInfo);
                 GET_SINGLETON(game::GuiManager)->EndFrame(commandBuffer);
                 Engine.getRenderer().endSwapChainRenderPass(commandBuffer);
                 Engine.getRenderer().endFrame();

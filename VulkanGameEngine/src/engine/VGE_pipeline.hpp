@@ -11,6 +11,8 @@ namespace VGE
         PipelineConfigInfo(const PipelineConfigInfo&) = delete;
         PipelineConfigInfo& operator=(const PipelineConfigInfo&) = delete;
 
+        std::vector<VkVertexInputBindingDescription> bindingDescription{};
+        std::vector<VkVertexInputAttributeDescription> attributeDescriptions{};
         VkPipelineViewportStateCreateInfo viewportStateInfo;
         VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
         VkPipelineInputAssemblyStateCreateInfo inputAssemblyStateInfo;

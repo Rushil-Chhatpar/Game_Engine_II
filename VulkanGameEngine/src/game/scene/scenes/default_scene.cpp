@@ -43,7 +43,7 @@ namespace game
         go->Transform->rotation = {glm::pi<float>(), 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
 
-        go = game::GameObject::createGameObjectPtr();
+        go = game::GameObject::createGameObjectPtr("Floor");
         go->addComponent<game::MeshComponent>(_app.Engine.getDevice(), "assets/Quad.obj");
         go->Transform->translation = {0.0f, 0.5f, 0.0f};
         go->Transform->scale = glm::vec3{2.0f};
