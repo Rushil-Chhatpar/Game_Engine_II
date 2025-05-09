@@ -21,8 +21,8 @@ namespace VGE
         VgePointLightRenderSystem(const VgePointLightRenderSystem &) = delete;
         VgePointLightRenderSystem& operator=(const VgePointLightRenderSystem &) = delete;
 
-        // We don't make the camera a member variable as I want to able to share camera between multiple render systems
-        void render(FrameInfo& frameInfo);
+        void update(FrameInfo& frameInfo, GlobalUBO& ubo, std::vector<game::GameObject*>& gameObjects);
+        void render(FrameInfo& frameInfo, std::vector<game::GameObject*>& gameObjects);
 
     private:
         void createPipelineLayout(VkDescriptorSetLayout globalSetLayout);

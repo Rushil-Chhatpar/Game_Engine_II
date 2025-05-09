@@ -3,6 +3,7 @@
 #include "scene.hpp"
 #include "VGE_app.hpp"
 #include "VGE_default_render_system.hpp"
+#include "VGE_pointlight_render_system.hpp"
 #include "VGE_frame_info.hpp"
 #include "VGE_mesh.hpp"
 #include "gui_manager.hpp"
@@ -19,8 +20,23 @@ namespace game
     {
     }
 
-    void Scene::Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem& renderSystem)
+    void Scene::Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem* renderSystem, VGE::VgePointLightRenderSystem* pointLightRenderSystem, VGE::GlobalUBO& ubo)
     {
+        // TODO: I NEED A BETTER WAY TO DO THIS
+        std::vector<GameObject*> lights;
+
+        for (auto& gameObject : _gameObjects)
+        {
+            if (gameObject->isActive() && gameObject->getComponent<PointLightComponent>() != nullptr)
+            {
+                lights.push_back(gameObject.get());
+            }
+        }
+
+        pointLightRenderSystem->update(frameInfo, ubo, lights);
+
+        pointLightRenderSystem->render(frameInfo, lights);
+
         std::vector<GameObject*> renderables;
         renderables.reserve(_gameObjects.size());
 
@@ -32,11 +48,11 @@ namespace game
             }
         }
 
-        renderSystem.renderGameObjects(frameInfo, renderables);
+        renderSystem->renderGameObjects(frameInfo, renderables);
         //renderSystem.renderGameObjectsinBatch(frameInfo, renderables);
     }
 
-    void Scene::LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem &renderSystem)
+    void Scene::LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem* renderSystem)
     {
         std::vector<GameObject*> renderables;
         renderables.reserve(_gameObjects.size());
@@ -49,7 +65,7 @@ namespace game
             }
         }
 
-        renderSystem.createBatchBuffers(renderables);
+        renderSystem->createBatchBuffers(renderables);
     }
 
     void Scene::Activate()

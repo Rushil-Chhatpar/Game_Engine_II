@@ -280,4 +280,23 @@ namespace game
             ImGui::TreePop();
         }
     }
+    
+    PointLightComponent::PointLightComponent(GameObject &owner, glm::vec3 color, float intensity, float radius)
+        : Component(owner)
+        , _color(color)
+        , _intensity(intensity)
+        , _radius(radius)
+    {
+    }
+
+    void PointLightComponent::GUI_RenderProperties()
+    {
+        if(ImGui::TreeNode("Point Light Component"))
+        {
+            ImGui::ColorEdit3("Color", &_color.x);
+            ImGui::DragFloat("Intensity", &_intensity, 0.1f);
+            ImGui::DragFloat("Radius", &_radius, 0.1f);
+            ImGui::TreePop();
+        }
+    }
 }

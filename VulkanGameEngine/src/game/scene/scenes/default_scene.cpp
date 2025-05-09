@@ -49,5 +49,9 @@ namespace game
         go->Transform->scale = glm::vec3{2.0f};
         go->Transform->rotation = {0.0f, 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
+
+        go = game::GameObject::createGameObjectPtr("Light");
+        go->addComponent<game::PointLightComponent>(glm::vec3{1.0f, 1.0f, 1.0f}, 1.0f, 1.0f);
+        _gameObjects.push_back(std::move(go));
     }
 }

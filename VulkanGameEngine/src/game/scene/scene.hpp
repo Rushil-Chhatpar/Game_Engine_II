@@ -6,7 +6,9 @@ namespace VGE
 {
     class VgeApp;
     class VgeDefaultRenderSystem;
+    class VgePointLightRenderSystem;
     struct FrameInfo;
+    struct GlobalUBO;
 }
 
 
@@ -25,8 +27,8 @@ namespace game
 
         virtual void Awake();
         virtual void Update(float deltaTime);
-        virtual void Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem& renderSystem);
-        virtual void LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem& renderSystem);
+        virtual void Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem* renderSystem, VGE::VgePointLightRenderSystem* pointLightRenderSystem, VGE::GlobalUBO& ubo);
+        virtual void LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem* renderSystem);
 
         void Activate();
         void Deactivate();

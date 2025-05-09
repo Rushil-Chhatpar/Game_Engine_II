@@ -11,14 +11,27 @@ const vec2 OFFSETS[6] = vec2[](
 
 layout (location = 0) out vec2 fragOffset;
 
+struct PointLight
+{
+    vec4 position;
+    vec4 color;
+};
+
 layout(set = 0, binding = 0) uniform GlobalUBO
 {
     mat4 projectionMatrix;
     mat4 viewMatrix;
     vec4 ambientLightColor;
-    vec3 lightPosition;
-    vec4 lightColor;
+    PointLight pointLights[20];
+    int numPointLights;
 } ubo;
+
+layout(push_constant) uniform Push
+{
+    vec4 position;
+    vec4 color;
+    float radius;
+} push;
 
 const float LIGHT_RADIUS = 0.2;
 
@@ -27,7 +40,7 @@ void main()
     fragOffset = OFFSETS[gl_VertexIndex];
 
     // calculate the light pos in cam space first
-    vec4 lightPosInCameraSpace = ubo.viewMatrix * vec4(ubo.lightPosition, 1.0);
+    vec4 lightPosInCameraSpace = ubo.viewMatrix * vec4(push.position.xyz, 1.0);
     // then apply offset in cam space
     vec4 positionInCameraSpace = lightPosInCameraSpace + LIGHT_RADIUS * vec4(fragOffset, 0.0, 0.0);
 

@@ -9,13 +9,19 @@ layout(location = 0) out vec3 fragColor;
 layout(location = 1) out vec3 fragWorldPos; // linearly interpolated to be the fragment position in the world space. We need this to calculate the light direction for each fragment
 layout(location = 2) out vec3 fragWorldNormal; // linearly interpolated to be the fragment normal in the world space.
 
+struct PointLight
+{
+    vec4 position;
+    vec4 color;
+};
+
 layout(set = 0, binding = 0) uniform GlobalUBO
 {
     mat4 projectionMatrix;
     mat4 viewMatrix;
     vec4 ambientLightColor;
-    vec3 lightPosition;
-    vec4 lightColor;
+    PointLight pointLights[20];
+    int numPointLights;
 } ubo;
 
 layout(push_constant) uniform Push

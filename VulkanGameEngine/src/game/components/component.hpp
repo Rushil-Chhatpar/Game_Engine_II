@@ -156,4 +156,24 @@ namespace game
         std::unique_ptr<VGE::VgeMesh> _mesh;
     };
 
+    class PointLightComponent : public Component
+    {
+    public:
+        PointLightComponent(GameObject& owner, glm::vec3 color, float intensity, float radius);
+        ~PointLightComponent() override = default;
+
+        virtual void awake() override {}
+        virtual void update(float deltaTime) override {}
+        virtual void GUI_RenderProperties() override;
+
+        glm::vec3 getColor() const { return _color; }
+        float getIntensity() const { return _intensity; }
+        float getRadius() const { return _radius; }
+
+    private:
+        glm::vec3 _color{1.0f, 1.0f, 1.0f};
+        float _intensity{1.0f};
+        float _radius{1.0f};
+    };
+
 }

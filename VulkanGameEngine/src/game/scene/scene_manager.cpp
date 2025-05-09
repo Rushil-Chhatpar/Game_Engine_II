@@ -3,6 +3,7 @@
 #include "scene_manager.hpp"
 #include "scene.hpp"
 #include "VGE_default_render_system.hpp"
+#include "VGE_pointlight_render_system.hpp"
 #include "VGE_frame_info.hpp"
 
 
@@ -27,15 +28,15 @@ namespace game
         }
     }
 
-    void SceneManager::Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem& renderSystem)
+    void SceneManager::Render(VGE::FrameInfo& frameInfo, VGE::VgeDefaultRenderSystem* renderSystem, VGE::VgePointLightRenderSystem* pointLightRenderSystem, VGE::GlobalUBO& ubo)
     {
         if (_activeScene)
         {
-            _activeScene->Render(frameInfo, renderSystem);
+            _activeScene->Render(frameInfo, renderSystem, pointLightRenderSystem, ubo);
         }
     }
 
-    void SceneManager::LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem &renderSystem)
+    void SceneManager::LoadMeshesOnRenderSystem(VGE::VgeDefaultRenderSystem* renderSystem)
     {
         for(const auto& scene : _scenes)
         {

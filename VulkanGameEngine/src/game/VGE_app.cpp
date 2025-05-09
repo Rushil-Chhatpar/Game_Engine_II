@@ -17,15 +17,6 @@
 
 namespace VGE
 {
-    struct GlobalUBO
-    {
-        alignas(16) glm::mat4 projectionMatrix{1.0f};
-        alignas(16) glm::mat4 ViewMatrix{1.0f};
-        alignas(16) glm::vec4 ambientLightColor{1.0f, 1.0f, 1.0f, 0.02f};
-        alignas(16) glm::vec3 lightPosition{-1.0f};
-        alignas(16) glm::vec4 lightColor{1.0f};
-        //alignas(16) glm::vec3 lightDirection = glm::normalize(glm::vec3{4.0f, -15.0f, -3.0f});
-    };
 
     VgeApp::VgeApp(VgeEngine& engine)
         : Engine(engine)
@@ -107,8 +98,10 @@ namespace VGE
             .build(globalDescriptorSets[i]);
         }
         
-        VgeDefaultRenderSystem renderSystem{Engine.getDevice(), Engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
-        VgePointLightRenderSystem pointLightRenderSystem{Engine.getDevice(), Engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
+        //VgeDefaultRenderSystem renderSystem{Engine.getDevice(), Engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
+        //VgePointLightRenderSystem pointLightRenderSystem{Engine.getDevice(), Engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
+        std::unique_ptr<VgeDefaultRenderSystem> renderSystem = std::make_unique<VgeDefaultRenderSystem>(Engine.getDevice(), Engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout());
+        std::unique_ptr<VgePointLightRenderSystem> pointLightRenderSystem = std::make_unique<VgePointLightRenderSystem>(Engine.getDevice(), Engine.getRenderer().getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout());
         
         //GET_SINGLETON(game::SceneManager)->LoadMeshesOnRenderSystem(renderSystem);
         
@@ -165,8 +158,7 @@ namespace VGE
 
                 drawAppUI();
 
-                GET_SINGLETON(game::SceneManager)->Render(frameInfo, renderSystem);
-                pointLightRenderSystem.render(frameInfo);
+                GET_SINGLETON(game::SceneManager)->Render(frameInfo, renderSystem.get(), pointLightRenderSystem.get(), ubo);
                 GET_SINGLETON(game::GuiManager)->EndFrame(commandBuffer);
                 Engine.getRenderer().endSwapChainRenderPass(commandBuffer);
                 Engine.getRenderer().endFrame();
