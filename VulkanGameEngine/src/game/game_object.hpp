@@ -116,6 +116,10 @@ namespace game
 
         void AddKBControllerComponent();
         void AddPointLightComponent();
+        void AddMeshComponent(const char* filename);
+
+        void GUI_DisplayAddMeshComponentMenu();
+
         
     public:
         TransformComponent* Transform = nullptr;

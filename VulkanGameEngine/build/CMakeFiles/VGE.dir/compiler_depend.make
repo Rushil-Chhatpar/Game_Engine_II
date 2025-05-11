@@ -31,6 +31,7 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.gch: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/enable_special_members.h \
   /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
@@ -38,6 +39,8 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.gch: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hash_bytes.h \
+  /usr/include/c++/13/bits/hashtable.h \
+  /usr/include/c++/13/bits/hashtable_policy.h \
   /usr/include/c++/13/bits/invoke.h \
   /usr/include/c++/13/bits/ios_base.h \
   /usr/include/c++/13/bits/istream.tcc \
@@ -67,6 +70,7 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.gch: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/specfun.h \
   /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
@@ -94,6 +98,7 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.gch: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/uniform_int_dist.h \
   /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
@@ -125,6 +130,7 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.gch: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/functional \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
@@ -164,6 +170,7 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.gch: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
@@ -1063,27 +1070,8 @@ CMakeFiles/VGE.dir/src/engine/VGE_descriptors.cpp.o: CMakeFiles/VGE.dir/cmake_pc
   /usr/include/GL/glext.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/memory \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
   /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/stdc-predef.h \
@@ -1100,7 +1088,6 @@ CMakeFiles/VGE.dir/src/engine/VGE_descriptors.cpp.o: CMakeFiles/VGE.dir/cmake_pc
   /usr/include/vulkan/vk_platform.h \
   /usr/include/vulkan/vulkan.h \
   /usr/include/vulkan/vulkan_core.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
@@ -1113,25 +1100,16 @@ CMakeFiles/VGE.dir/src/engine/VGE_device.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
   /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
   /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/unordered_set.h \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
   /usr/include/c++/13/unordered_set \
   /usr/include/c++/13/vector \
   /usr/include/stdc-predef.h \
@@ -1148,7 +1126,6 @@ CMakeFiles/VGE.dir/src/engine/VGE_device.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx
   /usr/include/vulkan/vk_platform.h \
   /usr/include/vulkan/vulkan.h \
   /usr/include/vulkan/vulkan_core.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
@@ -1166,40 +1143,11 @@ CMakeFiles/VGE.dir/src/engine/VGE_engine.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cassert \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
-  /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
   /usr/include/glm/detail/setup.hpp \
@@ -1278,50 +1226,22 @@ CMakeFiles/VGE.dir/src/engine/VGE_pipeline.cpp.o: CMakeFiles/VGE.dir/cmake_pch.h
   /usr/include/GL/glext.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/fstream.tcc \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
   /usr/include/c++/13/bits/locale_classes.h \
-  /usr/include/c++/13/bits/memory_resource.h \
   /usr/include/c++/13/bits/move.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cerrno \
   /usr/include/c++/13/cstdio \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/fstream \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/istream \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
-  /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/errno.h \
   /usr/include/glm/detail/setup.hpp \
@@ -1411,40 +1331,11 @@ CMakeFiles/VGE.dir/src/engine/VGE_renderer.cpp.o: CMakeFiles/VGE.dir/cmake_pch.h
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cassert \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
-  /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
   /usr/include/glm/detail/setup.hpp \
@@ -1622,40 +1513,12 @@ CMakeFiles/VGE.dir/src/game/VGE_app.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cassert \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
   /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
@@ -1826,36 +1689,18 @@ CMakeFiles/VGE.dir/src/game/VGE_mesh.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
   /usr/include/c++/13/bits/alloc_traits.h \
-  /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/fstream.tcc \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
   /usr/include/c++/13/bits/locale_classes.h \
-  /usr/include/c++/13/bits/memory_resource.h \
   /usr/include/c++/13/bits/move.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
   /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_relops.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
@@ -1865,9 +1710,6 @@ CMakeFiles/VGE.dir/src/game/VGE_mesh.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/fstream \
   /usr/include/c++/13/functional \
@@ -1877,14 +1719,11 @@ CMakeFiles/VGE.dir/src/game/VGE_mesh.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/map \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/set \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
   /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/utility \
   /usr/include/c++/13/vector \
@@ -1981,40 +1820,11 @@ CMakeFiles/VGE.dir/src/game/components/component.cpp.o: CMakeFiles/VGE.dir/cmake
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
-  /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
   /usr/include/glm/detail/setup.hpp \
@@ -2178,52 +1988,31 @@ CMakeFiles/VGE.dir/src/game/game_object.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx 
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imconfig.h \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imgui.h \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_buffer.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_descriptors.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_device.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_engine.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_renderer.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_swap_chain.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_app.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_mesh.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component_manager.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.cpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
+  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
   /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
@@ -2318,40 +2107,11 @@ CMakeFiles/VGE.dir/src/game/gui/gui_manager.cpp.o: CMakeFiles/VGE.dir/cmake_pch.
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
-  /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
   /usr/include/glm/detail/setup.hpp \
@@ -2446,40 +2206,11 @@ CMakeFiles/VGE.dir/src/game/render_systems/VGE_default_render_system.cpp.o: CMak
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
-  /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
   /usr/include/glm/detail/setup.hpp \
@@ -2574,40 +2305,11 @@ CMakeFiles/VGE.dir/src/game/render_systems/VGE_pointlight_render_system.cpp.o: C
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
-  /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
   /usr/include/glm/detail/setup.hpp \
@@ -2709,40 +2411,12 @@ CMakeFiles/VGE.dir/src/game/scene/scene.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx 
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cassert \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
   /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
@@ -2841,40 +2515,11 @@ CMakeFiles/VGE.dir/src/game/scene/scene_manager.cpp.o: CMakeFiles/VGE.dir/cmake_
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
-  /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
   /usr/include/glm/detail/setup.hpp \
@@ -2973,40 +2618,12 @@ CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene.cpp.o: CMakeFiles/VGE.dir
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cassert \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
   /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
@@ -3106,40 +2723,12 @@ CMakeFiles/VGE.dir/src/game/scene/scenes/default_scene_2.cpp.o: CMakeFiles/VGE.d
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cassert \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
   /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
@@ -3237,40 +2826,12 @@ CMakeFiles/VGE.dir/src/main.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
   /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cassert \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
   /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
   /usr/include/c++/13/unordered_map \
   /usr/include/c++/13/vector \
   /usr/include/features.h \
@@ -3473,10 +3034,6 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /usr/include/glm/detail/type_float.hpp:
 
-/usr/include/c++/13/functional:
-
-/usr/include/c++/13/bits/std_function.h:
-
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_swap_chain.hpp:
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_renderer.hpp:
@@ -3489,10 +3046,6 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_device.cpp:
 
-/usr/include/c++/13/unordered_map:
-
-/usr/include/c++/13/bits/hashtable_policy.h:
-
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_descriptors.hpp:
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_device.hpp:
@@ -3500,10 +3053,6 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imgui_widgets.cpp:
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imgui_tables.cpp:
-
-/usr/include/c++/13/bits/enable_special_members.h:
-
-/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imstb_truetype.h:
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imstb_rectpack.h:
 
@@ -3555,13 +3104,21 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/movdirintrin.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/lzcntintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/lwpintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/keylockerintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/ia32intrin.h:
+
 /usr/include/glm/ext/matrix_float4x2.hpp:
 
 /usr/include/c++/13/bits/basic_ios.h:
 
 /usr/include/glm/ext/matrix_float2x3.hpp:
-
-/usr/include/stdc-predef.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniint8intrin.h:
 
@@ -3572,6 +3129,10 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 /usr/include/KHR/khrplatform.h:
 
 /usr/include/glm/ext/scalar_constants.hpp:
+
+/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imstb_truetype.h:
+
+/usr/include/c++/13/bits/enable_special_members.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
@@ -3596,8 +3157,6 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 /usr/include/glm/detail/type_vec1.hpp:
 
 /usr/include/c++/13/bits/uses_allocator_args.h:
-
-/usr/include/glm/ext/vector_bool3.hpp:
 
 /usr/include/glm/detail/type_mat4x4.inl:
 
@@ -3685,8 +3244,6 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
-/usr/include/glm/ext/scalar_int_sized.hpp:
-
 /usr/include/glm/detail/type_mat3x2.inl:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h:
@@ -3696,6 +3253,8 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 /usr/include/vk_video/vulkan_video_codec_h265std_encode.h:
 
 /usr/include/c++/13/vector:
+
+/usr/include/c++/13/unordered_map:
 
 /usr/include/ctype.h:
 
@@ -3747,13 +3306,17 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /usr/include/c++/13/istream:
 
-/usr/include/c++/13/compare:
+/usr/include/c++/13/initializer_list:
 
-/usr/include/c++/13/system_error:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h:
 
-/usr/include/c++/13/bits/ostream_insert.h:
+/usr/include/c++/13/tr1/bessel_function.tcc:
 
-/usr/include/c++/13/bits/stl_set.h:
+/usr/include/c++/13/functional:
+
+/usr/include/c++/13/ext/string_conversions.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmaintrin.h:
 
 /usr/include/c++/13/bits/node_handle.h:
 
@@ -3764,10 +3327,6 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 /usr/include/glm/detail/type_vec1.inl:
 
 /usr/include/c++/13/bits/parse_numbers.h:
-
-/usr/include/linux/errno.h:
-
-/usr/include/c++/13/bits/std_abs.h:
 
 /usr/include/c++/13/bits/atomic_lockfree_defines.h:
 
@@ -3807,8 +3366,6 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /usr/include/glm/ext/matrix_double2x3.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/keylockerintrin.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/13/include/rtmintrin.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
@@ -3819,6 +3376,14 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /usr/include/c++/13/bits/ios_base.h:
 
+/usr/include/c++/13/bits/stl_set.h:
+
+/usr/include/c++/13/tr1/legendre_function.tcc:
+
+/usr/include/glm/mat2x4.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+
 /usr/include/errno.h:
 
 /usr/include/c++/13/bits/functional_hash.h:
@@ -3828,10 +3393,6 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 /usr/include/c++/13/pstl/execution_defs.h:
 
 /usr/include/c++/13/bits/basic_ios.tcc:
-
-/usr/include/c++/13/bits/unordered_map.h:
-
-/usr/include/glm/ext/vector_bool3_precision.hpp:
 
 /usr/include/glm/ext/matrix_double2x2.hpp:
 
@@ -3865,17 +3426,9 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /usr/include/glm/detail/type_vec3.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h:
-
-/usr/include/c++/13/tr1/bessel_function.tcc:
-
-/usr/include/c++/13/initializer_list:
-
-/usr/include/c++/13/cstdlib:
-
-/usr/include/limits.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/13/include/enqcmdintrin.h:
+
+/usr/include/stdc-predef.h:
 
 /usr/include/glm/detail/func_integer.inl:
 
@@ -3929,25 +3482,19 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /usr/include/glm/ext/vector_double2_precision.hpp:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
-
-/usr/include/c++/13/bits/predefined_ops.h:
-
-/usr/include/c++/13/iosfwd:
-
 /usr/include/c++/13/cwchar:
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_app.hpp:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
-/usr/include/c++/13/tr1/modified_bessel_func.tcc:
-
-/usr/include/glm/ext/vector_bool2.hpp:
-
 /usr/include/glm/ext/matrix_double4x4.hpp:
 
 /usr/include/alloca.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/mm_malloc.h:
+
+/usr/include/c++/13/algorithm:
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.hpp:
 
@@ -3969,9 +3516,13 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512erintrin.h:
 
+/usr/include/c++/13/bits/hashtable_policy.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/rdseedintrin.h:
 
 /usr/include/c++/13/bits/char_traits.h:
+
+/usr/include/c++/13/bits/std_function.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
 
@@ -3995,6 +3546,12 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 CMakeFiles/VGE.dir/cmake_pch.hxx:
 
+/usr/include/c++/13/iosfwd:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
+
+/usr/include/c++/13/bits/predefined_ops.h:
+
 /usr/include/glm/detail/compute_common.hpp:
 
 /usr/include/strings.h:
@@ -4013,10 +3570,6 @@ CMakeFiles/VGE.dir/cmake_pch.hxx:
 
 /usr/include/glm/ext/matrix_float4x2_precision.hpp:
 
-/usr/include/c++/13/debug/debug.h:
-
-/usr/include/c++/13/bits/stl_list.h:
-
 /usr/include/glm/ext/vector_double4.hpp:
 
 /usr/include/c++/13/backward/binders.h:
@@ -4030,10 +3583,6 @@ CMakeFiles/VGE.dir/cmake_pch.hxx:
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_pipeline.cpp:
 
 CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
-
-/usr/include/glm/ext/vector_bool2_precision.hpp:
-
-/usr/include/c++/13/bits/functexcept.h:
 
 /usr/include/glm/geometric.hpp:
 
@@ -4069,6 +3618,20 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
+/usr/include/c++/13/bits/ostream_insert.h:
+
+/usr/include/c++/13/system_error:
+
+/usr/include/c++/13/compare:
+
+/usr/include/c++/13/bits/stl_list.h:
+
+/usr/include/c++/13/debug/debug.h:
+
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/linux/errno.h:
+
 /usr/include/c++/13/bits/locale_facets.tcc:
 
 /usr/include/c++/13/bits/requires_hosted.h:
@@ -4084,6 +3647,10 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_mesh.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/c++/13/bits/stl_multiset.h:
+
+/usr/include/c++/13/bits/uses_allocator.h:
 
 /usr/include/c++/13/bits/stl_algo.h:
 
@@ -4120,10 +3687,6 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 /usr/include/c++/13/numeric:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/glm/ext/matrix_double3x4.hpp:
 
 /usr/include/c++/13/bits/stl_iterator_base_types.h:
 
@@ -4197,10 +3760,6 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-/usr/include/c++/13/bits/stl_multiset.h:
-
-/usr/include/c++/13/bits/uses_allocator.h:
-
 /usr/include/c++/13/bits/atomic_base.h:
 
 /usr/include/c++/13/tr1/beta_function.tcc:
@@ -4223,7 +3782,19 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 
 /usr/include/c++/13/cstdint:
 
+/usr/include/limits.h:
+
+/usr/include/c++/13/cstdlib:
+
+/usr/include/c++/13/bits/unordered_map.h:
+
+/usr/include/glm/ext/vector_bool3_precision.hpp:
+
 /usr/include/c++/13/ctime:
+
+/usr/include/vk_video/vulkan_video_codec_h264std.h:
+
+/usr/include/c++/13/debug/assertions.h:
 
 /usr/include/glm/ext/vector_float3_precision.hpp:
 
@@ -4241,15 +3812,25 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 
 /usr/include/vk_video/vulkan_video_codecs_common.h:
 
-/usr/include/c++/13/ext/string_conversions.h:
+/usr/include/glm/ext/scalar_int_sized.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmaintrin.h:
+/usr/include/c++/13/tr1/modified_bessel_func.tcc:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:
+/usr/include/glm/ext/vector_bool2.hpp:
 
-/usr/include/glm/ext/matrix_float3x2.hpp:
+/usr/include/c++/13/bits/functexcept.h:
+
+/usr/include/glm/ext/vector_bool2_precision.hpp:
+
+/usr/include/glm/ext/vector_bool3.hpp:
+
+/usr/include/glm/ext/matrix_double3x4.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/hresetintrin.h:
+
+/usr/include/glm/ext/matrix_float3x2.hpp:
 
 /usr/include/glm/ext/vector_bool4.hpp:
 
@@ -4348,14 +3929,6 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 /usr/include/glm/mat2x2.hpp:
 
 /usr/include/glm/mat2x3.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/lzcntintrin.h:
-
-/usr/include/c++/13/tr1/legendre_function.tcc:
-
-/usr/include/glm/mat2x4.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.hpp:
 
@@ -4597,10 +4170,6 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 
 /usr/include/vulkan/vulkan.h:
 
-/usr/include/c++/13/debug/assertions.h:
-
-/usr/include/vk_video/vulkan_video_codec_h264std.h:
-
 /usr/include/c++/13/bits/fstream.tcc:
 
 /usr/include/vk_video/vulkan_video_codec_h264std_encode.h:
@@ -4728,11 +4297,3 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 /usr/lib/gcc/x86_64-linux-gnu/13/include/fxsrintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/gfniintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/ia32intrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/lwpintrin.h:
-
-/usr/include/c++/13/algorithm:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/mm_malloc.h:

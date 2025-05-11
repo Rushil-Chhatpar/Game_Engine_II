@@ -9,10 +9,12 @@ namespace game
     GameObject::GameObject(id_t id, std::string name, Scene* scene)
         : _id(id), _name(name), _scene(scene)
     {
-        _guiSelectables.push_back(GuiSelectable("Point Light Component",
+        _guiSelectables.push_back(GuiSelectable("Point Light",
             std::bind(&GameObject::AddPointLightComponent, this)));
         _guiSelectables.push_back(GuiSelectable("Keyboard Controller",
             std::bind(&GameObject::AddKBControllerComponent, this)));
+        _guiSelectables.push_back(GuiSelectable("Mesh", nullptr,
+            std::bind(&GameObject::GUI_DisplayAddMeshComponentMenu, this)));
     }
 
     void GameObject::AddKBControllerComponent()
@@ -23,6 +25,23 @@ namespace game
     void GameObject::AddPointLightComponent()
     {
         this->addComponent<PointLightComponent>(glm::vec3{1.0f, 1.0f, 1.0f}, 1.0f, 1.0f);
+    }
+
+    void GameObject::GUI_DisplayAddMeshComponentMenu()
+    {
+        if(ImGui::BeginMenu("Mesh"))
+        {
+            ImGui::SeparatorText("Select a mesh file");
+            if(ImGui::Selectable("Sitting"))
+            {
+                this->addComponent<MeshComponent>(_scene->getApp().Engine.getDevice(), "assets/Sitting.obj");
+            }
+            if(ImGui::Selectable("Floor"))
+            {
+                this->addComponent<MeshComponent>(_scene->getApp().Engine.getDevice(), "assets/Quad.obj");
+            }
+            ImGui::EndMenu();
+        }
     }
 
     void GameObject::SetActive(bool isActive)
