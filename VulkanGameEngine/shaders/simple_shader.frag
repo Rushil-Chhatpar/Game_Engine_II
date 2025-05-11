@@ -49,7 +49,7 @@ void main()
         // The result is a value between 0.0 and 1.0
         // This is a simple Lambertian lighting model
         // light intensity is basically the dot product of the surface normal and the light direction
-        float cosAngIncidence = max(dot(surfaceNormal, normalize(directionToLight)), 0.0);
+        float cosAngIncidence = max(dot(surfaceNormal, normalize(directionToLight)), 0);
         vec3 intensity = light.color.xyz * light.color.w * attenuation;
         diffuseLight += intensity * cosAngIncidence;
     }

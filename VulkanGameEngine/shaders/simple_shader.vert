@@ -30,8 +30,6 @@ layout(push_constant) uniform Push
     mat4 normalMatrix;
 } push;
 
-const float AMBIENT_LIGHT_INTENSITY = 0.2;
-
 void main()
 {
     vec4 worldPosion = push.modelMatrix * vec4(inPosition, 1.0);

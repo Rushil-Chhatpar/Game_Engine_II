@@ -10,17 +10,20 @@
 
 namespace game
 {
+    class Scene;
+    struct GuiSelectable;
+
     class GameObject
     {
     public:
         using id_t = unsigned int;
         
         // Factory method to create a new game object
-        static GameObject createGameObject(std::string name = "GameObject")
+        static GameObject createGameObject(Scene* scene, std::string name = "GameObject")
         {
             static id_t currentId = 0;
             currentId++;
-            GameObject obj(currentId, std::to_string(currentId) + ". " + name);
+            GameObject obj(currentId, std::to_string(currentId) + ". " + name, scene);
             obj.Transform = obj.addComponent<TransformComponent>();
 
             return obj;
@@ -29,11 +32,11 @@ namespace game
         // Factory method to create a new game object with a unique pointer
         // This is useful for managing the lifetime of the game object
         // and its components automatically
-        static std::unique_ptr<GameObject> createGameObjectPtr(std::string name = "GameObject")
+        static std::unique_ptr<GameObject> createGameObjectPtr(Scene* scene, std::string name = "GameObject")
         {
             static id_t currentId = 0;
             currentId++;
-            std::unique_ptr<GameObject> obj(new GameObject(currentId, std::to_string(currentId) + ". " + name));
+            std::unique_ptr<GameObject> obj(new GameObject(currentId, std::to_string(currentId) + ". " + name, scene));
             obj->Transform = obj->addComponent<TransformComponent>();
 
             return obj;
@@ -53,11 +56,9 @@ namespace game
         void GUI_RenderComponentProperties();
 
         // setters
-        void setColor(const glm::vec3& color) { this->color = color; }
         void setActive(bool isActive) { _isActive = isActive; }
         
         // getters
-        const glm::vec3& getColor() const { return color; }
         bool isActive() const { return _isActive; }
         const std::string& getName() const { return _name; }
 
@@ -110,21 +111,25 @@ namespace game
             _components.erase(it, _components.end());
         }
         
+    private:
+        GameObject(id_t id, std::string name, Scene* scene);
+
+        void AddKBControllerComponent();
+        void AddPointLightComponent();
+        
     public:
         TransformComponent* Transform = nullptr;
     private:
-        GameObject(id_t id, std::string name) : _id(id), _name(name) {}
-
-        glm::vec3 color{};
-        
         id_t _id;
-
         std::string _name;
+        Scene* _scene = nullptr;
+        
+        bool _isActive = true;
 
+        
         // Components
         std::vector<std::unique_ptr<Component>> _components;
 
-        bool _isActive = true;
-
+        std::vector<GuiSelectable> _guiSelectables;
     };
 }

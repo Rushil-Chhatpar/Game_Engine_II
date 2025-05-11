@@ -71,7 +71,7 @@ namespace VGE
             ubo.pointLights[lightIndex].color = glm::vec4(gameObject->getComponent<game::PointLightComponent>()->getColor(), gameObject->getComponent<game::PointLightComponent>()->getIntensity());
             lightIndex++;
         }
-        ubo.numPointLights = static_cast<int>(gameObjects.size());
+        ubo.numPointLights = lightIndex;
     }
 
     void VgePointLightRenderSystem::render(FrameInfo &frameInfo, std::vector<game::GameObject*>& gameObjects)

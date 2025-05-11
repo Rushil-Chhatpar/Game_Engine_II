@@ -15,6 +15,8 @@ namespace VGE
 namespace game
 {
     class GameObject;
+    struct GuiSelectable;
+
     class Scene
     {
         friend class SceneManager;
@@ -36,6 +38,8 @@ namespace game
         void GUI_DisplayObjectList();
         void GUI_DisplayObjectProperties();
 
+        const VGE::VgeApp& getApp() const { return _app; }
+
         CameraComponent* getCamera() const
         {
             return _cameraObject ? _cameraObject->getComponent<CameraComponent>() : nullptr;
@@ -44,6 +48,11 @@ namespace game
     protected:
         virtual void loadGameObjects() = 0;
 
+    private:
+        void GUI_DisplayCreateObjectMenu();
+        void createEmptyGameObject();
+        void createPointLightGameObject();
+
     protected:
         VGE::VgeApp& _app;
 
@@ -51,5 +60,8 @@ namespace game
         GameObject* _cameraObject = nullptr;
         GameObject* _guiSelectedObject = nullptr;
         bool _isActive = true;
+
+    private:
+        std::vector<GuiSelectable> _guiSelectables;      
     };
 }

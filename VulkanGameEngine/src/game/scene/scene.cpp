@@ -14,6 +14,11 @@ namespace game
     void Scene::Awake()
     {
         loadGameObjects();
+        
+        _guiSelectables.push_back(GuiSelectable("Create Empty", 
+            std::bind(&Scene::createEmptyGameObject, this)));
+        _guiSelectables.push_back(GuiSelectable("Create Point Light",
+            std::bind(&Scene::createPointLightGameObject, this)));
     }
 
     void Scene::Update(float deltaTime)
@@ -88,6 +93,10 @@ namespace game
 
     void Scene::GUI_DisplayObjectList()
     {
+        GUI_DisplayCreateObjectMenu();
+
+        ImGui::SeparatorText("GameObjects");
+
         for(auto& gameObject : _gameObjects)
         {
             uint8_t flags = 0;
@@ -104,12 +113,52 @@ namespace game
     {
         if(_guiSelectedObject)
         {
-            ImGui::LabelText("Name", "%s", _guiSelectedObject->getName().c_str());
+            ImGui::SeparatorText(_guiSelectedObject->getName().c_str());
             _guiSelectedObject->GUI_RenderComponentProperties();
         }
     }
-}
 
+    void Scene::GUI_DisplayCreateObjectMenu()
+    {
+        std::string createGOPopupIDName = "create_gameobject";
+        ImGuiID createGOPopupID = ImGui::GetID(createGOPopupIDName.c_str());
+
+        if(ImGui::Button("Create GameObject"))
+        {
+            ImGui::OpenPopup(createGOPopupID);
+        }
+
+        if(ImGui::BeginPopup(createGOPopupIDName.c_str()))
+        {
+            for(auto& selectable : _guiSelectables)
+            {
+                selectable.GUI_Render();
+            }
+            ImGui::EndPopup();
+        }
+    }
+
+    void Scene::createEmptyGameObject()
+    {
+        auto go = GameObject::createGameObjectPtr(this);
+        go->Transform->translation = {0.0f, 0.0f, 0.0f};
+        go->Transform->scale = glm::vec3{1.0f};
+        go->Transform->rotation = {0.0f, 0.0f, 0.0f};
+        _gameObjects.push_back(std::move(go));
+        _guiSelectedObject = _gameObjects.back().get();
+    }
+
+    void Scene::createPointLightGameObject()
+    {
+        auto go = GameObject::createGameObjectPtr(this, "Point Light");
+        go->addComponent<PointLightComponent>(glm::vec3{1.0f, 1.0f, 1.0f}, 1.0f, 1.0f);
+        go->Transform->translation = {0.0f, 0.0f, 0.0f};
+        go->Transform->scale = glm::vec3{1.0f};
+        go->Transform->rotation = {0.0f, 0.0f, 0.0f};
+        _gameObjects.push_back(std::move(go));
+        _guiSelectedObject = _gameObjects.back().get();
+    }
+}
 
 /*
             if (ImGui::TreeNode(gameObject->getName().c_str()))

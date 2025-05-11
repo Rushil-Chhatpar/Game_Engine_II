@@ -529,30 +529,6 @@ src/game/VGE_app.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_app.cpp.s
 .PHONY : src/game/VGE_app.cpp.s
 
-src/game/VGE_default_render_system.o: src/game/VGE_default_render_system.cpp.o
-.PHONY : src/game/VGE_default_render_system.o
-
-# target to build an object file
-src/game/VGE_default_render_system.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_default_render_system.cpp.o
-.PHONY : src/game/VGE_default_render_system.cpp.o
-
-src/game/VGE_default_render_system.i: src/game/VGE_default_render_system.cpp.i
-.PHONY : src/game/VGE_default_render_system.i
-
-# target to preprocess a source file
-src/game/VGE_default_render_system.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_default_render_system.cpp.i
-.PHONY : src/game/VGE_default_render_system.cpp.i
-
-src/game/VGE_default_render_system.s: src/game/VGE_default_render_system.cpp.s
-.PHONY : src/game/VGE_default_render_system.s
-
-# target to generate assembly for a file
-src/game/VGE_default_render_system.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/VGE_default_render_system.cpp.s
-.PHONY : src/game/VGE_default_render_system.cpp.s
-
 src/game/VGE_frame_info.o: src/game/VGE_frame_info.cpp.o
 .PHONY : src/game/VGE_frame_info.o
 
@@ -696,6 +672,54 @@ src/game/gui/gui_manager.s: src/game/gui/gui_manager.cpp.s
 src/game/gui/gui_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/gui/gui_manager.cpp.s
 .PHONY : src/game/gui/gui_manager.cpp.s
+
+src/game/render_systems/VGE_default_render_system.o: src/game/render_systems/VGE_default_render_system.cpp.o
+.PHONY : src/game/render_systems/VGE_default_render_system.o
+
+# target to build an object file
+src/game/render_systems/VGE_default_render_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/render_systems/VGE_default_render_system.cpp.o
+.PHONY : src/game/render_systems/VGE_default_render_system.cpp.o
+
+src/game/render_systems/VGE_default_render_system.i: src/game/render_systems/VGE_default_render_system.cpp.i
+.PHONY : src/game/render_systems/VGE_default_render_system.i
+
+# target to preprocess a source file
+src/game/render_systems/VGE_default_render_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/render_systems/VGE_default_render_system.cpp.i
+.PHONY : src/game/render_systems/VGE_default_render_system.cpp.i
+
+src/game/render_systems/VGE_default_render_system.s: src/game/render_systems/VGE_default_render_system.cpp.s
+.PHONY : src/game/render_systems/VGE_default_render_system.s
+
+# target to generate assembly for a file
+src/game/render_systems/VGE_default_render_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/render_systems/VGE_default_render_system.cpp.s
+.PHONY : src/game/render_systems/VGE_default_render_system.cpp.s
+
+src/game/render_systems/VGE_pointlight_render_system.o: src/game/render_systems/VGE_pointlight_render_system.cpp.o
+.PHONY : src/game/render_systems/VGE_pointlight_render_system.o
+
+# target to build an object file
+src/game/render_systems/VGE_pointlight_render_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/render_systems/VGE_pointlight_render_system.cpp.o
+.PHONY : src/game/render_systems/VGE_pointlight_render_system.cpp.o
+
+src/game/render_systems/VGE_pointlight_render_system.i: src/game/render_systems/VGE_pointlight_render_system.cpp.i
+.PHONY : src/game/render_systems/VGE_pointlight_render_system.i
+
+# target to preprocess a source file
+src/game/render_systems/VGE_pointlight_render_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/render_systems/VGE_pointlight_render_system.cpp.i
+.PHONY : src/game/render_systems/VGE_pointlight_render_system.cpp.i
+
+src/game/render_systems/VGE_pointlight_render_system.s: src/game/render_systems/VGE_pointlight_render_system.cpp.s
+.PHONY : src/game/render_systems/VGE_pointlight_render_system.s
+
+# target to generate assembly for a file
+src/game/render_systems/VGE_pointlight_render_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGE.dir/build.make CMakeFiles/VGE.dir/src/game/render_systems/VGE_pointlight_render_system.cpp.s
+.PHONY : src/game/render_systems/VGE_pointlight_render_system.cpp.s
 
 src/game/scene/scene.o: src/game/scene/scene.cpp.o
 .PHONY : src/game/scene/scene.o
@@ -901,9 +925,6 @@ help:
 	@echo "... src/game/VGE_app.o"
 	@echo "... src/game/VGE_app.i"
 	@echo "... src/game/VGE_app.s"
-	@echo "... src/game/VGE_default_render_system.o"
-	@echo "... src/game/VGE_default_render_system.i"
-	@echo "... src/game/VGE_default_render_system.s"
 	@echo "... src/game/VGE_frame_info.o"
 	@echo "... src/game/VGE_frame_info.i"
 	@echo "... src/game/VGE_frame_info.s"
@@ -922,6 +943,12 @@ help:
 	@echo "... src/game/gui/gui_manager.o"
 	@echo "... src/game/gui/gui_manager.i"
 	@echo "... src/game/gui/gui_manager.s"
+	@echo "... src/game/render_systems/VGE_default_render_system.o"
+	@echo "... src/game/render_systems/VGE_default_render_system.i"
+	@echo "... src/game/render_systems/VGE_default_render_system.s"
+	@echo "... src/game/render_systems/VGE_pointlight_render_system.o"
+	@echo "... src/game/render_systems/VGE_pointlight_render_system.i"
+	@echo "... src/game/render_systems/VGE_pointlight_render_system.s"
 	@echo "... src/game/scene/scene.o"
 	@echo "... src/game/scene/scene.i"
 	@echo "... src/game/scene/scene.s"

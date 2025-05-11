@@ -66,7 +66,9 @@ namespace VGE
 
     void VgeApp::run()
     {
-        // Awake all scenes, gameobjects, and components
+        // Awake all scenes, gameobjects, and components in that order
+        // This is necessary to ensure that all game objects and components are
+        // properly 'awake' before the game loop starts
         GET_SINGLETON(game::SceneManager)->Awake();
         GET_SINGLETON(game::ComponentManager)->Awake();
 
@@ -128,15 +130,9 @@ namespace VGE
             {
                 int frameIndex = Engine.getRenderer().getFrameIndex();
                 
-                // update objects in memory
                 game::CameraComponent* camera = GET_SINGLETON(game::SceneManager)->getActiveScene()->getCamera();
-                GlobalUBO ubo{};
-                ubo.projectionMatrix = camera->getProjectionMatrix();
-                ubo.ViewMatrix = camera->getViewMatrix();
-                //ubo.lightDirection = glm::normalize(lightDirection);
-                uboBuffers[frameIndex]->writeToBuffer(&ubo);
-                uboBuffers[frameIndex]->flush();
-
+                
+                
                 // This level of separation is necessary
                 // It can easily integrate multiple render passes for things like
                 // shadow mapping, post processing, reflections, etc.
@@ -151,14 +147,21 @@ namespace VGE
                     .globalDescriptorSet = globalDescriptorSets[frameIndex],
                 };
                 Engine.getRenderer().beginSwapChainRenderPass(commandBuffer);
-
+                
                 ImGui::Begin("Light");
                 //ImGui::DragFloat3("Light Direction", &lightDirection.x);
                 ImGui::End();
-
                 drawAppUI();
 
+                GlobalUBO ubo{};
                 GET_SINGLETON(game::SceneManager)->Render(frameInfo, renderSystem.get(), pointLightRenderSystem.get(), ubo);
+                
+                // update objects in memory
+                ubo.projectionMatrix = camera->getProjectionMatrix();
+                ubo.ViewMatrix = camera->getViewMatrix();
+                uboBuffers[frameIndex]->writeToBuffer(&ubo);
+                uboBuffers[frameIndex]->flush();
+
                 GET_SINGLETON(game::GuiManager)->EndFrame(commandBuffer);
                 Engine.getRenderer().endSwapChainRenderPass(commandBuffer);
                 Engine.getRenderer().endFrame();
@@ -176,8 +179,8 @@ namespace VGE
 
     void VgeApp::drawAppUI()
     {
-        //bool showDemoWindow = true;
-        //ImGui::ShowDemoWindow(&showDemoWindow);
+        bool showDemoWindow = true;
+        ImGui::ShowDemoWindow(&showDemoWindow);
 
         if (ImGui::BeginMainMenuBar())
         {

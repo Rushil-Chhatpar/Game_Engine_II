@@ -17,6 +17,7 @@
 #include <limits>
 #include <stdexcept>
 #include <algorithm>
+#include <functional>
 
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE

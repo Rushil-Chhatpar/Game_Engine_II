@@ -24,6 +24,35 @@ namespace game
         VkSampleCountFlagBits MSAASamples = VK_SAMPLE_COUNT_1_BIT;
     };
 
+    struct GuiSelectable
+    {
+        GuiSelectable(const std::string& label, std::function<void()> action, std::function<void()> render = nullptr, ImGuiSelectableFlags flags = ImGuiSelectableFlags_None)
+            : label(label)
+            , action(action)
+            , render(render)
+            , flags(flags) 
+        {}
+
+        void GUI_Render()
+        {
+            if(render)
+            {
+                render();
+                return;
+            }
+
+            if (ImGui::Selectable(label.c_str(), false, flags))
+            {
+                action();
+            }
+        }
+
+        std::string label;
+        std::function<void()> action;
+        std::function<void()> render;
+        ImGuiSelectableFlags flags = ImGuiSelectableFlags_None;
+    };
+
     class GuiManager
     {
         DECLARE_SINGLETON(GuiManager);

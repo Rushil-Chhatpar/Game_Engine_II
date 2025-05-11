@@ -1605,13 +1605,14 @@ CMakeFiles/VGE.dir/src/game/VGE_app.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_app.cpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_app.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_mesh.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component_manager.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_default_render_system.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_pointlight_render_system.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene_manager.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scenes/default_scene.hpp \
@@ -1642,134 +1643,6 @@ CMakeFiles/VGE.dir/src/game/VGE_app.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cassert \
-  /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/ext/alloc_traits.h \
-  /usr/include/c++/13/ext/numeric_traits.h \
-  /usr/include/c++/13/functional \
-  /usr/include/c++/13/initializer_list \
-  /usr/include/c++/13/limits \
-  /usr/include/c++/13/memory \
-  /usr/include/c++/13/new \
-  /usr/include/c++/13/string \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeinfo \
-  /usr/include/c++/13/unordered_map \
-  /usr/include/c++/13/vector \
-  /usr/include/features.h \
-  /usr/include/glm/detail/setup.hpp \
-  /usr/include/glm/detail/type_float.hpp \
-  /usr/include/glm/detail/type_quat.hpp \
-  /usr/include/glm/detail/type_quat.inl \
-  /usr/include/glm/ext/matrix_clip_space.hpp \
-  /usr/include/glm/ext/matrix_clip_space.inl \
-  /usr/include/glm/ext/matrix_projection.hpp \
-  /usr/include/glm/ext/matrix_projection.inl \
-  /usr/include/glm/ext/matrix_transform.hpp \
-  /usr/include/glm/ext/matrix_transform.inl \
-  /usr/include/glm/ext/quaternion_common.hpp \
-  /usr/include/glm/ext/quaternion_common.inl \
-  /usr/include/glm/ext/quaternion_double.hpp \
-  /usr/include/glm/ext/quaternion_double_precision.hpp \
-  /usr/include/glm/ext/quaternion_float.hpp \
-  /usr/include/glm/ext/quaternion_float_precision.hpp \
-  /usr/include/glm/ext/quaternion_geometric.hpp \
-  /usr/include/glm/ext/quaternion_geometric.inl \
-  /usr/include/glm/ext/quaternion_relational.hpp \
-  /usr/include/glm/ext/quaternion_relational.inl \
-  /usr/include/glm/ext/quaternion_transform.hpp \
-  /usr/include/glm/ext/quaternion_transform.inl \
-  /usr/include/glm/ext/quaternion_trigonometric.hpp \
-  /usr/include/glm/ext/quaternion_trigonometric.inl \
-  /usr/include/glm/ext/vector_bool1.hpp \
-  /usr/include/glm/ext/vector_bool1_precision.hpp \
-  /usr/include/glm/ext/vector_double1.hpp \
-  /usr/include/glm/ext/vector_double1_precision.hpp \
-  /usr/include/glm/ext/vector_float1.hpp \
-  /usr/include/glm/ext/vector_float1_precision.hpp \
-  /usr/include/glm/ext/vector_int1.hpp \
-  /usr/include/glm/ext/vector_int1_sized.hpp \
-  /usr/include/glm/ext/vector_relational.hpp \
-  /usr/include/glm/ext/vector_relational.inl \
-  /usr/include/glm/ext/vector_uint1.hpp \
-  /usr/include/glm/ext/vector_uint1_sized.hpp \
-  /usr/include/glm/gtc/epsilon.hpp \
-  /usr/include/glm/gtc/epsilon.inl \
-  /usr/include/glm/gtc/matrix_transform.hpp \
-  /usr/include/glm/gtc/matrix_transform.inl \
-  /usr/include/glm/gtc/quaternion.hpp \
-  /usr/include/glm/gtc/quaternion.inl \
-  /usr/include/glm/gtc/type_ptr.hpp \
-  /usr/include/glm/gtc/type_ptr.inl \
-  /usr/include/glm/gtc/vec1.hpp \
-  /usr/include/glm/gtx/dual_quaternion.hpp \
-  /usr/include/glm/gtx/dual_quaternion.inl \
-  /usr/include/glm/gtx/hash.hpp \
-  /usr/include/glm/gtx/hash.inl \
-  /usr/include/stdc-predef.h \
-  /usr/include/string.h \
-  /usr/include/vk_video/vulkan_video_codec_av1std.h \
-  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
-  /usr/include/vk_video/vulkan_video_codec_av1std_encode.h \
-  /usr/include/vk_video/vulkan_video_codec_h264std.h \
-  /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
-  /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
-  /usr/include/vk_video/vulkan_video_codec_h265std.h \
-  /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
-  /usr/include/vk_video/vulkan_video_codec_h265std_encode.h \
-  /usr/include/vk_video/vulkan_video_codecs_common.h \
-  /usr/include/vulkan/vk_platform.h \
-  /usr/include/vulkan/vulkan.h \
-  /usr/include/vulkan/vulkan_core.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
-
-CMakeFiles/VGE.dir/src/game/VGE_default_render_system.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_glfw.h \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_vulkan.h \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imconfig.h \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imgui.h \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_buffer.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_device.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_pipeline.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.cpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_mesh.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component_manager.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.hpp \
-  /usr/include/GL/gl.h \
-  /usr/include/GL/glext.h \
-  /usr/include/GLFW/glfw3.h \
-  /usr/include/KHR/khrplatform.h \
-  /usr/include/assert.h \
-  /usr/include/c++/13/array \
-  /usr/include/c++/13/bits/allocator.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
-  /usr/include/c++/13/bits/functexcept.h \
-  /usr/include/c++/13/bits/functional_hash.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
-  /usr/include/c++/13/bits/invoke.h \
-  /usr/include/c++/13/bits/memory_resource.h \
-  /usr/include/c++/13/bits/node_handle.h \
-  /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/refwrap.h \
-  /usr/include/c++/13/bits/requires_hosted.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/cstring \
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
@@ -2551,6 +2424,262 @@ CMakeFiles/VGE.dir/src/game/gui/gui_manager.cpp.o: CMakeFiles/VGE.dir/cmake_pch.
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
+CMakeFiles/VGE.dir/src/game/render_systems/VGE_default_render_system.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_glfw.h \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_vulkan.h \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imconfig.h \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imgui.h \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_buffer.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_device.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_pipeline.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_mesh.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component_manager.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_default_render_system.cpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_default_render_system.hpp \
+  /usr/include/GL/gl.h \
+  /usr/include/GL/glext.h \
+  /usr/include/GLFW/glfw3.h \
+  /usr/include/KHR/khrplatform.h \
+  /usr/include/assert.h \
+  /usr/include/c++/13/array \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/enable_special_members.h \
+  /usr/include/c++/13/bits/erase_if.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hashtable.h \
+  /usr/include/c++/13/bits/hashtable_policy.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/memory_resource.h \
+  /usr/include/c++/13/bits/node_handle.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/unordered_map.h \
+  /usr/include/c++/13/cstring \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/functional \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/limits \
+  /usr/include/c++/13/memory \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/type_traits \
+  /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/unordered_map \
+  /usr/include/c++/13/vector \
+  /usr/include/features.h \
+  /usr/include/glm/detail/setup.hpp \
+  /usr/include/glm/detail/type_float.hpp \
+  /usr/include/glm/detail/type_quat.hpp \
+  /usr/include/glm/detail/type_quat.inl \
+  /usr/include/glm/ext/matrix_clip_space.hpp \
+  /usr/include/glm/ext/matrix_clip_space.inl \
+  /usr/include/glm/ext/matrix_projection.hpp \
+  /usr/include/glm/ext/matrix_projection.inl \
+  /usr/include/glm/ext/matrix_transform.hpp \
+  /usr/include/glm/ext/matrix_transform.inl \
+  /usr/include/glm/ext/quaternion_common.hpp \
+  /usr/include/glm/ext/quaternion_common.inl \
+  /usr/include/glm/ext/quaternion_double.hpp \
+  /usr/include/glm/ext/quaternion_double_precision.hpp \
+  /usr/include/glm/ext/quaternion_float.hpp \
+  /usr/include/glm/ext/quaternion_float_precision.hpp \
+  /usr/include/glm/ext/quaternion_geometric.hpp \
+  /usr/include/glm/ext/quaternion_geometric.inl \
+  /usr/include/glm/ext/quaternion_relational.hpp \
+  /usr/include/glm/ext/quaternion_relational.inl \
+  /usr/include/glm/ext/quaternion_transform.hpp \
+  /usr/include/glm/ext/quaternion_transform.inl \
+  /usr/include/glm/ext/quaternion_trigonometric.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.inl \
+  /usr/include/glm/ext/vector_bool1.hpp \
+  /usr/include/glm/ext/vector_bool1_precision.hpp \
+  /usr/include/glm/ext/vector_double1.hpp \
+  /usr/include/glm/ext/vector_double1_precision.hpp \
+  /usr/include/glm/ext/vector_float1.hpp \
+  /usr/include/glm/ext/vector_float1_precision.hpp \
+  /usr/include/glm/ext/vector_int1.hpp \
+  /usr/include/glm/ext/vector_int1_sized.hpp \
+  /usr/include/glm/ext/vector_relational.hpp \
+  /usr/include/glm/ext/vector_relational.inl \
+  /usr/include/glm/ext/vector_uint1.hpp \
+  /usr/include/glm/ext/vector_uint1_sized.hpp \
+  /usr/include/glm/gtc/epsilon.hpp \
+  /usr/include/glm/gtc/epsilon.inl \
+  /usr/include/glm/gtc/matrix_transform.hpp \
+  /usr/include/glm/gtc/matrix_transform.inl \
+  /usr/include/glm/gtc/quaternion.hpp \
+  /usr/include/glm/gtc/quaternion.inl \
+  /usr/include/glm/gtc/type_ptr.hpp \
+  /usr/include/glm/gtc/type_ptr.inl \
+  /usr/include/glm/gtc/vec1.hpp \
+  /usr/include/glm/gtx/dual_quaternion.hpp \
+  /usr/include/glm/gtx/dual_quaternion.inl \
+  /usr/include/glm/gtx/hash.hpp \
+  /usr/include/glm/gtx/hash.inl \
+  /usr/include/stdc-predef.h \
+  /usr/include/string.h \
+  /usr/include/vk_video/vulkan_video_codec_av1std.h \
+  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
+  /usr/include/vk_video/vulkan_video_codec_av1std_encode.h \
+  /usr/include/vk_video/vulkan_video_codec_h264std.h \
+  /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
+  /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
+  /usr/include/vk_video/vulkan_video_codec_h265std.h \
+  /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
+  /usr/include/vk_video/vulkan_video_codec_h265std_encode.h \
+  /usr/include/vk_video/vulkan_video_codecs_common.h \
+  /usr/include/vulkan/vk_platform.h \
+  /usr/include/vulkan/vulkan.h \
+  /usr/include/vulkan/vulkan_core.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
+
+CMakeFiles/VGE.dir/src/game/render_systems/VGE_pointlight_render_system.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_glfw.h \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_vulkan.h \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imconfig.h \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/imgui.h \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_buffer.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_device.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_pipeline.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_mesh.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component_manager.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_pointlight_render_system.cpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_pointlight_render_system.hpp \
+  /usr/include/GL/gl.h \
+  /usr/include/GL/glext.h \
+  /usr/include/GLFW/glfw3.h \
+  /usr/include/KHR/khrplatform.h \
+  /usr/include/assert.h \
+  /usr/include/c++/13/array \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/enable_special_members.h \
+  /usr/include/c++/13/bits/erase_if.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hashtable.h \
+  /usr/include/c++/13/bits/hashtable_policy.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/memory_resource.h \
+  /usr/include/c++/13/bits/node_handle.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/unordered_map.h \
+  /usr/include/c++/13/cstring \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/functional \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/limits \
+  /usr/include/c++/13/memory \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/type_traits \
+  /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/unordered_map \
+  /usr/include/c++/13/vector \
+  /usr/include/features.h \
+  /usr/include/glm/detail/setup.hpp \
+  /usr/include/glm/detail/type_float.hpp \
+  /usr/include/glm/detail/type_quat.hpp \
+  /usr/include/glm/detail/type_quat.inl \
+  /usr/include/glm/ext/matrix_clip_space.hpp \
+  /usr/include/glm/ext/matrix_clip_space.inl \
+  /usr/include/glm/ext/matrix_projection.hpp \
+  /usr/include/glm/ext/matrix_projection.inl \
+  /usr/include/glm/ext/matrix_transform.hpp \
+  /usr/include/glm/ext/matrix_transform.inl \
+  /usr/include/glm/ext/quaternion_common.hpp \
+  /usr/include/glm/ext/quaternion_common.inl \
+  /usr/include/glm/ext/quaternion_double.hpp \
+  /usr/include/glm/ext/quaternion_double_precision.hpp \
+  /usr/include/glm/ext/quaternion_float.hpp \
+  /usr/include/glm/ext/quaternion_float_precision.hpp \
+  /usr/include/glm/ext/quaternion_geometric.hpp \
+  /usr/include/glm/ext/quaternion_geometric.inl \
+  /usr/include/glm/ext/quaternion_relational.hpp \
+  /usr/include/glm/ext/quaternion_relational.inl \
+  /usr/include/glm/ext/quaternion_transform.hpp \
+  /usr/include/glm/ext/quaternion_transform.inl \
+  /usr/include/glm/ext/quaternion_trigonometric.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.inl \
+  /usr/include/glm/ext/vector_bool1.hpp \
+  /usr/include/glm/ext/vector_bool1_precision.hpp \
+  /usr/include/glm/ext/vector_double1.hpp \
+  /usr/include/glm/ext/vector_double1_precision.hpp \
+  /usr/include/glm/ext/vector_float1.hpp \
+  /usr/include/glm/ext/vector_float1_precision.hpp \
+  /usr/include/glm/ext/vector_int1.hpp \
+  /usr/include/glm/ext/vector_int1_sized.hpp \
+  /usr/include/glm/ext/vector_relational.hpp \
+  /usr/include/glm/ext/vector_relational.inl \
+  /usr/include/glm/ext/vector_uint1.hpp \
+  /usr/include/glm/ext/vector_uint1_sized.hpp \
+  /usr/include/glm/gtc/epsilon.hpp \
+  /usr/include/glm/gtc/epsilon.inl \
+  /usr/include/glm/gtc/matrix_transform.hpp \
+  /usr/include/glm/gtc/matrix_transform.inl \
+  /usr/include/glm/gtc/quaternion.hpp \
+  /usr/include/glm/gtc/quaternion.inl \
+  /usr/include/glm/gtc/type_ptr.hpp \
+  /usr/include/glm/gtc/type_ptr.inl \
+  /usr/include/glm/gtc/vec1.hpp \
+  /usr/include/glm/gtx/dual_quaternion.hpp \
+  /usr/include/glm/gtx/dual_quaternion.inl \
+  /usr/include/glm/gtx/hash.hpp \
+  /usr/include/glm/gtx/hash.inl \
+  /usr/include/stdc-predef.h \
+  /usr/include/string.h \
+  /usr/include/vk_video/vulkan_video_codec_av1std.h \
+  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
+  /usr/include/vk_video/vulkan_video_codec_av1std_encode.h \
+  /usr/include/vk_video/vulkan_video_codec_h264std.h \
+  /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
+  /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
+  /usr/include/vk_video/vulkan_video_codec_h265std.h \
+  /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
+  /usr/include/vk_video/vulkan_video_codec_h265std_encode.h \
+  /usr/include/vk_video/vulkan_video_codecs_common.h \
+  /usr/include/vulkan/vk_platform.h \
+  /usr/include/vulkan/vulkan.h \
+  /usr/include/vulkan/vulkan_core.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
+
 CMakeFiles/VGE.dir/src/game/scene/scene.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_glfw.h \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_vulkan.h \
@@ -2565,13 +2694,14 @@ CMakeFiles/VGE.dir/src/game/scene/scene.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx 
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_swap_chain.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_app.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_mesh.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component_manager.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_default_render_system.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_pointlight_render_system.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.cpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.hpp \
   /usr/include/GL/gl.h \
@@ -2695,13 +2825,14 @@ CMakeFiles/VGE.dir/src/game/scene/scene_manager.cpp.o: CMakeFiles/VGE.dir/cmake_
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_device.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_pipeline.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_window.hpp \
-  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_frame_info.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_mesh.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component_manager.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/gui/gui_manager.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_default_render_system.hpp \
+  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_pointlight_render_system.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.hpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene_manager.cpp \
   /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene_manager.hpp \
@@ -3226,6 +3357,10 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.cpp:
 
+/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_pointlight_render_system.cpp:
+
+/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_default_render_system.cpp:
+
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/components/component_manager.cpp:
 
 /usr/include/c++/13/sstream:
@@ -3243,6 +3378,8 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene_manager.hpp:
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.hpp:
+
+/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_pointlight_render_system.hpp:
 
 /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/game_object.hpp:
 
@@ -3599,8 +3736,6 @@ CMakeFiles/VGE.dir/src/pch.cpp.o: CMakeFiles/VGE.dir/cmake_pch.hxx \
 /usr/include/c++/13/pstl/pstl_config.h:
 
 /usr/include/c++/13/pstl/glue_numeric_defs.h:
-
-/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.cpp:
 
 /usr/include/glm/ext/matrix_float3x3_precision.hpp:
 
@@ -3997,6 +4132,8 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 /usr/include/c++/13/bits/stringfwd.h:
 
 /usr/include/c++/13/cerrno:
+
+/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/render_systems/VGE_default_render_system.hpp:
 
 /usr/include/glm/detail/setup.hpp:
 
@@ -4561,8 +4698,6 @@ CMakeFiles/VGE.dir/cmake_pch.hxx.cxx:
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqvlintrin.h:
-
-/home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_default_render_system.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 

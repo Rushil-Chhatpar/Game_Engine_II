@@ -13,7 +13,7 @@ namespace game
     void DefaultScene::Awake()
     {
         Scene::Awake();
-        auto cameraObject = game::GameObject::createGameObjectPtr("Camera");
+        auto cameraObject = game::GameObject::createGameObjectPtr(this, "Camera");
         cameraObject->addComponent<game::CameraComponent>();
         cameraObject->addComponent<game::KeyboardController>(_app.Engine.getWindow().getGLFWwindow(), 3.0f, 1.5f);
         _cameraObject = cameraObject.get();
@@ -29,29 +29,34 @@ namespace game
     void DefaultScene::loadGameObjects()
     {
         std::shared_ptr<VGE::VgeMesh> mesh = VGE::VgeMesh::createModelFromFile(_app.Engine.getDevice(), "assets/Sitting.obj");
-        auto go = game::GameObject::createGameObjectPtr();
+        auto go = game::GameObject::createGameObjectPtr(this);
         go->addComponent<game::MeshComponent>(_app.Engine.getDevice(), "assets/Sitting.obj");
         go->Transform->translation = {0.0f, 0.0f, 0.0f};
         go->Transform->scale = glm::vec3{0.2f};
         go->Transform->rotation = {glm::pi<float>(), 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
 
-        go = game::GameObject::createGameObjectPtr();
+        go = game::GameObject::createGameObjectPtr(this);
         go->addComponent<game::MeshComponent>(_app.Engine.getDevice(), "assets/Sitting.obj");
         go->Transform->translation = {2.0f, 0.0f, 0.0f};
         go->Transform->scale = glm::vec3{0.2f};
         go->Transform->rotation = {glm::pi<float>(), 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
 
-        go = game::GameObject::createGameObjectPtr("Floor");
+        go = game::GameObject::createGameObjectPtr(this, "Floor");
         go->addComponent<game::MeshComponent>(_app.Engine.getDevice(), "assets/Quad.obj");
         go->Transform->translation = {0.0f, 0.5f, 0.0f};
         go->Transform->scale = glm::vec3{2.0f};
         go->Transform->rotation = {0.0f, 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
 
-        go = game::GameObject::createGameObjectPtr("Light");
+        go = game::GameObject::createGameObjectPtr(this, "Light");
         go->addComponent<game::PointLightComponent>(glm::vec3{1.0f, 1.0f, 1.0f}, 1.0f, 1.0f);
+        _gameObjects.push_back(std::move(go));
+
+        go = game::GameObject::createGameObjectPtr(this, "Light2");
+        go->addComponent<game::PointLightComponent>(glm::vec3{1.0f, 1.0f, 1.0f}, 1.0f, 1.0f);
+        go->Transform->translation = {1.0f, 0.0f, 0.0f};
         _gameObjects.push_back(std::move(go));
     }
 }

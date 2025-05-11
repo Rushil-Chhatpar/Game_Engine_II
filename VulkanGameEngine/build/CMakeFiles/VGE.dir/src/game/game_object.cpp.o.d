@@ -28,32 +28,7 @@ CMakeFiles/VGE.dir/src/game/game_object.cpp.o: \
  /usr/include/c++/13/vector \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_buffer.hpp \
  /usr/include/glm/gtx/hash.hpp /usr/include/c++/13/functional \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
- /usr/include/c++/13/bits/stl_function.h /usr/include/c++/13/tuple \
- /usr/include/c++/13/type_traits \
- /usr/include/c++/13/bits/functional_hash.h \
- /usr/include/c++/13/bits/invoke.h /usr/include/c++/13/bits/refwrap.h \
- /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/new \
- /usr/include/c++/13/typeinfo /usr/include/c++/13/bits/functexcept.h \
- /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/requires_hosted.h \
- /usr/include/c++/13/initializer_list \
- /usr/include/c++/13/bits/unordered_map.h \
- /usr/include/c++/13/bits/hashtable.h \
- /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/bits/stl_algobase.h \
- /usr/include/c++/13/bits/stl_pair.h \
- /usr/include/c++/13/ext/aligned_buffer.h \
- /usr/include/c++/13/ext/alloc_traits.h \
- /usr/include/c++/13/ext/numeric_traits.h \
- /usr/include/c++/13/bits/enable_special_members.h \
- /usr/include/c++/13/bits/node_handle.h \
- /usr/include/c++/13/bits/allocator.h \
- /usr/include/c++/13/bits/range_access.h \
- /usr/include/c++/13/bits/erase_if.h \
- /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/array \
- /usr/include/c++/13/bits/stl_algo.h /usr/include/glm/gtc/vec1.hpp \
- /usr/include/glm/ext/vector_bool1.hpp \
+ /usr/include/glm/gtc/vec1.hpp /usr/include/glm/ext/vector_bool1.hpp \
  /usr/include/glm/ext/vector_bool1_precision.hpp \
  /usr/include/glm/ext/vector_float1.hpp \
  /usr/include/glm/ext/vector_float1_precision.hpp \
@@ -107,4 +82,13 @@ CMakeFiles/VGE.dir/src/game/game_object.cpp.o: \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_glfw.h \
  /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/include/imgui/backends/imgui_impl_vulkan.h \
  /usr/include/glm/gtc/type_ptr.hpp /usr/include/c++/13/cstring \
- /usr/include/glm/gtc/type_ptr.inl
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+ /usr/include/glm/gtc/type_ptr.inl \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/scene/scene.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/game/VGE_app.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_renderer.hpp \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_swap_chain.hpp \
+ /usr/include/c++/13/cassert \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_descriptors.hpp \
+ /usr/include/c++/13/unordered_map \
+ /home/rcwsl/VulkanGameEngine/Game_Engine_II/VulkanGameEngine/src/engine/VGE_engine.hpp
