@@ -114,11 +114,13 @@ namespace game
     private:
         GameObject(id_t id, std::string name, Scene* scene);
 
+        void GUI_DisplayAddComponentMenu();
+        void GUI_DisplayAddMeshComponentMenu();
+
         void AddKBControllerComponent();
         void AddPointLightComponent();
         void AddMeshComponent(const char* filename);
 
-        void GUI_DisplayAddMeshComponentMenu();
 
         
     public:

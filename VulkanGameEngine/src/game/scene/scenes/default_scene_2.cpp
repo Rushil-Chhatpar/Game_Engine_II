@@ -25,7 +25,7 @@ namespace game
     void DefaultScene2::Update(float deltaTime)
     {
         float aspect = _app.Engine.getRenderer().getAspectRatio();
-        _cameraObject->getComponent<game::CameraComponent>()->setPerspectiveProjection(glm::radians(50.0f), aspect, 0.1f, 10.0f);
+        _cameraObject->getComponent<game::CameraComponent>()->setPerspectiveProjection(glm::radians(50.0f), aspect, 0.1f, 20.0f);
     }
 
     void DefaultScene2::loadGameObjects()

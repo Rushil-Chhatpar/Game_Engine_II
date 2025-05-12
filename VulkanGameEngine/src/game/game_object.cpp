@@ -27,6 +27,28 @@ namespace game
         this->addComponent<PointLightComponent>(glm::vec3{1.0f, 1.0f, 1.0f}, 1.0f, 1.0f);
     }
 
+    void GameObject::GUI_DisplayAddComponentMenu()
+    {
+        ImGui::SeparatorText("Add Component");
+
+        std::string addComponentPopupIDName = "app_component";
+        ImGuiID addComponentPopupID = ImGui::GetID(addComponentPopupIDName.c_str());
+
+        if(ImGui::Button("Add Component"))
+        {
+            ImGui::OpenPopup(addComponentPopupID);
+        }
+
+        if(ImGui::BeginPopup(addComponentPopupIDName.c_str()))
+        {
+            for(auto& selectable : _guiSelectables)
+            {
+                selectable.GUI_Render();
+            }
+            ImGui::EndPopup();
+        }
+    }
+
     void GameObject::GUI_DisplayAddMeshComponentMenu()
     {
         if(ImGui::BeginMenu("Mesh"))
@@ -59,24 +81,7 @@ namespace game
         {
             component->GUI_RenderProperties();
         }
-
-        ImGui::SeparatorText("Add Component");
-
-        std::string addComponentPopupIDName = "app_component";
-        ImGuiID addComponentPopupID = ImGui::GetID(addComponentPopupIDName.c_str());
-
-        if(ImGui::Button("Add Component"))
-        {
-            ImGui::OpenPopup(addComponentPopupID);
-        }
-
-        if(ImGui::BeginPopup(addComponentPopupIDName.c_str()))
-        {
-            for(auto& selectable : _guiSelectables)
-            {
-                selectable.GUI_Render();
-            }
-            ImGui::EndPopup();
-        }
+ 
+        GUI_DisplayAddComponentMenu();        
     }
 }

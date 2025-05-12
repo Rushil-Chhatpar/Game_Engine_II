@@ -179,8 +179,8 @@ namespace VGE
 
     void VgeApp::drawAppUI()
     {
-        bool showDemoWindow = true;
-        ImGui::ShowDemoWindow(&showDemoWindow);
+        // bool showDemoWindow = true;
+        // ImGui::ShowDemoWindow(&showDemoWindow);
 
         if (ImGui::BeginMainMenuBar())
         {
